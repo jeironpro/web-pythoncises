@@ -1,6 +1,15 @@
 [
   {
     "date": "2026-08-12",
+    "macrostructure": "Index-First",
+    "theme": "Atelier",
+    "enrichment": "none (typography only)",
+    "nav": "N1a",
+    "footer": "Ft2",
+    "brief": "web-pythoncises · rediseño multi-página (índice + 32 páginas de ejercicio)"
+  },
+  {
+    "date": "2026-08-12",
     "macrostructure": "Component Playground",
     "theme": "Newsprint",
     "enrichment": "none (typography only)",

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Programa que escanea documentos pdf usando OCR (Optical Character Recognition o Reconocimiento Óptico de Caracteres) que es un tecnica que se utiliza para leer texto desde imágenes o documentos y convertirlos a texto editable">
+  <title>Pythoncises · OCR sobre PDF</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-word" href="../index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="../index.html#indice">Índice</a></li>
+        <li><a href="../index.html#licencia">Licencia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="detalle">
+    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <p class="detalle-meta">Archivos y PDF · 20 · extraer_texto_pdf_ocr.py</p>
+    <h1 class="detalle-titulo">OCR sobre PDF</h1>
+    <p class="detalle-desc">Programa que escanea documentos pdf usando OCR (Optical Character Recognition o Reconocimiento Óptico de Caracteres) que es un tecnica que se utiliza para leer texto desde imágenes o documentos y convertirlos a texto editable</p>
+    <div class="detalle-acciones">
+      <button class="btn" type="button" data-accion="copiar">Copiar</button>
+      <button class="btn" type="button" data-accion="descargar" data-nombre="extraer_texto_pdf_ocr.py">Descargar</button>
+    </div>
+    <p class="codigo-archivo">extraer-texto-pdf-ocr/extraer_texto_pdf_ocr.py</p>
+    <pre><code>&quot;&quot;&quot;
+    Programa que escanea documentos pdf usando OCR (Optical Character Recognition o Reconocimiento Óptico de Caracteres) que es un tecnica que se utiliza para leer texto desde imágenes o documentos y convertirlos a texto editable
+&quot;&quot;&quot;
+import fitz
+import pytesseract
+from pdf2image import convert_from_path
+
+ruta_archivo = &quot;comandos_esenciales_docker_engine.pdf&quot;
+
+texto_total = &quot;&quot;
+
+# Abrir el documento
+documento_pdf = fitz.open(ruta_archivo)
+
+# Iterar cada página del documento
+for numero, pagina in enumerate(documento_pdf, start=1):
+    texto = pagina.get_text().strip() # Obtener el texto
+
+    # Si el documento no tiene texto, tratar imagenes
+    if not texto:
+        print(f&quot;Página {numero}: sin texto, aplicando OCR...&quot;)
+        # Tratar el documento como imagen
+        imagen = convert_from_path(ruta_archivo, first_page=numero, last_page=numero)[0]
+        # Usar ocr para convertir la imagen en texto
+        texto = pytesseract.image_to_string(imagen)
+    else:
+        print(f&quot;Página {numero}: texto digital detectado&quot;)
+    
+    # Guardar el texto de cada pagina 
+    texto_total += f&quot;\n--- Página {numero} ---\n{texto}\n&quot;
+
+# Mostrar el texto obtenido
+print(texto_total)</code></pre>
+    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+      <a class="anterior" href="marca-agua.html">← Marca de agua</a>
+      <a class="siguiente" href="herramienta-renombra-archivo.html">Renombrador de archivos →</a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Programa que simula el juego del ahorcado. Toma una palabra aleatoria de una lista, muestra el estado inicial del juego, pide y valida una letra al usuario, muestra el estado en cada intento indicando cuando haya ganado.">
+  <title>Pythoncises · El ahorcado</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-word" href="../index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="../index.html#indice">Índice</a></li>
+        <li><a href="../index.html#licencia">Licencia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="detalle">
+    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <p class="detalle-meta">Juegos · 02 · ahorcado.py</p>
+    <h1 class="detalle-titulo">El ahorcado</h1>
+    <p class="detalle-desc">Programa que simula el juego del ahorcado. Toma una palabra aleatoria de una lista, muestra el estado inicial del juego, pide y valida una letra al usuario, muestra el estado en cada intento indicando cuando haya ganado.</p>
+    <div class="detalle-acciones">
+      <button class="btn" type="button" data-accion="copiar">Copiar</button>
+      <button class="btn" type="button" data-accion="descargar" data-nombre="ahorcado.py">Descargar</button>
+    </div>
+    <p class="codigo-archivo">ahorcado/ahorcado.py</p>
+    <pre><code>&quot;&quot;&quot;
+    Programa que simula el juego del ahorcado.
+    Toma una palabra aleatoria de una lista,
+    muestra el estado inicial del juego,
+    pide y valida una letra al usuario,
+    muestra el estado en cada intento indicando cuando haya ganado.
+&quot;&quot;&quot;
+import random
+
+# Representación del estado del ahorcado en cada intento
+PARTES_AHORCADO = [
+    &quot;&quot;&quot;
+    +---+
+    |   |
+        |
+        |
+        |
+        |
+    =========
+    &quot;&quot;&quot;,
+    &quot;&quot;&quot;
+    +---+
+    |   |
+    O   |
+        |
+        |
+        |
+    =========
+    &quot;&quot;&quot;,
+    &quot;&quot;&quot;
+    +---+
+    |   |
+    O   |
+    |   |
+        |
+        |
+    =========
+    &quot;&quot;&quot;,
+    &quot;&quot;&quot;
+     +---+
+     |   |
+     O   |
+    /|   |
+         |
+         |
+    =========
+    &quot;&quot;&quot;,
+    &quot;&quot;&quot;
+     +---+
+     |   |
+     O   |
+    /|\\  |
+         |
+         |
+    =========
+    &quot;&quot;&quot;,
+    &quot;&quot;&quot;
+     +---+
+     |   |
+     O   |
+    /|\\  |
+    /    |
+         |
+    =========
+    &quot;&quot;&quot;,
+    &quot;&quot;&quot;
+     +---+
+     |   |
+     O   |
+    /|\\  |
+    / \\  |
+         |
+    =========
+    &quot;&quot;&quot;
+]
+
+# Lista de palabras de longitud igual a 7
+PALABRAS = [
+    &quot;amapola&quot;,&quot;bandera&quot;,&quot;botella&quot;,&quot;caballo&quot;,&quot;caminar&quot;,&quot;cuchara&quot;,&quot;familia&quot;,&quot;gallina&quot;,&quot;glaciar&quot;,
+    &quot;hormiga&quot;,&quot;lagarto&quot;,&quot;lavanda&quot;,&quot;limones&quot;,&quot;manzana&quot;,&quot;medalla&quot;,&quot;mensual&quot;,&quot;militar&quot;,&quot;mirador&quot;,&quot;montana&quot;,
+    &quot;narices&quot;,&quot;nublado&quot;,&quot;palmera&quot;,&quot;patinar&quot;,&quot;peluche&quot;,&quot;perfume&quot;,&quot;pintura&quot;,&quot;piragua&quot;,&quot;plumero&quot;,&quot;portada&quot;,
+    &quot;pradera&quot;,&quot;ratones&quot;,&quot;recoger&quot;,&quot;regalos&quot;,&quot;rejilla&quot;,&quot;remover&quot;,&quot;resumen&quot;,&quot;rosales&quot;,&quot;sabores&quot;,&quot;sandias&quot;,
+    &quot;sardina&quot;,&quot;semilla&quot;,&quot;soldado&quot;,&quot;sombrio&quot;,&quot;teatral&quot;,&quot;temblor&quot;,&quot;tiburon&quot;,&quot;tortuga&quot;,&quot;trabajo&quot;,&quot;trenzas&quot;,
+    &quot;triunfo&quot;,&quot;trompas&quot;,&quot;valores&quot;,&quot;ventana&quot;,&quot;viajero&quot;,&quot;volador&quot;,&quot;zapatos&quot;,&quot;acechar&quot;,&quot;acordar&quot;,&quot;actuaba&quot;,
+    &quot;ajedrez&quot;,&quot;anzuelo&quot;,&quot;apretar&quot;,&quot;arenoso&quot;,&quot;armario&quot;,&quot;arrojar&quot;,&quot;atender&quot;,&quot;aventar&quot;,&quot;azucena&quot;,&quot;balanza&quot;,
+    &quot;barrera&quot;,&quot;bateria&quot;,&quot;bordado&quot;,&quot;brillar&quot;,&quot;buscaba&quot;,&quot;cabello&quot;,&quot;camello&quot;,&quot;cansado&quot;,&quot;caretas&quot;,&quot;carpeta&quot;,
+    &quot;cartera&quot;,&quot;celular&quot;,&quot;cenizas&quot;,&quot;cerdito&quot;,&quot;cerezas&quot;,&quot;charcos&quot;,&quot;corazon&quot;,&quot;cristal&quot;,&quot;cuadros&quot;,&quot;culebra&quot;,
+    &quot;delgado&quot;,&quot;dientes&quot;,&quot;dibujos&quot;,&quot;esferas&quot;,&quot;fragata&quot;,&quot;frontal&quot;,&quot;gigante&quot;,&quot;granero&quot;,&quot;habitos&quot;,&quot;heraldo&quot;,
+    &quot;joyeria&quot;
+]
+
+# Pedir y validar letra al usuario
+def pedir_letra(letras_adivinadas):
+    while True:
+        letra_usuario = input(&quot;Introduce una letra: &quot;).strip().lower()
+
+        if len(letra_usuario) != 1 or not letra_usuario.isalpha:
+            print(&quot;Introduce una sola letra (a-z)&quot;)
+            continue
+
+        if letra_usuario in letras_adivinadas:
+            print(&quot;La letra ya ha sido adivinada&quot;)
+            continue
+        return letra_usuario
+
+# Muestra el estado de la palabra en cada intento
+def mostrar_intento(palabra, letras_adivinadas):
+    intento = [letra.upper() if letra in letras_adivinadas else &quot;_&quot; for letra in palabra]
+    print(' '.join(intento))
+
+# Logica principal del juego
+def jugar(palabras):
+    print(&quot;============================&quot;)
+    print(&quot;     JUEGO DEL AHORCADO     &quot;)
+    print(&quot;============================&quot;)
+
+    palabra = random.choice(palabras)
+    letras_adivinadas = set()
+    intentos = len(palabra)-1
+
+    while intentos &gt; 0:
+        print(PARTES_AHORCADO[len(PARTES_AHORCADO) - 1 - intentos])
+        mostrar_intento(palabra, letras_adivinadas)
+        
+        if all(letra in letras_adivinadas for letra in palabra):
+            print(&quot;Has ganado!&quot;)
+
+        letra_usuario = pedir_letra(letras_adivinadas)
+        letras_adivinadas.add(letra_usuario)
+
+        if letra_usuario not in palabra:
+            intentos -= 1
+            print(f&quot;La letra no esta en la palabra. Te quedan {intentos} intentos&quot;)
+
+    print(PARTES_AHORCADO[-1])
+    print(f&quot;Has perdido. La palabra era: {palabra}&quot;)
+
+# Iniciar el juego
+jugar(PALABRAS)</code></pre>
+    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+      <a class="anterior" href="adivina-numero.html">← Adivina el número</a>
+      <a class="siguiente" href="piedra-papel-tijera.html">Piedra, papel o tijera →</a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
+  </footer>
+</body>
+</html>

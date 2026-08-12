@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Programa que convierte un video de un formato a otro, permtiendo opcionalmente ajustar la resolución y la calidad del video">
+  <title>Pythoncises · Convertidor de vídeos</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-word" href="../index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="../index.html#indice">Índice</a></li>
+        <li><a href="../index.html#licencia">Licencia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="detalle">
+    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <p class="detalle-meta">Archivos y PDF · 23 · convertir_videos.py</p>
+    <h1 class="detalle-titulo">Convertidor de vídeos</h1>
+    <p class="detalle-desc">Programa que convierte un video de un formato a otro, permtiendo opcionalmente ajustar la resolución y la calidad del video</p>
+    <div class="detalle-acciones">
+      <button class="btn" type="button" data-accion="copiar">Copiar</button>
+      <button class="btn" type="button" data-accion="descargar" data-nombre="convertir_videos.py">Descargar</button>
+    </div>
+    <p class="codigo-archivo">convertir-videos/convertir_videos.py</p>
+    <pre><code>&quot;&quot;&quot;
+    Programa que convierte un video de un formato a otro,
+    permtiendo opcionalmente ajustar la resolución y la calidad del video
+&quot;&quot;&quot;
+import os
+from moviepy import VideoFileClip
+
+ruta_video = input(&quot;Ingrese la ruta del video: &quot;)
+
+# Verificar si el video existe
+if not os.path.exists(ruta_video):
+    print(&quot;El video no existe&quot;)
+    exit()
+
+# Cargar el video
+video = VideoFileClip(ruta_video)
+
+formato_destino = input(&quot;Ingrese el formato de salida deseado (ej: mp4, avi, mov): &quot;)
+
+cambio_resolucion = input(&quot;Desea cambiar la resolución del video? (si/no): &quot;)
+
+# Resolución original del video
+ancho_resolucion = video.size[0]
+alto_resolucion = video.size[1]
+
+if cambio_resolucion == &quot;si&quot;:
+    resolucion = input(&quot;Ingresa la nueva resolución (ej: 1920x1080): &quot;)
+
+    partes_resolucion = resolucion.split(&quot;x&quot;)
+
+    if len(partes_resolucion) == 2:
+        ancho_resolucion = int(partes_resolucion[0])
+        alto_resolucion = int(partes_resolucion[1])
+    else:
+        print(&quot;Formato de resolución no válido&quot;)
+        exit()
+
+cambio_calidad = input(&quot;Desea cambiar la calidad o bitrate del video? (si/no): &quot;)
+calidad = None
+
+if cambio_calidad == &quot;si&quot;:
+    calidad = input(&quot;Ingrese el bitrate deseado en kbps (ej: 2000): &quot;)
+
+# Verificar y ajustar valores de resolución
+if ancho_resolucion and alto_resolucion:
+    video = video.resized((ancho_resolucion, alto_resolucion))
+
+calidad_valida = None
+# Verificar y validad calidad
+if calidad:
+    calidad_valida = f&quot;{calidad}k&quot;
+
+video.write_videofile(
+    f&quot;video_convertido.{formato_destino}&quot;,
+    codec=&quot;libx264&quot;,
+    bitrate=calidad_valida
+)   </code></pre>
+    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+      <a class="anterior" href="organizador-archivos.html">← Organizador de archivos</a>
+      <a class="siguiente" href="cuenta-tiempo-atras.html">Cuenta atrás →</a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Programa que lee cualquier archivo que sea de texto y busca los correos electronicos y muestras sus partes (nombre y dominio)">
+  <title>Pythoncises · Partes de un correo</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-word" href="../index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="../index.html#indice">Índice</a></li>
+        <li><a href="../index.html#licencia">Licencia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="detalle">
+    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <p class="detalle-meta">Texto y cadenas · 16 · partes_correo.py</p>
+    <h1 class="detalle-titulo">Partes de un correo</h1>
+    <p class="detalle-desc">Programa que lee cualquier archivo que sea de texto y busca los correos electronicos y muestras sus partes (nombre y dominio)</p>
+    <div class="detalle-acciones">
+      <button class="btn" type="button" data-accion="copiar">Copiar</button>
+      <button class="btn" type="button" data-accion="descargar" data-nombre="partes_correo.py">Descargar</button>
+    </div>
+    <p class="codigo-archivo">partes-correo/partes_correo.py</p>
+    <pre><code>&quot;&quot;&quot;
+    Programa que lee cualquier archivo que sea de texto
+    y busca los correos electronicos y muestras sus partes 
+    (nombre y dominio)
+&quot;&quot;&quot;
+import os
+
+nombre_archivo = input(&quot;Introduce el nombre del archivo: &quot;)
+
+# Verificar que el archivo existe antes de leer
+if os.path.exists(nombre_archivo):
+    with open(nombre_archivo, &quot;r&quot;) as archivo:
+        for linea in archivo:
+            linea = linea.strip()
+
+            if &quot;@&quot; in linea:
+                partes = linea.split(&quot;@&quot;)
+
+                nombre_usuario = partes[0]
+                dominio = partes[1]
+
+                print(f&quot;Nombre usuario: {nombre_usuario}&quot;)
+                print(f&quot;Dominio: {dominio}&quot;)
+else:
+    print(f&quot;El archivo {nombre_archivo} no existe&quot;)</code></pre>
+    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+      <a class="anterior" href="historias-divertidas.html">← Historias divertidas</a>
+      <a class="siguiente" href="convertir-markdown-html.html">Markdown a HTML →</a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
+  </footer>
+</body>
+</html>
