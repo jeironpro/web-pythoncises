@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,29 +28,29 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="herramienta_renombra_archivo.py">Descargar</button>
     </div>
     <p class="codigo-archivo">herramienta-renombra-archivo/herramienta_renombra_archivo.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que renombra archivo.
     Pide al usuario la ruta del archivo y el nuevo nombre,
     verifica si el archivo existe y lo renombra,
     de lo contrario muestra un mensaje de error
-&quot;&quot;&quot;
-import os
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> os
 
-ruta_archivo = input(&quot;Introduce la ruta del archivo: &quot;)
-nuevo_nombre = input(&quot;Introduce el nuevo nombre: &quot;)
-# Obtener el directorio de la ruta ruta del archivo
+ruta_archivo = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce la ruta del archivo: &quot;</span>)
+nuevo_nombre = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce el nuevo nombre: &quot;</span>)
+<span class="tok-comentario"># Obtener el directorio de la ruta ruta del archivo</span>
 directorio_archivo = os.path.dirname(ruta_archivo)
 
-# Verificar si el archivo existe
-if os.path.exists(ruta_archivo):
-    # Ruta completa del nuevo nombre
+<span class="tok-comentario"># Verificar si el archivo existe</span>
+<span class="tok-palabra">if</span> os.path.exists(ruta_archivo):
+    <span class="tok-comentario"># Ruta completa del nuevo nombre</span>
     directorio_nuevo_nombre = os.path.join(directorio_archivo, nuevo_nombre)
 
-    # Renombrar el archivo
+    <span class="tok-comentario"># Renombrar el archivo</span>
     os.rename(ruta_archivo, directorio_nuevo_nombre)
-    print(f&quot;Archivo {ruta_archivo} renombrado a {directorio_nuevo_nombre}&quot;)
-else:
-    print(&quot;El archivo no existe&quot;)</code></pre>
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Archivo {ruta_archivo} renombrado a {directorio_nuevo_nombre}&quot;</span>)
+<span class="tok-palabra">else</span>:
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;El archivo no existe&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="extraer-texto-pdf-ocr.html">← OCR sobre PDF</a>
       <a class="siguiente" href="organizador-archivos.html">Organizador de archivos →</a>

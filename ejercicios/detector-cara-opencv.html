@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,12 +28,12 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="detector_cara_opencv.py">Descargar</button>
     </div>
     <p class="codigo-archivo">detector-cara-opencv/detector_cara_opencv.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que detecta rostros que se posicionen frente a la cámara.
     Utiliza la libreria opencv para abrir la camara y detectar los rostros.
-&quot;&quot;&quot;
-import cv2
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> cv2
+<span class="tok-cadena">&quot;&quot;&quot;
     Función	                  Descripción
     cv2.imread()	          Cargar imagen
     cv2.imwrite()	          Guardar imagen
@@ -51,76 +45,76 @@ import cv2
     cv2.threshold()	          Umbralización (blanco/negro)
     cv2.findContours()	      Detección de contornos
     cv2.CascadeClassifier()	  Detección facial
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
 
-# Clasificador de rostros preentranado de OpenCV
-clasificador_rostros = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+<span class="tok-comentario"># Clasificador de rostros preentranado de OpenCV</span>
+clasificador_rostros = cv2.CascadeClassifier(cv2.data.haarcascades + <span class="tok-cadena">'haarcascade_frontalface_default.xml'</span>)
 
-# Cargar la cámara
-camara = cv2.VideoCapture(0)
+<span class="tok-comentario"># Cargar la cámara</span>
+camara = cv2.VideoCapture(<span class="tok-numero">0</span>)
 
-# Verificar si la camara no se abre
-if not camara.isOpened():
-    print(&quot;No se pudo acceder a la cámara&quot;)
+<span class="tok-comentario"># Verificar si la camara no se abre</span>
+<span class="tok-palabra">if</span> <span class="tok-palabra">not</span> camara.isOpened():
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;No se pudo acceder a la cámara&quot;</span>)
     exit()
 
-while True:
-    &quot;&quot;&quot;
+<span class="tok-palabra">while</span> <span class="tok-palabra">True</span>:
+    <span class="tok-cadena">&quot;&quot;&quot;
         El método .read() lee una imagen (frame) desde el objeto VideoCapture, puede ser tanto una cámara como un archivo de video.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;</span>
     lectura_exitosa, imagen = camara.read()
 
-    # Verificar si la lectura de la imagen se realizo correctamente
-    if not lectura_exitosa:
-        print(&quot;No se leer la imagen&quot;)
-        break
+    <span class="tok-comentario"># Verificar si la lectura de la imagen se realizo correctamente</span>
+    <span class="tok-palabra">if</span> <span class="tok-palabra">not</span> lectura_exitosa:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;No se leer la imagen&quot;</span>)
+        <span class="tok-palabra">break</span>
 
-    &quot;&quot;&quot;
+    <span class="tok-cadena">&quot;&quot;&quot;
         El método cv2.cvtColor(imagen, cv2.COLOR_BGR2GRAY) convierte una imagen (frame) de color (BGR) a escala de grises (GRAY). La imagen pasa de 3 canales de color (azul, verde, rojo) a una imagen de un solo canal (intensidad de luz). 
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;</span>
     conversion_imagen_gray = cv2.cvtColor(imagen, cv2.COLOR_BGR2GRAY)
 
-    &quot;&quot;&quot;
+    <span class="tok-cadena">&quot;&quot;&quot;
         El método .detectMultiScale(imagen_en_escala_de_grises, reductor_de_escala, detenciones_vecinas, tamaño_del_rostro) busca un rostro dentro de la imagen.
 
         Devuelve una lista de coordenadas con todos los rostros detectados.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;</span>
     rostros = clasificador_rostros.detectMultiScale(
         conversion_imagen_gray, 
-        scaleFactor=1.1, 
-        minNeighbors=5, 
-        minSize=(50, 50)
+        scaleFactor=<span class="tok-numero">1.1</span>, 
+        minNeighbors=<span class="tok-numero">5</span>, 
+        minSize=(<span class="tok-numero">50</span>, <span class="tok-numero">50</span>)
     )
 
-    # Iterar la tupla de coordenadas de cada rostro detectado 
-    &quot;&quot;&quot;
+    <span class="tok-comentario"># Iterar la tupla de coordenadas de cada rostro detectado </span>
+    <span class="tok-cadena">&quot;&quot;&quot;
         x = posición X del rostro (esquina superior izquierda)
         y = posición Y del rostro
         w = ancho del rostro detectado
         h = alto del rostro detectado
-    &quot;&quot;&quot;
-    for (x, y, w, h) in rostros:
-        &quot;&quot;&quot;
+    &quot;&quot;&quot;</span>
+    <span class="tok-palabra">for</span> (x, y, w, h) <span class="tok-palabra">in</span> rostros:
+        <span class="tok-cadena">&quot;&quot;&quot;
             El método .rectangle(imagen, coordenadas_de_la_esquina_superior_izquierda, coordenadas_de_la_esquina_inferior_derecha_sumando_ancho_y_alto, color_del_rectangulo_en_formato_BGR_(azul_verde_rojo), grosor_de_la_linea) dibuja un rectángulo sobre la imagen en la posición donde se detectó el rostro.
-        &quot;&quot;&quot;
-        cv2.rectangle(imagen, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        &quot;&quot;&quot;</span>
+        cv2.rectangle(imagen, (x, y), (x + w, y + h), (<span class="tok-numero">0</span>, <span class="tok-numero">255</span>, <span class="tok-numero">0</span>), <span class="tok-numero">2</span>)
 
-    # Muestra el video en una ventana con el titulo &quot;Camara&quot;
-    cv2.imshow(&quot;Camara&quot;, imagen)
+    <span class="tok-comentario"># Muestra el video en una ventana con el titulo &quot;Camara&quot;</span>
+    cv2.imshow(<span class="tok-cadena">&quot;Camara&quot;</span>, imagen)
 
-    &quot;&quot;&quot;
+    <span class="tok-cadena">&quot;&quot;&quot;
         El método .waitKey(tiempo) espera una tecla del teclado durante un número determinado de milisegundos. Ademas, permite actualizar la ventana de la cámara evitando que se congele.
 
         &amp; 0xFF: se asegura que el valor leido de la tecla presionada sea compatible entre sistemas operativos, tomando 8 bits bajos del código ASCII.
 
         ord('q'): convierte el caracter q en su valor numérico ASCII.
-    &quot;&quot;&quot;
-    if cv2.waitKey(1) &amp; 0xFF == ord('q'):
-        break
+    &quot;&quot;&quot;</span>
+    <span class="tok-palabra">if</span> cv2.waitKey(<span class="tok-numero">1</span>) &amp; <span class="tok-numero">0xFF</span> == <span class="tok-builtin">ord</span>(<span class="tok-cadena">'q'</span>):
+        <span class="tok-palabra">break</span>
 
-# Liberación de la cámara para que no se quede bloqueada o encendida después de cerrar el programa
+<span class="tok-comentario"># Liberación de la cámara para que no se quede bloqueada o encendida después de cerrar el programa</span>
 camara.release()
-# Cierre de todo lo que abrio cv2.imshow()
+<span class="tok-comentario"># Cierre de todo lo que abrio cv2.imshow()</span>
 cv2.destroyAllWindows()</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="lista-to-do.html">← Lista de tareas</a>

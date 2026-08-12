@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,45 +28,45 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="adivina_numero.py">Descargar</button>
     </div>
     <p class="codigo-archivo">adivina-numero/adivina_numero.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa genera un numero aleatorio del 1 al 100, le permite 10 intentos al usuario para adivinarlo 
-&quot;&quot;&quot;
-import random
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> random
 
-def genera_numero_secreto():
-    return random.randint(1, 100)
+<span class="tok-palabra">def</span> <span class="tok-funcion">genera_numero_secreto</span>():
+    <span class="tok-palabra">return</span> random.randint(<span class="tok-numero">1</span>, <span class="tok-numero">100</span>)
 
 numero_secreto = genera_numero_secreto()
-contador_intentos = 0
-gana = False
+contador_intentos = <span class="tok-numero">0</span>
+gana = <span class="tok-palabra">False</span>
 
-while True:
-    numero_usuario = input(&quot;Adivina el numero secreto (enter para salir): &quot;)
+<span class="tok-palabra">while</span> <span class="tok-palabra">True</span>:
+    numero_usuario = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Adivina el numero secreto (enter para salir): &quot;</span>)
 
-    # Validación de salida
-    if not numero_usuario:
-        print(&quot;Adios&quot;)
-        break
+    <span class="tok-comentario"># Validación de salida</span>
+    <span class="tok-palabra">if</span> <span class="tok-palabra">not</span> numero_usuario:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Adios&quot;</span>)
+        <span class="tok-palabra">break</span>
     
-    # Convertir el número a un entero
-    numero_usuario = int(numero_usuario)
+    <span class="tok-comentario"># Convertir el número a un entero</span>
+    numero_usuario = <span class="tok-builtin">int</span>(numero_usuario)
 
-    # Verificación de número y aumento intentos si falla
-    if numero_usuario &lt; numero_secreto:
-        contador_intentos += 1
-        print(&quot;El número secreto es mayor\n&quot;)
-    elif numero_usuario &gt; numero_secreto:
-        contador_intentos += 1
-        print(&quot;El número secreto es menor\n&quot;)
-    else:
-        gana = True # marcar que gana
-        print(&quot;Has adivinado!!!&quot;)
-        break
+    <span class="tok-comentario"># Verificación de número y aumento intentos si falla</span>
+    <span class="tok-palabra">if</span> numero_usuario &lt; numero_secreto:
+        contador_intentos += <span class="tok-numero">1</span>
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;El número secreto es mayor\n&quot;</span>)
+    <span class="tok-palabra">elif</span> numero_usuario &gt; numero_secreto:
+        contador_intentos += <span class="tok-numero">1</span>
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;El número secreto es menor\n&quot;</span>)
+    <span class="tok-palabra">else</span>:
+        gana = <span class="tok-palabra">True</span> <span class="tok-comentario"># marcar que gana</span>
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Has adivinado!!!&quot;</span>)
+        <span class="tok-palabra">break</span>
     
-    # Verificacion de intentos sin ganar
-    if contador_intentos == 10 and not gana:
-        print(&quot;Se te han acabado los intentos y no has adivinado&quot;)
-        break
+    <span class="tok-comentario"># Verificacion de intentos sin ganar</span>
+    <span class="tok-palabra">if</span> contador_intentos == <span class="tok-numero">10</span> <span class="tok-palabra">and</span> <span class="tok-palabra">not</span> gana:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Se te han acabado los intentos y no has adivinado&quot;</span>)
+        <span class="tok-palabra">break</span>
 </code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       

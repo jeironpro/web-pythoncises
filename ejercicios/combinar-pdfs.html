@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,28 +28,28 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="combinar_pdfs.py">Descargar</button>
     </div>
     <p class="codigo-archivo">combinar-pdfs/combinar_pdfs.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que une pdfs usando la libreria PyPDF2.
     Toma los pdfs de un directorio y los une en un solo
     pdf.
-&quot;&quot;&quot;
-import os
-from PyPDF2 import PdfMerger
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> os
+<span class="tok-palabra">from</span> PyPDF2 <span class="tok-palabra">import</span> PdfMerger
 
 merger = PdfMerger()
 
-directorio = &quot;pdfs&quot;
+directorio = <span class="tok-cadena">&quot;pdfs&quot;</span>
 pdfs = os.listdir(directorio)
-ruta_destino = &quot;combinacion.pdf&quot;
+ruta_destino = <span class="tok-cadena">&quot;combinacion.pdf&quot;</span>
 
-for pdf in pdfs:
+<span class="tok-palabra">for</span> pdf <span class="tok-palabra">in</span> pdfs:
     ruta_pdf = os.path.join(directorio, pdf)
     merger.append(ruta_pdf)
 
 merger.write(ruta_destino)
 merger.close()
 
-print(f&quot;PDF combinacion en {ruta_destino}&quot;)</code></pre>
+<span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;PDF combinacion en {ruta_destino}&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="convertir-markdown-html.html">← Markdown a HTML</a>
       <a class="siguiente" href="marca-agua.html">Marca de agua →</a>

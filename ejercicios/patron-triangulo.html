@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,14 +28,14 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="patron_triangulo.py">Descargar</button>
     </div>
     <p class="codigo-archivo">patron-triangulo/patron_triangulo.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que dibuja un triangulo de astericos
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
 
-filas = 5
+filas = <span class="tok-numero">5</span>
 
-for i in range(1, filas + 1):
-    print(&quot; &quot; * (filas - i) + '*' * (2 * i -1))</code></pre>
+<span class="tok-palabra">for</span> i <span class="tok-palabra">in</span> <span class="tok-builtin">range</span>(<span class="tok-numero">1</span>, filas + <span class="tok-numero">1</span>):
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot; &quot;</span> * (filas - i) + <span class="tok-cadena">'*'</span> * (<span class="tok-numero">2</span> * i -<span class="tok-numero">1</span>))</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="dados-aleatorios.html">← Dados aleatorios</a>
       <a class="siguiente" href="patron-triangulo-invertido.html">Patrón triángulo invertido →</a>

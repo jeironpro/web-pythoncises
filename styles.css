@@ -79,28 +79,6 @@ button {
   color: var(--color-accent);
 }
 
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: var(--space-lg);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.nav-links a {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  color: var(--color-muted);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.nav-links a:hover {
-  color: var(--color-accent);
-}
-
 /* Introducción */
 
 .intro {
@@ -350,6 +328,17 @@ button {
   overflow-wrap: normal;
   tab-size: 4;
 }
+
+/* Sintaxis */
+
+.tok-palabra { color: var(--color-tok-palabra); }
+.tok-builtin { color: var(--color-tok-builtin); }
+.tok-funcion { color: var(--color-tok-funcion); }
+.tok-clase   { color: var(--color-tok-clase); font-weight: 500; }
+.tok-cadena  { color: var(--color-tok-cadena); }
+.tok-numero  { color: var(--color-tok-numero); }
+.tok-comentario { color: var(--color-tok-comentario); font-style: italic; }
+.tok-decorador { color: var(--color-tok-decorador); }
 
 /* Navegación anterior / siguiente */
 

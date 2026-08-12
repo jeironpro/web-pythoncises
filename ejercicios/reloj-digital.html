@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,12 +28,12 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="reloj_digital.py">Descargar</button>
     </div>
     <p class="codigo-archivo">reloj-digital/reloj_digital.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que simula un reloj digital, mostrando la hora
     actual cada segundo.
-&quot;&quot;&quot;
-import time
-import os
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> time
+<span class="tok-palabra">import</span> os
 
 tiempo = time.localtime()
 
@@ -47,30 +41,30 @@ horaActual = tiempo.tm_hour
 minutosActuales = tiempo.tm_min
 segundosActuales = tiempo.tm_sec
 
-while True:
-    # Limpiar pantalla
-    os.system('clear')
+<span class="tok-palabra">while</span> <span class="tok-palabra">True</span>:
+    <span class="tok-comentario"># Limpiar pantalla</span>
+    os.system(<span class="tok-cadena">'clear'</span>)
 
-    print(f&quot;{horaActual}:{minutosActuales}:{segundosActuales}&quot;)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;{horaActual}:{minutosActuales}:{segundosActuales}&quot;</span>)
 
-    time.sleep(1) # Espera de un segundo
+    time.sleep(<span class="tok-numero">1</span>) <span class="tok-comentario"># Espera de un segundo</span>
 
-    # Actualizar los segundos
-    segundosActuales = segundosActuales + 1
+    <span class="tok-comentario"># Actualizar los segundos</span>
+    segundosActuales = segundosActuales + <span class="tok-numero">1</span>
 
-    # Verificar limite de segundos y actualizar minutos
-    if segundosActuales == 60:
-        segundosActuales = 0
-        minutosActuales = minutosActuales + 1
+    <span class="tok-comentario"># Verificar limite de segundos y actualizar minutos</span>
+    <span class="tok-palabra">if</span> segundosActuales == <span class="tok-numero">60</span>:
+        segundosActuales = <span class="tok-numero">0</span>
+        minutosActuales = minutosActuales + <span class="tok-numero">1</span>
 
-    # Verificar limite de minutos y actualizar hora
-    if minutosActuales == 60:
-        minutosActuales = 0
-        horaActual = horaActual + 1
+    <span class="tok-comentario"># Verificar limite de minutos y actualizar hora</span>
+    <span class="tok-palabra">if</span> minutosActuales == <span class="tok-numero">60</span>:
+        minutosActuales = <span class="tok-numero">0</span>
+        horaActual = horaActual + <span class="tok-numero">1</span>
 
-    # Verificar y actualizar limite hora
-    if horaActual == 24:
-        horaActual = 0</code></pre>
+    <span class="tok-comentario"># Verificar y actualizar limite hora</span>
+    <span class="tok-palabra">if</span> horaActual == <span class="tok-numero">24</span>:
+        horaActual = <span class="tok-numero">0</span></code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="reloj-alarma.html">← Reloj alarma</a>
       <a class="siguiente" href="rastreador-habitos-diarios.html">Rastreador de hábitos →</a>

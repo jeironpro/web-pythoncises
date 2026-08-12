@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,18 +28,18 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="ahorcado.py">Descargar</button>
     </div>
     <p class="codigo-archivo">ahorcado/ahorcado.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que simula el juego del ahorcado.
     Toma una palabra aleatoria de una lista,
     muestra el estado inicial del juego,
     pide y valida una letra al usuario,
     muestra el estado en cada intento indicando cuando haya ganado.
-&quot;&quot;&quot;
-import random
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> random
 
-# Representación del estado del ahorcado en cada intento
+<span class="tok-comentario"># Representación del estado del ahorcado en cada intento</span>
 PARTES_AHORCADO = [
-    &quot;&quot;&quot;
+    <span class="tok-cadena">&quot;&quot;&quot;
     +---+
     |   |
         |
@@ -53,26 +47,26 @@ PARTES_AHORCADO = [
         |
         |
     =========
-    &quot;&quot;&quot;,
-    &quot;&quot;&quot;
-    +---+
-    |   |
-    O   |
-        |
-        |
-        |
-    =========
-    &quot;&quot;&quot;,
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;</span>,
+    <span class="tok-cadena">&quot;&quot;&quot;
     +---+
     |   |
     O   |
+        |
+        |
+        |
+    =========
+    &quot;&quot;&quot;</span>,
+    <span class="tok-cadena">&quot;&quot;&quot;
+    +---+
+    |   |
+    O   |
     |   |
         |
         |
     =========
-    &quot;&quot;&quot;,
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;</span>,
+    <span class="tok-cadena">&quot;&quot;&quot;
      +---+
      |   |
      O   |
@@ -80,8 +74,8 @@ PARTES_AHORCADO = [
          |
          |
     =========
-    &quot;&quot;&quot;,
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;</span>,
+    <span class="tok-cadena">&quot;&quot;&quot;
      +---+
      |   |
      O   |
@@ -89,8 +83,8 @@ PARTES_AHORCADO = [
          |
          |
     =========
-    &quot;&quot;&quot;,
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;</span>,
+    <span class="tok-cadena">&quot;&quot;&quot;
      +---+
      |   |
      O   |
@@ -98,8 +92,8 @@ PARTES_AHORCADO = [
     /    |
          |
     =========
-    &quot;&quot;&quot;,
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;</span>,
+    <span class="tok-cadena">&quot;&quot;&quot;
      +---+
      |   |
      O   |
@@ -107,71 +101,71 @@ PARTES_AHORCADO = [
     / \\  |
          |
     =========
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;</span>
 ]
 
-# Lista de palabras de longitud igual a 7
+<span class="tok-comentario"># Lista de palabras de longitud igual a 7</span>
 PALABRAS = [
-    &quot;amapola&quot;,&quot;bandera&quot;,&quot;botella&quot;,&quot;caballo&quot;,&quot;caminar&quot;,&quot;cuchara&quot;,&quot;familia&quot;,&quot;gallina&quot;,&quot;glaciar&quot;,
-    &quot;hormiga&quot;,&quot;lagarto&quot;,&quot;lavanda&quot;,&quot;limones&quot;,&quot;manzana&quot;,&quot;medalla&quot;,&quot;mensual&quot;,&quot;militar&quot;,&quot;mirador&quot;,&quot;montana&quot;,
-    &quot;narices&quot;,&quot;nublado&quot;,&quot;palmera&quot;,&quot;patinar&quot;,&quot;peluche&quot;,&quot;perfume&quot;,&quot;pintura&quot;,&quot;piragua&quot;,&quot;plumero&quot;,&quot;portada&quot;,
-    &quot;pradera&quot;,&quot;ratones&quot;,&quot;recoger&quot;,&quot;regalos&quot;,&quot;rejilla&quot;,&quot;remover&quot;,&quot;resumen&quot;,&quot;rosales&quot;,&quot;sabores&quot;,&quot;sandias&quot;,
-    &quot;sardina&quot;,&quot;semilla&quot;,&quot;soldado&quot;,&quot;sombrio&quot;,&quot;teatral&quot;,&quot;temblor&quot;,&quot;tiburon&quot;,&quot;tortuga&quot;,&quot;trabajo&quot;,&quot;trenzas&quot;,
-    &quot;triunfo&quot;,&quot;trompas&quot;,&quot;valores&quot;,&quot;ventana&quot;,&quot;viajero&quot;,&quot;volador&quot;,&quot;zapatos&quot;,&quot;acechar&quot;,&quot;acordar&quot;,&quot;actuaba&quot;,
-    &quot;ajedrez&quot;,&quot;anzuelo&quot;,&quot;apretar&quot;,&quot;arenoso&quot;,&quot;armario&quot;,&quot;arrojar&quot;,&quot;atender&quot;,&quot;aventar&quot;,&quot;azucena&quot;,&quot;balanza&quot;,
-    &quot;barrera&quot;,&quot;bateria&quot;,&quot;bordado&quot;,&quot;brillar&quot;,&quot;buscaba&quot;,&quot;cabello&quot;,&quot;camello&quot;,&quot;cansado&quot;,&quot;caretas&quot;,&quot;carpeta&quot;,
-    &quot;cartera&quot;,&quot;celular&quot;,&quot;cenizas&quot;,&quot;cerdito&quot;,&quot;cerezas&quot;,&quot;charcos&quot;,&quot;corazon&quot;,&quot;cristal&quot;,&quot;cuadros&quot;,&quot;culebra&quot;,
-    &quot;delgado&quot;,&quot;dientes&quot;,&quot;dibujos&quot;,&quot;esferas&quot;,&quot;fragata&quot;,&quot;frontal&quot;,&quot;gigante&quot;,&quot;granero&quot;,&quot;habitos&quot;,&quot;heraldo&quot;,
-    &quot;joyeria&quot;
+    <span class="tok-cadena">&quot;amapola&quot;</span>,<span class="tok-cadena">&quot;bandera&quot;</span>,<span class="tok-cadena">&quot;botella&quot;</span>,<span class="tok-cadena">&quot;caballo&quot;</span>,<span class="tok-cadena">&quot;caminar&quot;</span>,<span class="tok-cadena">&quot;cuchara&quot;</span>,<span class="tok-cadena">&quot;familia&quot;</span>,<span class="tok-cadena">&quot;gallina&quot;</span>,<span class="tok-cadena">&quot;glaciar&quot;</span>,
+    <span class="tok-cadena">&quot;hormiga&quot;</span>,<span class="tok-cadena">&quot;lagarto&quot;</span>,<span class="tok-cadena">&quot;lavanda&quot;</span>,<span class="tok-cadena">&quot;limones&quot;</span>,<span class="tok-cadena">&quot;manzana&quot;</span>,<span class="tok-cadena">&quot;medalla&quot;</span>,<span class="tok-cadena">&quot;mensual&quot;</span>,<span class="tok-cadena">&quot;militar&quot;</span>,<span class="tok-cadena">&quot;mirador&quot;</span>,<span class="tok-cadena">&quot;montana&quot;</span>,
+    <span class="tok-cadena">&quot;narices&quot;</span>,<span class="tok-cadena">&quot;nublado&quot;</span>,<span class="tok-cadena">&quot;palmera&quot;</span>,<span class="tok-cadena">&quot;patinar&quot;</span>,<span class="tok-cadena">&quot;peluche&quot;</span>,<span class="tok-cadena">&quot;perfume&quot;</span>,<span class="tok-cadena">&quot;pintura&quot;</span>,<span class="tok-cadena">&quot;piragua&quot;</span>,<span class="tok-cadena">&quot;plumero&quot;</span>,<span class="tok-cadena">&quot;portada&quot;</span>,
+    <span class="tok-cadena">&quot;pradera&quot;</span>,<span class="tok-cadena">&quot;ratones&quot;</span>,<span class="tok-cadena">&quot;recoger&quot;</span>,<span class="tok-cadena">&quot;regalos&quot;</span>,<span class="tok-cadena">&quot;rejilla&quot;</span>,<span class="tok-cadena">&quot;remover&quot;</span>,<span class="tok-cadena">&quot;resumen&quot;</span>,<span class="tok-cadena">&quot;rosales&quot;</span>,<span class="tok-cadena">&quot;sabores&quot;</span>,<span class="tok-cadena">&quot;sandias&quot;</span>,
+    <span class="tok-cadena">&quot;sardina&quot;</span>,<span class="tok-cadena">&quot;semilla&quot;</span>,<span class="tok-cadena">&quot;soldado&quot;</span>,<span class="tok-cadena">&quot;sombrio&quot;</span>,<span class="tok-cadena">&quot;teatral&quot;</span>,<span class="tok-cadena">&quot;temblor&quot;</span>,<span class="tok-cadena">&quot;tiburon&quot;</span>,<span class="tok-cadena">&quot;tortuga&quot;</span>,<span class="tok-cadena">&quot;trabajo&quot;</span>,<span class="tok-cadena">&quot;trenzas&quot;</span>,
+    <span class="tok-cadena">&quot;triunfo&quot;</span>,<span class="tok-cadena">&quot;trompas&quot;</span>,<span class="tok-cadena">&quot;valores&quot;</span>,<span class="tok-cadena">&quot;ventana&quot;</span>,<span class="tok-cadena">&quot;viajero&quot;</span>,<span class="tok-cadena">&quot;volador&quot;</span>,<span class="tok-cadena">&quot;zapatos&quot;</span>,<span class="tok-cadena">&quot;acechar&quot;</span>,<span class="tok-cadena">&quot;acordar&quot;</span>,<span class="tok-cadena">&quot;actuaba&quot;</span>,
+    <span class="tok-cadena">&quot;ajedrez&quot;</span>,<span class="tok-cadena">&quot;anzuelo&quot;</span>,<span class="tok-cadena">&quot;apretar&quot;</span>,<span class="tok-cadena">&quot;arenoso&quot;</span>,<span class="tok-cadena">&quot;armario&quot;</span>,<span class="tok-cadena">&quot;arrojar&quot;</span>,<span class="tok-cadena">&quot;atender&quot;</span>,<span class="tok-cadena">&quot;aventar&quot;</span>,<span class="tok-cadena">&quot;azucena&quot;</span>,<span class="tok-cadena">&quot;balanza&quot;</span>,
+    <span class="tok-cadena">&quot;barrera&quot;</span>,<span class="tok-cadena">&quot;bateria&quot;</span>,<span class="tok-cadena">&quot;bordado&quot;</span>,<span class="tok-cadena">&quot;brillar&quot;</span>,<span class="tok-cadena">&quot;buscaba&quot;</span>,<span class="tok-cadena">&quot;cabello&quot;</span>,<span class="tok-cadena">&quot;camello&quot;</span>,<span class="tok-cadena">&quot;cansado&quot;</span>,<span class="tok-cadena">&quot;caretas&quot;</span>,<span class="tok-cadena">&quot;carpeta&quot;</span>,
+    <span class="tok-cadena">&quot;cartera&quot;</span>,<span class="tok-cadena">&quot;celular&quot;</span>,<span class="tok-cadena">&quot;cenizas&quot;</span>,<span class="tok-cadena">&quot;cerdito&quot;</span>,<span class="tok-cadena">&quot;cerezas&quot;</span>,<span class="tok-cadena">&quot;charcos&quot;</span>,<span class="tok-cadena">&quot;corazon&quot;</span>,<span class="tok-cadena">&quot;cristal&quot;</span>,<span class="tok-cadena">&quot;cuadros&quot;</span>,<span class="tok-cadena">&quot;culebra&quot;</span>,
+    <span class="tok-cadena">&quot;delgado&quot;</span>,<span class="tok-cadena">&quot;dientes&quot;</span>,<span class="tok-cadena">&quot;dibujos&quot;</span>,<span class="tok-cadena">&quot;esferas&quot;</span>,<span class="tok-cadena">&quot;fragata&quot;</span>,<span class="tok-cadena">&quot;frontal&quot;</span>,<span class="tok-cadena">&quot;gigante&quot;</span>,<span class="tok-cadena">&quot;granero&quot;</span>,<span class="tok-cadena">&quot;habitos&quot;</span>,<span class="tok-cadena">&quot;heraldo&quot;</span>,
+    <span class="tok-cadena">&quot;joyeria&quot;</span>
 ]
 
-# Pedir y validar letra al usuario
-def pedir_letra(letras_adivinadas):
-    while True:
-        letra_usuario = input(&quot;Introduce una letra: &quot;).strip().lower()
+<span class="tok-comentario"># Pedir y validar letra al usuario</span>
+<span class="tok-palabra">def</span> <span class="tok-funcion">pedir_letra</span>(letras_adivinadas):
+    <span class="tok-palabra">while</span> <span class="tok-palabra">True</span>:
+        letra_usuario = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce una letra: &quot;</span>).strip().lower()
 
-        if len(letra_usuario) != 1 or not letra_usuario.isalpha:
-            print(&quot;Introduce una sola letra (a-z)&quot;)
-            continue
+        <span class="tok-palabra">if</span> <span class="tok-builtin">len</span>(letra_usuario) != <span class="tok-numero">1</span> <span class="tok-palabra">or</span> <span class="tok-palabra">not</span> letra_usuario.isalpha:
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Introduce una sola letra (a-z)&quot;</span>)
+            <span class="tok-palabra">continue</span>
 
-        if letra_usuario in letras_adivinadas:
-            print(&quot;La letra ya ha sido adivinada&quot;)
-            continue
-        return letra_usuario
+        <span class="tok-palabra">if</span> letra_usuario <span class="tok-palabra">in</span> letras_adivinadas:
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;La letra ya ha sido adivinada&quot;</span>)
+            <span class="tok-palabra">continue</span>
+        <span class="tok-palabra">return</span> letra_usuario
 
-# Muestra el estado de la palabra en cada intento
-def mostrar_intento(palabra, letras_adivinadas):
-    intento = [letra.upper() if letra in letras_adivinadas else &quot;_&quot; for letra in palabra]
-    print(' '.join(intento))
+<span class="tok-comentario"># Muestra el estado de la palabra en cada intento</span>
+<span class="tok-palabra">def</span> <span class="tok-funcion">mostrar_intento</span>(palabra, letras_adivinadas):
+    intento = [letra.upper() <span class="tok-palabra">if</span> letra <span class="tok-palabra">in</span> letras_adivinadas <span class="tok-palabra">else</span> <span class="tok-cadena">&quot;_&quot;</span> <span class="tok-palabra">for</span> letra <span class="tok-palabra">in</span> palabra]
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">' '</span>.join(intento))
 
-# Logica principal del juego
-def jugar(palabras):
-    print(&quot;============================&quot;)
-    print(&quot;     JUEGO DEL AHORCADO     &quot;)
-    print(&quot;============================&quot;)
+<span class="tok-comentario"># Logica principal del juego</span>
+<span class="tok-palabra">def</span> <span class="tok-funcion">jugar</span>(palabras):
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;============================&quot;</span>)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;     JUEGO DEL AHORCADO     &quot;</span>)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;============================&quot;</span>)
 
     palabra = random.choice(palabras)
-    letras_adivinadas = set()
-    intentos = len(palabra)-1
+    letras_adivinadas = <span class="tok-builtin">set</span>()
+    intentos = <span class="tok-builtin">len</span>(palabra)-<span class="tok-numero">1</span>
 
-    while intentos &gt; 0:
-        print(PARTES_AHORCADO[len(PARTES_AHORCADO) - 1 - intentos])
+    <span class="tok-palabra">while</span> intentos &gt; <span class="tok-numero">0</span>:
+        <span class="tok-builtin">print</span>(PARTES_AHORCADO[<span class="tok-builtin">len</span>(PARTES_AHORCADO) - <span class="tok-numero">1</span> - intentos])
         mostrar_intento(palabra, letras_adivinadas)
         
-        if all(letra in letras_adivinadas for letra in palabra):
-            print(&quot;Has ganado!&quot;)
+        <span class="tok-palabra">if</span> <span class="tok-builtin">all</span>(letra <span class="tok-palabra">in</span> letras_adivinadas <span class="tok-palabra">for</span> letra <span class="tok-palabra">in</span> palabra):
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Has ganado!&quot;</span>)
 
         letra_usuario = pedir_letra(letras_adivinadas)
         letras_adivinadas.add(letra_usuario)
 
-        if letra_usuario not in palabra:
-            intentos -= 1
-            print(f&quot;La letra no esta en la palabra. Te quedan {intentos} intentos&quot;)
+        <span class="tok-palabra">if</span> letra_usuario <span class="tok-palabra">not</span> <span class="tok-palabra">in</span> palabra:
+            intentos -= <span class="tok-numero">1</span>
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;La letra no esta en la palabra. Te quedan {intentos} intentos&quot;</span>)
 
-    print(PARTES_AHORCADO[-1])
-    print(f&quot;Has perdido. La palabra era: {palabra}&quot;)
+    <span class="tok-builtin">print</span>(PARTES_AHORCADO[-<span class="tok-numero">1</span>])
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Has perdido. La palabra era: {palabra}&quot;</span>)
 
-# Iniciar el juego
+<span class="tok-comentario"># Iniciar el juego</span>
 jugar(PALABRAS)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="adivina-numero.html">← Adivina el número</a>

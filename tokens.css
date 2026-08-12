@@ -1,21 +1,31 @@
 /* Hallmark · pre-emit critique: P5 H4 E5 S5 R5 V5 */
-/* Hallmark · macrostructure: Index-First · tone: austere · anchor hue: 160 (verde hoja) · theme: Atelier · genre: editorial · nav: N1a Wordmark + 2 links · footer: Ft2 Inline single line · enrichment: none (typography only) · contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive: pass (49) · mobile: pass (34, 50–57) */
+/* Hallmark · macrostructure: Index-First · tone: austere · anchor hue: 255 (azul marino) · theme: Atelier (paleta Marina) · genre: editorial · nav: N1a Wordmark + 2 links · footer: Ft2 Inline single line · enrichment: none (typography only) · contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive: pass (49) · mobile: pass (34, 50–57) */
 
 :root {
-  /* Color — Atelier: papel marfil, tinta cálida, acento verde hoja */
-  --color-paper:    oklch(97% 0.01 90);
-  --color-paper-2:  oklch(94% 0.012 90);
-  --color-rule:     oklch(85% 0.012 90);
-  --color-neutral:  oklch(50% 0.012 90);
-  --color-muted:    oklch(42% 0.014 85);
-  --color-ink:      oklch(18% 0.02 70);
-  --color-accent:   oklch(45% 0.11 160);
-  --color-focus:    oklch(50% 0.15 165);
+  /* Color — Marina: papel marfil, tinta azul marino, acento azul acero */
+  --color-paper:    oklch(97.5% 0.008 90);
+  --color-paper-2:  oklch(94.5% 0.01 90);
+  --color-rule:     oklch(86% 0.01 90);
+  --color-neutral:  oklch(50% 0.015 250);
+  --color-muted:    oklch(43% 0.02 250);
+  --color-ink:      oklch(22% 0.04 255);
+  --color-accent:   oklch(45% 0.13 255);
+  --color-focus:    oklch(45% 0.15 255);
 
   /* Tipografía — 2 familias: Fraunces (display + cuerpo), JetBrains Mono (código y registros técnicos) */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body:    "Fraunces", Georgia, "Times New Roman", serif;
   --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Colores de sintaxis — registro contenido, legible sobre papel marfil */
+  --color-tok-palabra:    oklch(38% 0.12 260);
+  --color-tok-builtin:    oklch(38% 0.09 300);
+  --color-tok-funcion:    oklch(42% 0.1 230);
+  --color-tok-clase:      oklch(38% 0.12 260);
+  --color-tok-cadena:     oklch(48% 0.1 45);
+  --color-tok-numero:     oklch(42% 0.06 250);
+  --color-tok-comentario: oklch(52% 0.02 250);
+  --color-tok-decorador:  oklch(45% 0.13 255);
 
   /* Escala de espacio 4 pt */
   --space-3xs: 0.125rem;

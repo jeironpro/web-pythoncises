@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,39 +28,39 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="extraer_texto_pdf_ocr.py">Descargar</button>
     </div>
     <p class="codigo-archivo">extraer-texto-pdf-ocr/extraer_texto_pdf_ocr.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que escanea documentos pdf usando OCR (Optical Character Recognition o Reconocimiento Óptico de Caracteres) que es un tecnica que se utiliza para leer texto desde imágenes o documentos y convertirlos a texto editable
-&quot;&quot;&quot;
-import fitz
-import pytesseract
-from pdf2image import convert_from_path
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> fitz
+<span class="tok-palabra">import</span> pytesseract
+<span class="tok-palabra">from</span> pdf2image <span class="tok-palabra">import</span> convert_from_path
 
-ruta_archivo = &quot;comandos_esenciales_docker_engine.pdf&quot;
+ruta_archivo = <span class="tok-cadena">&quot;comandos_esenciales_docker_engine.pdf&quot;</span>
 
-texto_total = &quot;&quot;
+texto_total = <span class="tok-cadena">&quot;&quot;</span>
 
-# Abrir el documento
-documento_pdf = fitz.open(ruta_archivo)
+<span class="tok-comentario"># Abrir el documento</span>
+documento_pdf = fitz.<span class="tok-builtin">open</span>(ruta_archivo)
 
-# Iterar cada página del documento
-for numero, pagina in enumerate(documento_pdf, start=1):
-    texto = pagina.get_text().strip() # Obtener el texto
+<span class="tok-comentario"># Iterar cada página del documento</span>
+<span class="tok-palabra">for</span> numero, pagina <span class="tok-palabra">in</span> <span class="tok-builtin">enumerate</span>(documento_pdf, start=<span class="tok-numero">1</span>):
+    texto = pagina.get_text().strip() <span class="tok-comentario"># Obtener el texto</span>
 
-    # Si el documento no tiene texto, tratar imagenes
-    if not texto:
-        print(f&quot;Página {numero}: sin texto, aplicando OCR...&quot;)
-        # Tratar el documento como imagen
-        imagen = convert_from_path(ruta_archivo, first_page=numero, last_page=numero)[0]
-        # Usar ocr para convertir la imagen en texto
+    <span class="tok-comentario"># Si el documento no tiene texto, tratar imagenes</span>
+    <span class="tok-palabra">if</span> <span class="tok-palabra">not</span> texto:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Página {numero}: sin texto, aplicando OCR...&quot;</span>)
+        <span class="tok-comentario"># Tratar el documento como imagen</span>
+        imagen = convert_from_path(ruta_archivo, first_page=numero, last_page=numero)[<span class="tok-numero">0</span>]
+        <span class="tok-comentario"># Usar ocr para convertir la imagen en texto</span>
         texto = pytesseract.image_to_string(imagen)
-    else:
-        print(f&quot;Página {numero}: texto digital detectado&quot;)
+    <span class="tok-palabra">else</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Página {numero}: texto digital detectado&quot;</span>)
     
-    # Guardar el texto de cada pagina 
-    texto_total += f&quot;\n--- Página {numero} ---\n{texto}\n&quot;
+    <span class="tok-comentario"># Guardar el texto de cada pagina </span>
+    texto_total += <span class="tok-cadena">f&quot;\n--- Página {numero} ---\n{texto}\n&quot;</span>
 
-# Mostrar el texto obtenido
-print(texto_total)</code></pre>
+<span class="tok-comentario"># Mostrar el texto obtenido</span>
+<span class="tok-builtin">print</span>(texto_total)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="marca-agua.html">← Marca de agua</a>
       <a class="siguiente" href="herramienta-renombra-archivo.html">Renombrador de archivos →</a>

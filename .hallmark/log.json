@@ -2,6 +2,15 @@
   {
     "date": "2026-08-12",
     "macrostructure": "Index-First",
+    "theme": "Atelier (paleta Marina)",
+    "enrichment": "none (typography only)",
+    "nav": "N1a (solo marca)",
+    "footer": "Ft2",
+    "brief": "web-pythoncises · paleta Marina + resaltado de sintaxis Python propio"
+  },
+  {
+    "date": "2026-08-12",
+    "macrostructure": "Index-First",
     "theme": "Atelier",
     "enrichment": "none (typography only)",
     "nav": "N1a",

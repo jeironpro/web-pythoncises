@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,85 +28,85 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="marca_agua.py">Descargar</button>
     </div>
     <p class="codigo-archivo">marca-agua/marca_agua.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que inserta marca de agua en imagenes
-&quot;&quot;&quot;
-from PIL import Image, ImageDraw, ImageFont
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">from</span> PIL <span class="tok-palabra">import</span> Image, ImageDraw, ImageFont
 
-&quot;&quot;&quot;
+<span class="tok-cadena">&quot;&quot;&quot;
     La imagen se convierte a un modo de color con canal alfa.
 
     El canal alfa controla la opacidad.
 
     Para marcas de agua con trasparencias se necesita que la imagen soporte el canal alfa, porque si la imagen solo soporta RGB no se puede insertar la capa de texto semitransparente correctamente.
-&quot;&quot;&quot;
-# Abrir la imagen convertida a RGBA
-imagen = Image.open(&quot;imagen.jpg&quot;).convert(&quot;RGBA&quot;)
+&quot;&quot;&quot;</span>
+<span class="tok-comentario"># Abrir la imagen convertida a RGBA</span>
+imagen = Image.<span class="tok-builtin">open</span>(<span class="tok-cadena">&quot;imagen.jpg&quot;</span>).convert(<span class="tok-cadena">&quot;RGBA&quot;</span>)
 
-# Caracteristicas de la marca de agua
-marca_agua = &quot;JeironPro&quot;
-tamano_texto = 150
-margen_derecho = 75
-margen_inferior = 75
+<span class="tok-comentario"># Caracteristicas de la marca de agua</span>
+marca_agua = <span class="tok-cadena">&quot;JeironPro&quot;</span>
+tamano_texto = <span class="tok-numero">150</span>
+margen_derecho = <span class="tok-numero">75</span>
+margen_inferior = <span class="tok-numero">75</span>
 
-&quot;&quot;&quot;
+<span class="tok-cadena">&quot;&quot;&quot;
     El método ImageFont.truetype carga las fuentes TrueType(TTF) para poder usarla al dibujar la marca de agua en la imagen.
 
     Recibe la ruta de la fuente y el tamaño como un entero que representa pixeles.
 
     Devuelve un objeto ImageFont.FreeTypeFont que podemos usar con ImageDraw.text() para dibujar texto con la fuente que se ha indicado y el tamaño.
-&quot;&quot;&quot;
-# Usar un fuente del sistema para pasarla al texto de la marca de agua
-fuente = ImageFont.truetype(&quot;/usr/share/fonts/open-sans/OpenSans-Bold.ttf&quot;, tamano_texto)
+&quot;&quot;&quot;</span>
+<span class="tok-comentario"># Usar un fuente del sistema para pasarla al texto de la marca de agua</span>
+fuente = ImageFont.truetype(<span class="tok-cadena">&quot;/usr/share/fonts/open-sans/OpenSans-Bold.ttf&quot;</span>, tamano_texto)
 
-# Crear una nueva capa transparente para insertarla en la imagen
-capa = Image.new(&quot;RGBA&quot;, imagen.size, (255, 255, 255, 0))
+<span class="tok-comentario"># Crear una nueva capa transparente para insertarla en la imagen</span>
+capa = Image.new(<span class="tok-cadena">&quot;RGBA&quot;</span>, imagen.size, (<span class="tok-numero">255</span>, <span class="tok-numero">255</span>, <span class="tok-numero">255</span>, <span class="tok-numero">0</span>))
 
-&quot;&quot;&quot;
+<span class="tok-cadena">&quot;&quot;&quot;
     El método ImageDraw.Draw(capa) crea un objeto (lienzo) para dibujar sobre la imagen.
 
     Permite dibujar texto, líneas, formas, rectángulos, círculos, etc. sobre la imagen. En este caso la imagen es una capa trasparente.
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
 dibujo = ImageDraw.Draw(capa)
 
-&quot;&quot;&quot;
+<span class="tok-cadena">&quot;&quot;&quot;
     El método dibujo.textbbox(posociones, texto, fuente) se usa para medir el tamaño exacto del texto antes de dibujarlo.
 
     Devuelve una caja delimitadora (bounding box) del texto que deseamos dibujar. Con exactitud te dice cuánto espacio ocupará el texto en pixeles, teniendo en cuenta la fuente y el tamaño.
-&quot;&quot;&quot;
-tamano_exacto_texto = dibujo.textbbox((0, 0), marca_agua, font=fuente)
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
+tamano_exacto_texto = dibujo.textbbox((<span class="tok-numero">0</span>, <span class="tok-numero">0</span>), marca_agua, font=fuente)
+<span class="tok-cadena">&quot;&quot;&quot;
     Toma las posiciones x1, x0 para calcula cuanto mide horizontalmente, restando los valores a la inversa
-&quot;&quot;&quot;
-ancho_texto = tamano_exacto_texto[2] - tamano_exacto_texto[0] 
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
+ancho_texto = tamano_exacto_texto[<span class="tok-numero">2</span>] - tamano_exacto_texto[<span class="tok-numero">0</span>] 
+<span class="tok-cadena">&quot;&quot;&quot;
     Toma las posiciones y1, y0 para calcula cuanto mide verticalmente, restando los valores a la inversa
-&quot;&quot;&quot;
-alto_texto = tamano_exacto_texto[3] - tamano_exacto_texto[1]
+&quot;&quot;&quot;</span>
+alto_texto = tamano_exacto_texto[<span class="tok-numero">3</span>] - tamano_exacto_texto[<span class="tok-numero">1</span>]
 
-&quot;&quot;&quot;
+<span class="tok-cadena">&quot;&quot;&quot;
     Posiciones del plano cartesiano a la se va a dibujar el texto en la capa (imagen).
     
     La posición x (horizontal) se obtiene restando el ancho de la imagen con el ancho del texto y el margen horizontal.
 
     La posición y (vertical) se obtiene restando el alto de la imagen con el alto del texto y el margen vertical.
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
 posicion_x = imagen.width - ancho_texto - margen_derecho
 posicion_y = imagen.height - alto_texto - margen_inferior
 
-# Dibujar texto en la capa
-dibujo.text((posicion_x, posicion_y), marca_agua, font=fuente, fill=(255, 255, 255, 180))  # fill es el color del texto
+<span class="tok-comentario"># Dibujar texto en la capa</span>
+dibujo.text((posicion_x, posicion_y), marca_agua, font=fuente, fill=(<span class="tok-numero">255</span>, <span class="tok-numero">255</span>, <span class="tok-numero">255</span>, <span class="tok-numero">180</span>))  <span class="tok-comentario"># fill es el color del texto</span>
 
-&quot;&quot;&quot;
+<span class="tok-cadena">&quot;&quot;&quot;
     El método Image.alpha_composite(imagen, capa) sirve para combinar dos imágenes que tienen canal alfa (transparencia), superponiendo la segunda sobre la primera.
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
 imagen_final = Image.alpha_composite(imagen, capa)
 
-&quot;&quot;&quot;
+<span class="tok-cadena">&quot;&quot;&quot;
     Para obtener la imagen con la marca de agua, se convierta a imagen sin transparencia RGB o mejor dicho sin canal alfa y se guarda en una nueva ruta o nombre de imagen con su formato original
-&quot;&quot;&quot;
-imagen_final.convert(&quot;RGB&quot;).save(&quot;imagen_marca_agua.jpg&quot;)
-print(&quot;Marca de agua agregada correctamente&quot;)</code></pre>
+&quot;&quot;&quot;</span>
+imagen_final.convert(<span class="tok-cadena">&quot;RGB&quot;</span>).save(<span class="tok-cadena">&quot;imagen_marca_agua.jpg&quot;</span>)
+<span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Marca de agua agregada correctamente&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="combinar-pdfs.html">← Combinar PDFs</a>
       <a class="siguiente" href="extraer-texto-pdf-ocr.html">OCR sobre PDF →</a>

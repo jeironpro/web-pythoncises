@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,45 +28,45 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="corta_url.py">Descargar</button>
     </div>
     <p class="codigo-archivo">corta-url/corta_url.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que acorta una url larga.
     Pide al usuario la url larga y retorna la url corta
-&quot;&quot;&quot;
-import random
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> random
 
-&quot;&quot;&quot; 
+<span class="tok-cadena">&quot;&quot;&quot; 
     Deberia sustituir esta diccionario por un archivo JSON o una base de datos, 
     ya que los datos solo son persistentes en un archivo o una base de datos. 
     Recomendable y seguro en una base de datos
-&quot;&quot;&quot; 
+&quot;&quot;&quot;</span> 
 urls = {}
 
-# Debe ser tu servidor real
-MI_SERVIDOR = &quot;https://miservidor.com/&quot; 
+<span class="tok-comentario"># Debe ser tu servidor real</span>
+MI_SERVIDOR = <span class="tok-cadena">&quot;https://miservidor.com/&quot;</span> 
 
-def generar_codigo_corto():
-    caracteres = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;
+<span class="tok-palabra">def</span> <span class="tok-funcion">generar_codigo_corto</span>():
+    caracteres = <span class="tok-cadena">&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;</span>
 
-    codigo = [random.choice(caracteres) for _ in range(8)]
-    return ''.join(codigo)
+    codigo = [random.choice(caracteres) <span class="tok-palabra">for</span> _ <span class="tok-palabra">in</span> <span class="tok-builtin">range</span>(<span class="tok-numero">8</span>)]
+    <span class="tok-palabra">return</span> <span class="tok-cadena">''</span>.join(codigo)
 
-def validar_codigo(codigo):
-    while codigo in urls.keys():
+<span class="tok-palabra">def</span> <span class="tok-funcion">validar_codigo</span>(codigo):
+    <span class="tok-palabra">while</span> codigo <span class="tok-palabra">in</span> urls.keys():
         codigo = generar_codigo_corto()
-    return codigo
+    <span class="tok-palabra">return</span> codigo
 
-def acorta_url(codigo, url_larga):
+<span class="tok-palabra">def</span> <span class="tok-funcion">acorta_url</span>(codigo, url_larga):
     urls[codigo] = url_larga
-    return MI_SERVIDOR + codigo
+    <span class="tok-palabra">return</span> MI_SERVIDOR + codigo
 
-def redirigir(codigo_corto):
-    if codigo_corto in urls.keys():
+<span class="tok-palabra">def</span> <span class="tok-funcion">redirigir</span>(codigo_corto):
+    <span class="tok-palabra">if</span> codigo_corto <span class="tok-palabra">in</span> urls.keys():
         ulr_larga = urls.get(codigo_corto)
-        return ulr_larga
-    else:
-        print(&quot;URL no encontrada&quot;)
+        <span class="tok-palabra">return</span> ulr_larga
+    <span class="tok-palabra">else</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;URL no encontrada&quot;</span>)
 
-url = input(&quot;Introduce la URL a acortar: &quot;)
+url = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce la URL a acortar: &quot;</span>)
 
 codigo = generar_codigo_corto()
 codigo_valido = validar_codigo(codigo)
@@ -80,8 +74,8 @@ codigo_valido = validar_codigo(codigo)
 url_corta = acorta_url(codigo, url)
 url_redirigida = redirigir(codigo_valido)
 
-print(f&quot;URL corta: {url_corta}&quot;)
-print(f&quot;URL larga: {url_redirigida}&quot;)</code></pre>
+<span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;URL corta: {url_corta}&quot;</span>)
+<span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;URL larga: {url_redirigida}&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="convertidor-moneda.html">← Convertidor de moneda</a>
       <a class="siguiente" href="generador-contraseñas.html">Generador de contraseñas →</a>

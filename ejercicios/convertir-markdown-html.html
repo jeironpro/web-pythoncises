@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,35 +28,35 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="convertir_markdown_html.py">Descargar</button>
     </div>
     <p class="codigo-archivo">convertir-markdown-html/convertir_markdown_html.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que convierte un archivo markdown a un archivo html.
     Utiliza la libreria markdown para realizar la conversión
-&quot;&quot;&quot;
-import os
-import markdown
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> os
+<span class="tok-palabra">import</span> markdown
 
-def leer_markdown(ruta_archivo):
-    with open(ruta_archivo, &quot;r&quot;) as md:
+<span class="tok-palabra">def</span> <span class="tok-funcion">leer_markdown</span>(ruta_archivo):
+    <span class="tok-palabra">with</span> <span class="tok-builtin">open</span>(ruta_archivo, <span class="tok-cadena">&quot;r&quot;</span>) <span class="tok-palabra">as</span> md:
         contenido = md.read()
-    return contenido
+    <span class="tok-palabra">return</span> contenido
 
-def convertir_markdown_html(texto_md):
+<span class="tok-palabra">def</span> <span class="tok-funcion">convertir_markdown_html</span>(texto_md):
     html = markdown.markdown(texto_md)
-    return html
+    <span class="tok-palabra">return</span> html
     
-def guardar_html(ruta_destino, contenido_html):
-    with open(ruta_destino, &quot;w&quot;) as html:
+<span class="tok-palabra">def</span> <span class="tok-funcion">guardar_html</span>(ruta_destino, contenido_html):
+    <span class="tok-palabra">with</span> <span class="tok-builtin">open</span>(ruta_destino, <span class="tok-cadena">&quot;w&quot;</span>) <span class="tok-palabra">as</span> html:
         html.write(contenido_html)
 
-ruta_archivo_md = input(&quot;Introduce la ruta absoluta del archivo markdown: &quot;)
+ruta_archivo_md = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce la ruta absoluta del archivo markdown: &quot;</span>)
 
-if not os.path.exists(ruta_archivo_md):
-    print(&quot;El archivo no existe&quot;)
-else:
+<span class="tok-palabra">if</span> <span class="tok-palabra">not</span> os.path.exists(ruta_archivo_md):
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;El archivo no existe&quot;</span>)
+<span class="tok-palabra">else</span>:
     texto_md = leer_markdown(ruta_archivo_md)
     html = convertir_markdown_html(texto_md)
 
-    ruta_destino_html = &quot;index.html&quot;
+    ruta_destino_html = <span class="tok-cadena">&quot;index.html&quot;</span>
     html_guardado = guardar_html(ruta_destino_html, html)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="partes-correo.html">← Partes de un correo</a>

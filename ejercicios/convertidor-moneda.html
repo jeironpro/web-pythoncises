@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,31 +28,31 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="convertidor_moneda.py">Descargar</button>
     </div>
     <p class="codigo-archivo">convertidor-moneda/convertidor_moneda.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que pide una cantidad, una moneda de origen, una moneda destino al usuario,
     y utiliza la API de frankfurter para obtener los datos de la conversion,
     finalmente muestra el resultado
-&quot;&quot;&quot;
-import requests
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> requests
 
-def convertir_moneda(cantidad, origen, destino):
-    url = f&quot;https://api.frankfurter.app/latest?amount={cantidad}&amp;from={origen}&amp;to={destino}&quot;
+<span class="tok-palabra">def</span> <span class="tok-funcion">convertir_moneda</span>(cantidad, origen, destino):
+    url = <span class="tok-cadena">f&quot;https://api.frankfurter.app/latest?amount={cantidad}&amp;from={origen}&amp;to={destino}&quot;</span>
 
-    respuesta = requests.get(url) # Petición get a la API
-    datos = respuesta.json() # Convertir la respuesta a JSON
-    return datos
+    respuesta = requests.get(url) <span class="tok-comentario"># Petición get a la API</span>
+    datos = respuesta.json() <span class="tok-comentario"># Convertir la respuesta a JSON</span>
+    <span class="tok-palabra">return</span> datos
 
-cantidad = input(&quot;Introduce la cantidad: &quot;)
-moneda_origen = input(&quot;Introduce la moneda origen: &quot;).upper()
-moneda_destino = input(&quot;Introduce la moneda destino: &quot;).upper()
+cantidad = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce la cantidad: &quot;</span>)
+moneda_origen = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce la moneda origen: &quot;</span>).upper()
+moneda_destino = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce la moneda destino: &quot;</span>).upper()
 
 conversion = convertir_moneda(cantidad, moneda_origen, moneda_destino)
 
-if 'not found' in conversion.values():
-    print(&quot;Lo sentimos. No hay datos para esta conversión&quot;)
-else:
-    resultado = conversion['rates'][moneda_destino]
-    print(f&quot;{cantidad} {moneda_origen} = {resultado:.2f} {moneda_destino}&quot;)</code></pre>
+<span class="tok-palabra">if</span> <span class="tok-cadena">'not found'</span> <span class="tok-palabra">in</span> conversion.values():
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Lo sentimos. No hay datos para esta conversión&quot;</span>)
+<span class="tok-palabra">else</span>:
+    resultado = conversion[<span class="tok-cadena">'rates'</span>][moneda_destino]
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;{cantidad} {moneda_origen} = {resultado:.2f} {moneda_destino}&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="calculadora-propina.html">← Calculadora de propina</a>
       <a class="siguiente" href="corta-url.html">Acortador de URLs →</a>
