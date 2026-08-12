@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Programa que organiza archivos en carpetas segun su extension. En una carpeta pueden ir archivos de mas de una extensión">
+  <title>Pythoncises · Organizador de archivos</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-word" href="../index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="../index.html#indice">Índice</a></li>
+        <li><a href="../index.html#licencia">Licencia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="detalle">
+    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <p class="detalle-meta">Archivos y PDF · 22 · organizador_archivos.py</p>
+    <h1 class="detalle-titulo">Organizador de archivos</h1>
+    <p class="detalle-desc">Programa que organiza archivos en carpetas segun su extension. En una carpeta pueden ir archivos de mas de una extensión</p>
+    <div class="detalle-acciones">
+      <button class="btn" type="button" data-accion="copiar">Copiar</button>
+      <button class="btn" type="button" data-accion="descargar" data-nombre="organizador_archivos.py">Descargar</button>
+    </div>
+    <p class="codigo-archivo">organizador-archivos/organizador_archivos.py</p>
+    <pre><code>&quot;&quot;&quot;
+    Programa que organiza archivos en carpetas segun
+    su extension. En una carpeta pueden ir archivos
+    de mas de una extensión
+&quot;&quot;&quot;
+import os
+import shutil
+
+carpeta_archivos = {
+    &quot;documentos&quot;: ['pdf', 'txt', 'json', 'docx'],
+    &quot;hoja_de_calculo&quot;: ['xlsx', 'csv'],
+    &quot;imagenes&quot;: ['jpg', 'gif', 'png', 'jpeg'],
+    &quot;audios&quot;: ['mp3'],
+    &quot;videos&quot;: ['mp4', 'mkv', 'mov'],
+    &quot;codigo&quot;: ['py', 'js', 'java', 'c', 'html']
+}
+
+directorio = &quot;archivos&quot;
+
+archivos = os.listdir(directorio)
+
+for archivo in archivos:
+    partes = archivo.split(&quot;.&quot;)
+
+    # Verificar si el archivo es valido
+    if len(partes) &lt; 2: 
+        continue
+
+    # Tomar la extensión del archivo
+    extension = partes[-1].lower()
+
+    for carpeta, extensiones in carpeta_archivos.items():
+        if extension in extensiones:
+            ruta_carpeta = os.path.join(directorio, carpeta)
+            ruta_origen = os.path.join(directorio, archivo)
+            ruta_destino = os.path.join(ruta_carpeta, archivo)
+
+            # Verificar y crear la carpeta de cada grupo de archivos
+            if not os.path.exists(ruta_carpeta):
+                os.makedirs(ruta_carpeta, exist_ok=True)
+                print(f&quot;Carpeta: {carpeta} creada correctamente&quot;)
+
+            # Mover el archivo a su respectiva carpeta
+            shutil.move(ruta_origen, ruta_destino)
+            print(f&quot;Archivo: {archivo} organizado en {ruta_destino}&quot;)
+            break</code></pre>
+    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+      <a class="anterior" href="herramienta-renombra-archivo.html">← Renombrador de archivos</a>
+      <a class="siguiente" href="convertir-videos.html">Convertidor de vídeos →</a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
+  </footer>
+</body>
+</html>

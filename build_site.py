@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
-"""Genera index.html a partir de las carpetas de ejercicios.
+"""Genera el sitio web a partir de las carpetas de ejercicios.
 
 Uso:  python3 build_site.py
 
-Lee cada ejercicio (el archivo .py principal de su carpeta), extrae la
-descripción de su docstring y genera el sitio estático con el código
-incrustado (para copiar y descargar sin servidor).
+Produce:
+- index.html                  índice ligero (búsqueda + categorías + enlaces)
+- ejercicios/<slug>.html      una página por ejercicio (código, copiar, descargar)
+
+El código de cada ejercicio vive solo en su propia página; el índice no
+contiene código. El diseño se define en styles.css y tokens.css.
 """
 
 import re
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent
+SALIDA = RAIZ / "ejercicios"
 
 CATEGORIAS = [
     ("Juegos", [
@@ -124,12 +128,6 @@ def extrae_descripcion(texto):
     return " ".join(lineas)
 
 
-def escapa_codigo(texto):
-    """El código va dentro de <script type="text/plain">: solo hay que
-    neutralizar la secuencia de cierre.</script>."""
-    return texto.replace("</script", "<\\/script")
-
-
 def escapa_html(texto):
     return (
         texto.replace("&", "&amp;")
@@ -140,17 +138,18 @@ def escapa_html(texto):
 
 
 def lee_ejercicios():
-    """Devuelve [(categoria, [ejercicio, ...]), ...] con slug, titulo,
-    archivo, descripcion y codigo."""
-    resultado = []
+    """Devuelve (categorias, plana): categorias con sus ejercicios y la
+    lista plana (para navegación anterior/siguiente)."""
+    categorias = []
+    plana = []
     numero = 0
-    for categoria, slogs in CATEGORIAS:
+    for nombre_cat, slogs in CATEGORIAS:
         items = []
         for slug in slogs:
             numero += 1
             archivo = archivo_principal(slug)
             codigo = archivo.read_text(encoding="utf-8")
-            items.append({
+            ejercicio = {
                 "numero": numero,
                 "slug": slug,
                 "titulo": TITULOS.get(slug, slug.replace("-", " ").title()),
@@ -158,125 +157,94 @@ def lee_ejercicios():
                 "nombre": archivo.name,
                 "descripcion": extrae_descripcion(codigo),
                 "codigo": codigo,
-            })
-        resultado.append((categoria, items))
-    return resultado
+            }
+            items.append(ejercicio)
+            plana.append(ejercicio)
+        categorias.append((nombre_cat, items))
+    return categorias, plana
 
 
-def fila_ejercicio(ejercicio):
-    num = f"{ejercicio['numero']:02d}"
-    slug = ejercicio["slug"]
-    busqueda = " ".join([
-        ejercicio["titulo"],
-        ejercicio["descripcion"],
-        slug,
-        ejercicio["archivo"],
-    ]).lower()
-    return f"""        <article class="ejercicio" data-slug="{escapa_html(slug)}" data-nombre="{escapa_html(ejercicio['nombre'])}" data-busqueda="{escapa_html(busqueda)}">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">{num}</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">{escapa_html(ejercicio['titulo'])}</h4>
-              <p class="ejercicio-desc">{escapa_html(ejercicio['descripcion'])}</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-{escapa_html(slug)}">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-{escapa_html(slug)}" hidden>
-            <p class="codigo-archivo">{escapa_html(ejercicio['archivo'])}</p>
-            <pre><code></code></pre>
-          </div>
-        </article>"""
-
-
-def seccion_categoria(categoria, ejercicios):
-    filas = "\n".join(fila_ejercicio(e) for e in ejercicios)
-    return f"""      <section class="categoria" aria-labelledby="cat-{escapa_html(categoria.lower().replace(' ', '-'))}">
-        <h3 class="categoria-nombre" id="cat-{escapa_html(categoria.lower().replace(' ', '-'))}">
-          {escapa_html(categoria)}
-          <span class="categoria-conteo">{len(ejercicios)}</span>
-        </h3>
-{filas}
-      </section>"""
-
-
-def bloques_codigo(ejercicios):
-    bloques = []
-    for categoria, items in ejercicios:
-        for ejercicio in items:
-            bloques.append(
-                f'<script type="text/plain" id="src-{escapa_html(ejercicio["slug"])}">\n'
-                f'{escapa_codigo(ejercicio["codigo"])}\n'
-                f"</script>"
-            )
-    return "\n".join(bloques)
-
-
-def genera_html(ejercicios):
-    total = sum(len(items) for _, items in ejercicios)
-    secciones = "\n".join(seccion_categoria(c, i) for c, i in ejercicios)
-    codigos = bloques_codigo(ejercicios)
+def cabecera(rel, titulo, descripcion):
     return f"""<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Índice de {total} ejercicios de Python: verlos, copiarlos y descargarlos.">
-  <title>Pythoncises · {total} ejercicios de Python</title>
+  <meta name="description" content="{escapa_html(descripcion)}">
+  <title>{escapa_html(titulo)}</title>
+  <link rel="icon" type="image/svg+xml" href="{rel}favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="{rel}favicon-32.png">
+  <link rel="apple-touch-icon" href="{rel}favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{rel}styles.css">
+  <script src="{rel}app.js" defer></script>
 </head>
-<body>
-  <header class="nav-mast">
-    <p class="mast-line">web-pythoncises · índice de ejercicios · 2026</p>
-    <h1 class="mast-name">Pythoncises</h1>
-    <nav class="mast-nav" aria-label="Principal">
-      <ul>
-        <li><a href="#como-usar">Cómo usar</a></li>
-        <li><a href="#indice">Índice</a></li>
-        <li><a href="#licencia">Licencia</a></li>
+<body>"""
+
+
+def nav(rel):
+    return f"""  <header class="nav">
+    <a class="nav-word" href="{rel}index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="{rel}index.html#indice">Índice</a></li>
+        <li><a href="{rel}index.html#licencia">Licencia</a></li>
       </ul>
     </nav>
-    <hr class="mast-rule" aria-hidden="true">
-  </header>
+  </header>"""
 
+
+def pie():
+    return """  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
+  </footer>
+</body>
+</html>
+"""
+
+
+def fila_indice(ejercicio):
+    num = f"{ejercicio['numero']:02d}"
+    busqueda = " ".join([
+        ejercicio["titulo"],
+        ejercicio["descripcion"],
+        ejercicio["slug"],
+        ejercicio["archivo"],
+    ]).lower()
+    return f"""      <article class="ejercicio" data-busqueda="{escapa_html(busqueda)}">
+        <span class="ejercicio-num" aria-hidden="true">{num}</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/{escapa_html(ejercicio['slug'])}.html">{escapa_html(ejercicio['titulo'])}</a></h3>
+          <p class="ejercicio-desc">{escapa_html(ejercicio['descripcion'])}</p>
+        </div>
+      </article>"""
+
+
+def genera_indice(categorias, total):
+    secciones = []
+    for nombre_cat, items in categorias:
+        filas = "\n".join(fila_indice(e) for e in items)
+        secciones.append(f"""    <section class="categoria" aria-labelledby="cat-{escapa_html(nombre_cat.lower().replace(' ', '-'))}">
+      <h2 class="categoria-nombre" id="cat-{escapa_html(nombre_cat.lower().replace(' ', '-'))}">{escapa_html(nombre_cat)}</h2>
+{filas}
+    </section>""")
+    return f"""{cabecera("", "Pythoncises", "Índice de ejercicios de Python: verlos, copiarlos y descargarlos.")}
+{nav("")}
   <main>
     <section class="intro" aria-labelledby="intro-titulo">
-      <h2 class="intro-title" id="intro-titulo">{total} programas de Python.</h2>
-      <p class="intro-copy">Verlos, copiarlos, descargarlos. Cada ejercicio es un archivo, cada archivo con su propósito.</p>
+      <p class="intro-label">Índice</p>
+      <h1 class="intro-title" id="intro-titulo">Ejercicios de Python.</h1>
+      <p class="intro-copy">Verlos, copiarlos, descargarlos. Cada ejercicio en su propia página.</p>
       <div class="buscar">
-        <label class="buscar-label" for="buscar">Buscar</label>
+        <label for="buscar">Buscar</label>
         <input id="buscar" type="search" placeholder="ahorcado, pdf, rombo…" autocomplete="off" spellcheck="false">
-        <span class="buscar-conteo" id="buscar-conteo" aria-live="polite">{total} ejercicios</span>
       </div>
     </section>
 
-    <section class="como-usar" id="como-usar" aria-labelledby="como-usar-titulo">
-      <h2 class="como-usar-titulo" id="como-usar-titulo">Cómo usar</h2>
-      <ol class="usos">
-        <li>
-          <span class="uso-verbo">Ver</span>
-          <p>«Ver código» abre el archivo en la página, sin salir de ella.</p>
-        </li>
-        <li>
-          <span class="uso-verbo">Copiar</span>
-          <p>Un clic deja el código completo en el portapapeles.</p>
-        </li>
-        <li>
-          <span class="uso-verbo">Descargar</span>
-          <p>Guarda el archivo .py tal cual está en el repositorio.</p>
-        </li>
-      </ol>
-    </section>
-
-    <section class="indice" id="indice" aria-labelledby="indice-titulo">
-      <h2 class="indice-titulo" id="indice-titulo">Índice</h2>
-{secciones}
+    <section class="indice" id="indice" aria-label="Índice de ejercicios">
+{chr(10).join(secciones)}
       <p class="sin-resultados" id="sin-resultados" hidden>Ningún ejercicio coincide con la búsqueda.</p>
     </section>
 
@@ -285,130 +253,58 @@ def genera_html(ejercicios):
       <p>El repositorio está publicado bajo la licencia MIT. Los ejercicios pueden usarse, copiarse y modificarse libremente.</p>
     </section>
   </main>
+{pie()}"""
 
-  <footer class="foot-dense">
-    <p>web-pythoncises · {total} ejercicios de Python · licencia MIT · construido sin frameworks.</p>
-  </footer>
 
-{codigos}
-  <script>
-    (function () {{
-      "use strict";
-
-      var filas = Array.prototype.slice.call(document.querySelectorAll(".ejercicio"));
-      var categorias = Array.prototype.slice.call(document.querySelectorAll(".categoria"));
-      var input = document.getElementById("buscar");
-      var conteo = document.getElementById("buscar-conteo");
-      var sinResultados = document.getElementById("sin-resultados");
-
-      function normaliza(texto) {{
-        return texto.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
-      }}
-
-      function codigoDe(boton) {{
-        var ficha = boton.closest(".ejercicio");
-        var fuente = document.getElementById("src-" + ficha.dataset.slug);
-        return fuente.textContent.replace(/^\\n/, "").replace(/\\s+$/, "");
-      }}
-
-      function filtrar() {{
-        var termino = normaliza(input.value.trim());
-        var visibles = 0;
-        filas.forEach(function (fila) {{
-          var coincide = !termino || normaliza(fila.dataset.busqueda).indexOf(termino) !== -1;
-          fila.hidden = !coincide;
-          if (coincide) visibles++;
-        }});
-        categorias.forEach(function (cat) {{
-          cat.hidden = cat.querySelectorAll(".ejercicio:not([hidden])").length === 0;
-        }});
-        conteo.textContent = visibles + " de " + filas.length + (visibles === 1 ? " ejercicio" : " ejercicios");
-        sinResultados.hidden = visibles !== 0;
-      }}
-
-      input.addEventListener("input", filtrar);
-
-      document.addEventListener("click", function (evento) {{
-        var boton = evento.target.closest("button[data-accion]");
-        if (!boton) return;
-
-        var ficha = boton.closest(".ejercicio");
-        var panel = ficha.querySelector(".ejercicio-codigo");
-        var codigo = codigoDe(boton);
-        var accion = boton.dataset.accion;
-
-        if (accion === "ver") {{
-          var abierto = !panel.hidden;
-          if (abierto) {{
-            panel.hidden = true;
-            boton.setAttribute("aria-expanded", "false");
-            boton.textContent = "Ver código";
-          }} else {{
-            panel.querySelector("code").textContent = codigo;
-            panel.hidden = false;
-            boton.setAttribute("aria-expanded", "true");
-            boton.textContent = "Ocultar código";
-          }}
-        }} else if (accion === "copiar") {{
-          copiar(boton, codigo);
-        }} else if (accion === "descargar") {{
-          descargar(ficha.dataset.nombre, codigo);
-        }}
-      }});
-
-      function copiar(boton, texto) {{
-        var hecho = function () {{
-          var original = boton.textContent;
-          boton.textContent = "Copiado ✓";
-          boton.dataset.copiado = "true";
-          setTimeout(function () {{
-            boton.textContent = original;
-            delete boton.dataset.copiado;
-          }}, 2500);
-        }};
-        if (navigator.clipboard && window.isSecureContext) {{
-          navigator.clipboard.writeText(texto).then(hecho, function () {{ copiarPorSeleccion(texto, hecho); }});
-        }} else {{
-          copiarPorSeleccion(texto, hecho);
-        }}
-      }}
-
-      function copiarPorSeleccion(texto, hecho) {{
-        var area = document.createElement("textarea");
-        area.value = texto;
-        area.setAttribute("readonly", "");
-        area.style.position = "fixed";
-        area.style.opacity = "0";
-        document.body.appendChild(area);
-        area.select();
-        try {{ document.execCommand("copy"); hecho(); }} catch (error) {{ /* sin acción */ }}
-        document.body.removeChild(area);
-      }}
-
-      function descargar(nombre, texto) {{
-        var blob = new Blob([texto], {{ type: "text/plain;charset=utf-8" }});
-        var url = URL.createObjectURL(blob);
-        var enlace = document.createElement("a");
-        enlace.href = url;
-        enlace.download = nombre;
-        document.body.appendChild(enlace);
-        enlace.click();
-        document.body.removeChild(enlace);
-        URL.revokeObjectURL(url);
-      }}
-    }})();
-  </script>
-</body>
-</html>
-"""
+def pagina_ejercicio(ejercicio, anterior, siguiente):
+    meta = " · ".join([
+        ejercicio["categoria"],
+        f"{ejercicio['numero']:02d}",
+        ejercicio["nombre"],
+    ])
+    nav_previo = f'<a class="anterior" href="{anterior["slug"]}.html">← {escapa_html(anterior["titulo"])}</a>' if anterior else ""
+    nav_siguiente = f'<a class="siguiente" href="{siguiente["slug"]}.html">{escapa_html(siguiente["titulo"])} →</a>' if siguiente else ""
+    return f"""{cabecera("../", f"Pythoncises · {ejercicio['titulo']}", ejercicio['descripcion'])}
+{nav("../")}
+  <main class="detalle">
+    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <p class="detalle-meta">{escapa_html(meta)}</p>
+    <h1 class="detalle-titulo">{escapa_html(ejercicio['titulo'])}</h1>
+    <p class="detalle-desc">{escapa_html(ejercicio['descripcion'])}</p>
+    <div class="detalle-acciones">
+      <button class="btn" type="button" data-accion="copiar">Copiar</button>
+      <button class="btn" type="button" data-accion="descargar" data-nombre="{escapa_html(ejercicio['nombre'])}">Descargar</button>
+    </div>
+    <p class="codigo-archivo">{escapa_html(ejercicio['archivo'])}</p>
+    <pre><code>{escapa_html(ejercicio['codigo'])}</code></pre>
+    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+      {nav_previo}
+      {nav_siguiente}
+    </nav>
+  </main>
+{pie()}"""
 
 
 def main():
-    ejercicios = lee_ejercicios()
-    html = genera_html(ejercicios)
-    (RAIZ / "index.html").write_text(html, encoding="utf-8")
-    total = sum(len(items) for _, items in ejercicios)
-    print(f"index.html generado con {total} ejercicios.")
+    categorias, plana = lee_ejercicios()
+    # Añadir la categoría a cada ejercicio para la meta del detalle
+    por_slug = {}
+    for nombre_cat, items in categorias:
+        for e in items:
+            e["categoria"] = nombre_cat
+            por_slug[e["slug"]] = e
+
+    (RAIZ / "index.html").write_text(genera_indice(categorias, len(plana)), encoding="utf-8")
+
+    SALIDA.mkdir(exist_ok=True)
+    for indice, ejercicio in enumerate(plana):
+        anterior = plana[indice - 1] if indice > 0 else None
+        siguiente = plana[indice + 1] if indice < len(plana) - 1 else None
+        (SALIDA / f"{ejercicio['slug']}.html").write_text(
+            pagina_ejercicio(ejercicio, anterior, siguiente), encoding="utf-8"
+        )
+
+    print(f"index.html + {len(plana)} páginas en ejercicios/ generados.")
 
 
 if __name__ == "__main__":

@@ -3,688 +3,290 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Índice de 32 ejercicios de Python: verlos, copiarlos y descargarlos.">
-  <title>Pythoncises · 32 ejercicios de Python</title>
+  <meta name="description" content="Índice de ejercicios de Python: verlos, copiarlos y descargarlos.">
+  <title>Pythoncises</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="nav-mast">
-    <p class="mast-line">web-pythoncises · índice de ejercicios · 2026</p>
-    <h1 class="mast-name">Pythoncises</h1>
-    <nav class="mast-nav" aria-label="Principal">
-      <ul>
-        <li><a href="#como-usar">Cómo usar</a></li>
-        <li><a href="#indice">Índice</a></li>
-        <li><a href="#licencia">Licencia</a></li>
+  <header class="nav">
+    <a class="nav-word" href="index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="index.html#indice">Índice</a></li>
+        <li><a href="index.html#licencia">Licencia</a></li>
       </ul>
     </nav>
-    <hr class="mast-rule" aria-hidden="true">
   </header>
-
   <main>
     <section class="intro" aria-labelledby="intro-titulo">
-      <h2 class="intro-title" id="intro-titulo">32 programas de Python.</h2>
-      <p class="intro-copy">Verlos, copiarlos, descargarlos. Cada ejercicio es un archivo, cada archivo con su propósito.</p>
+      <p class="intro-label">Índice</p>
+      <h1 class="intro-title" id="intro-titulo">Ejercicios de Python.</h1>
+      <p class="intro-copy">Verlos, copiarlos, descargarlos. Cada ejercicio en su propia página.</p>
       <div class="buscar">
-        <label class="buscar-label" for="buscar">Buscar</label>
+        <label for="buscar">Buscar</label>
         <input id="buscar" type="search" placeholder="ahorcado, pdf, rombo…" autocomplete="off" spellcheck="false">
-        <span class="buscar-conteo" id="buscar-conteo" aria-live="polite">32 ejercicios</span>
       </div>
     </section>
 
-    <section class="como-usar" id="como-usar" aria-labelledby="como-usar-titulo">
-      <h2 class="como-usar-titulo" id="como-usar-titulo">Cómo usar</h2>
-      <ol class="usos">
-        <li>
-          <span class="uso-verbo">Ver</span>
-          <p>«Ver código» abre el archivo en la página, sin salir de ella.</p>
-        </li>
-        <li>
-          <span class="uso-verbo">Copiar</span>
-          <p>Un clic deja el código completo en el portapapeles.</p>
-        </li>
-        <li>
-          <span class="uso-verbo">Descargar</span>
-          <p>Guarda el archivo .py tal cual está en el repositorio.</p>
-        </li>
-      </ol>
+    <section class="indice" id="indice" aria-label="Índice de ejercicios">
+    <section class="categoria" aria-labelledby="cat-juegos">
+      <h2 class="categoria-nombre" id="cat-juegos">Juegos</h2>
+      <article class="ejercicio" data-busqueda="adivina el número programa genera un numero aleatorio del 1 al 100, le permite 10 intentos al usuario para adivinarlo adivina-numero adivina-numero/adivina_numero.py">
+        <span class="ejercicio-num" aria-hidden="true">01</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/adivina-numero.html">Adivina el número</a></h3>
+          <p class="ejercicio-desc">Programa genera un numero aleatorio del 1 al 100, le permite 10 intentos al usuario para adivinarlo</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="el ahorcado programa que simula el juego del ahorcado. toma una palabra aleatoria de una lista, muestra el estado inicial del juego, pide y valida una letra al usuario, muestra el estado en cada intento indicando cuando haya ganado. ahorcado ahorcado/ahorcado.py">
+        <span class="ejercicio-num" aria-hidden="true">02</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/ahorcado.html">El ahorcado</a></h3>
+          <p class="ejercicio-desc">Programa que simula el juego del ahorcado. Toma una palabra aleatoria de una lista, muestra el estado inicial del juego, pide y valida una letra al usuario, muestra el estado en cada intento indicando cuando haya ganado.</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="piedra, papel o tijera programa que simula el juego de piedra papel o tijera, el usuario elige una de las opciones y la maquina tambien, finalmente muestra el ganador o empate. piedra-papel-tijera piedra-papel-tijera/piedra_papel_tijera.py">
+        <span class="ejercicio-num" aria-hidden="true">03</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/piedra-papel-tijera.html">Piedra, papel o tijera</a></h3>
+          <p class="ejercicio-desc">Programa que simula el juego de piedra papel o tijera, el usuario elige una de las opciones y la maquina tambien, finalmente muestra el ganador o empate.</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="dados aleatorios programa que simula un lanzador de dados, pide al usuario un número de lanzamientos, lanza el número de dados indicados y muestra el valor de cada dado, la suma y el producto de todos dados-aleatorios dados-aleatorios/dados_aleatorios.py">
+        <span class="ejercicio-num" aria-hidden="true">04</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/dados-aleatorios.html">Dados aleatorios</a></h3>
+          <p class="ejercicio-desc">Programa que simula un lanzador de dados, pide al usuario un número de lanzamientos, lanza el número de dados indicados y muestra el valor de cada dado, la suma y el producto de todos</p>
+        </div>
+      </article>
     </section>
-
-    <section class="indice" id="indice" aria-labelledby="indice-titulo">
-      <h2 class="indice-titulo" id="indice-titulo">Índice</h2>
-      <section class="categoria" aria-labelledby="cat-juegos">
-        <h3 class="categoria-nombre" id="cat-juegos">
-          Juegos
-          <span class="categoria-conteo">4</span>
-        </h3>
-        <article class="ejercicio" data-slug="adivina-numero" data-nombre="adivina_numero.py" data-busqueda="adivina el número programa genera un numero aleatorio del 1 al 100, le permite 10 intentos al usuario para adivinarlo adivina-numero adivina-numero/adivina_numero.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">01</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Adivina el número</h4>
-              <p class="ejercicio-desc">Programa genera un numero aleatorio del 1 al 100, le permite 10 intentos al usuario para adivinarlo</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-adivina-numero">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-adivina-numero" hidden>
-            <p class="codigo-archivo">adivina-numero/adivina_numero.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="ahorcado" data-nombre="ahorcado.py" data-busqueda="el ahorcado programa que simula el juego del ahorcado. toma una palabra aleatoria de una lista, muestra el estado inicial del juego, pide y valida una letra al usuario, muestra el estado en cada intento indicando cuando haya ganado. ahorcado ahorcado/ahorcado.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">02</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">El ahorcado</h4>
-              <p class="ejercicio-desc">Programa que simula el juego del ahorcado. Toma una palabra aleatoria de una lista, muestra el estado inicial del juego, pide y valida una letra al usuario, muestra el estado en cada intento indicando cuando haya ganado.</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-ahorcado">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-ahorcado" hidden>
-            <p class="codigo-archivo">ahorcado/ahorcado.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="piedra-papel-tijera" data-nombre="piedra_papel_tijera.py" data-busqueda="piedra, papel o tijera programa que simula el juego de piedra papel o tijera, el usuario elige una de las opciones y la maquina tambien, finalmente muestra el ganador o empate. piedra-papel-tijera piedra-papel-tijera/piedra_papel_tijera.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">03</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Piedra, papel o tijera</h4>
-              <p class="ejercicio-desc">Programa que simula el juego de piedra papel o tijera, el usuario elige una de las opciones y la maquina tambien, finalmente muestra el ganador o empate.</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-piedra-papel-tijera">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-piedra-papel-tijera" hidden>
-            <p class="codigo-archivo">piedra-papel-tijera/piedra_papel_tijera.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="dados-aleatorios" data-nombre="dados_aleatorios.py" data-busqueda="dados aleatorios programa que simula un lanzador de dados, pide al usuario un número de lanzamientos, lanza el número de dados indicados y muestra el valor de cada dado, la suma y el producto de todos dados-aleatorios dados-aleatorios/dados_aleatorios.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">04</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Dados aleatorios</h4>
-              <p class="ejercicio-desc">Programa que simula un lanzador de dados, pide al usuario un número de lanzamientos, lanza el número de dados indicados y muestra el valor de cada dado, la suma y el producto de todos</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-dados-aleatorios">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-dados-aleatorios" hidden>
-            <p class="codigo-archivo">dados-aleatorios/dados_aleatorios.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-      </section>
-      <section class="categoria" aria-labelledby="cat-patrones">
-        <h3 class="categoria-nombre" id="cat-patrones">
-          Patrones
-          <span class="categoria-conteo">3</span>
-        </h3>
-        <article class="ejercicio" data-slug="patron-triangulo" data-nombre="patron_triangulo.py" data-busqueda="patrón triángulo programa que dibuja un triangulo de astericos patron-triangulo patron-triangulo/patron_triangulo.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">05</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Patrón triángulo</h4>
-              <p class="ejercicio-desc">Programa que dibuja un triangulo de astericos</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-patron-triangulo">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-patron-triangulo" hidden>
-            <p class="codigo-archivo">patron-triangulo/patron_triangulo.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="patron-triangulo-invertido" data-nombre="patron_triangulo_invertido.py" data-busqueda="patrón triángulo invertido programa que dibuja un triangulo invertido de astericos patron-triangulo-invertido patron-triangulo-invertido/patron_triangulo_invertido.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">06</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Patrón triángulo invertido</h4>
-              <p class="ejercicio-desc">Programa que dibuja un triangulo invertido de astericos</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-patron-triangulo-invertido">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-patron-triangulo-invertido" hidden>
-            <p class="codigo-archivo">patron-triangulo-invertido/patron_triangulo_invertido.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="patron-rombo" data-nombre="patron_rombo.py" data-busqueda="patrón rombo programa que dibuja un rombo de astericos patron-rombo patron-rombo/patron_rombo.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">07</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Patrón rombo</h4>
-              <p class="ejercicio-desc">Programa que dibuja un rombo de astericos</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-patron-rombo">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-patron-rombo" hidden>
-            <p class="codigo-archivo">patron-rombo/patron_rombo.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-      </section>
-      <section class="categoria" aria-labelledby="cat-calculadoras">
-        <h3 class="categoria-nombre" id="cat-calculadoras">
-          Calculadoras
-          <span class="categoria-conteo">3</span>
-        </h3>
-        <article class="ejercicio" data-slug="calculadora" data-nombre="calculadora.py" data-busqueda="calculadora programa que hace la funciones basica de una calculadora, pidiendole al usuario dos operando y un operador, finalmente muestra el resultado de la operación. calculadora calculadora/calculadora.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">08</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Calculadora</h4>
-              <p class="ejercicio-desc">Programa que hace la funciones basica de una calculadora, pidiendole al usuario dos operando y un operador, finalmente muestra el resultado de la operación.</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-calculadora">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-calculadora" hidden>
-            <p class="codigo-archivo">calculadora/calculadora.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="calculadora-indice-masa-corporal" data-nombre="calculadora_indice_masa_corporal.py" data-busqueda="calculadora de imc programa que pide al usuario su peso y altura, calcula su indice de masa corporal y muestra el resultado calculadora-indice-masa-corporal calculadora-indice-masa-corporal/calculadora_indice_masa_corporal.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">09</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Calculadora de IMC</h4>
-              <p class="ejercicio-desc">Programa que pide al usuario su peso y altura, calcula su indice de masa corporal y muestra el resultado</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-calculadora-indice-masa-corporal">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-calculadora-indice-masa-corporal" hidden>
-            <p class="codigo-archivo">calculadora-indice-masa-corporal/calculadora_indice_masa_corporal.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="calculadora-propina" data-nombre="calculadora_propina.py" data-busqueda="calculadora de propina programa que calcula la propina y el monto total de una cuenta. pide al usuario el monto de la cuenta y el porcentaje de la propina y muestra el monto total de la cuenta y la propina a pagar calculadora-propina calculadora-propina/calculadora_propina.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">10</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Calculadora de propina</h4>
-              <p class="ejercicio-desc">Programa que calcula la propina y el monto total de una cuenta. Pide al usuario el monto de la cuenta y el porcentaje de la propina y muestra el monto total de la cuenta y la propina a pagar</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-calculadora-propina">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-calculadora-propina" hidden>
-            <p class="codigo-archivo">calculadora-propina/calculadora_propina.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-      </section>
-      <section class="categoria" aria-labelledby="cat-web-y-api">
-        <h3 class="categoria-nombre" id="cat-web-y-api">
-          Web y API
-          <span class="categoria-conteo">2</span>
-        </h3>
-        <article class="ejercicio" data-slug="convertidor-moneda" data-nombre="convertidor_moneda.py" data-busqueda="convertidor de moneda programa que pide una cantidad, una moneda de origen, una moneda destino al usuario, y utiliza la api de frankfurter para obtener los datos de la conversion, finalmente muestra el resultado convertidor-moneda convertidor-moneda/convertidor_moneda.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">11</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Convertidor de moneda</h4>
-              <p class="ejercicio-desc">Programa que pide una cantidad, una moneda de origen, una moneda destino al usuario, y utiliza la API de frankfurter para obtener los datos de la conversion, finalmente muestra el resultado</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-convertidor-moneda">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-convertidor-moneda" hidden>
-            <p class="codigo-archivo">convertidor-moneda/convertidor_moneda.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="corta-url" data-nombre="corta_url.py" data-busqueda="acortador de urls programa que acorta una url larga. pide al usuario la url larga y retorna la url corta corta-url corta-url/corta_url.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">12</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Acortador de URLs</h4>
-              <p class="ejercicio-desc">Programa que acorta una url larga. Pide al usuario la url larga y retorna la url corta</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-corta-url">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-corta-url" hidden>
-            <p class="codigo-archivo">corta-url/corta_url.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-      </section>
-      <section class="categoria" aria-labelledby="cat-texto-y-cadenas">
-        <h3 class="categoria-nombre" id="cat-texto-y-cadenas">
-          Texto y cadenas
-          <span class="categoria-conteo">5</span>
-        </h3>
-        <article class="ejercicio" data-slug="generador-contraseñas" data-nombre="generador_contrasenas.py" data-busqueda="generador de contraseñas programa que pide una longitud al usuario y genera una contraseña con esa longitud generador-contraseñas generador-contraseñas/generador_contrasenas.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">13</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Generador de contraseñas</h4>
-              <p class="ejercicio-desc">Programa que pide una longitud al usuario y genera una contraseña con esa longitud</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-generador-contraseñas">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-generador-contraseñas" hidden>
-            <p class="codigo-archivo">generador-contraseñas/generador_contrasenas.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="generador-chiste-random" data-nombre="generador_chiste_random.py" data-busqueda="generador de chistes programa que genera un chiste por petición, muestra un menu de dos opciones al usuario, permitiendo generar un chiste y salir del generador. generador-chiste-random generador-chiste-random/generador_chiste_random.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">14</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Generador de chistes</h4>
-              <p class="ejercicio-desc">Programa que genera un chiste por petición, muestra un menu de dos opciones al usuario, permitiendo generar un chiste y salir del generador.</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-generador-chiste-random">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-generador-chiste-random" hidden>
-            <p class="codigo-archivo">generador-chiste-random/generador_chiste_random.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="historias-divertidas" data-nombre="historias_divertidas.py" data-busqueda="historias divertidas programa que pide palabras al usuario y genera una historia divertida con esa palabras y se la muestra al usuario historias-divertidas historias-divertidas/historias_divertidas.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">15</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Historias divertidas</h4>
-              <p class="ejercicio-desc">Programa que pide palabras al usuario y genera una historia divertida con esa palabras y se la muestra al usuario</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-historias-divertidas">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-historias-divertidas" hidden>
-            <p class="codigo-archivo">historias-divertidas/historias_divertidas.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="partes-correo" data-nombre="partes_correo.py" data-busqueda="partes de un correo programa que lee cualquier archivo que sea de texto y busca los correos electronicos y muestras sus partes (nombre y dominio) partes-correo partes-correo/partes_correo.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">16</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Partes de un correo</h4>
-              <p class="ejercicio-desc">Programa que lee cualquier archivo que sea de texto y busca los correos electronicos y muestras sus partes (nombre y dominio)</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-partes-correo">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-partes-correo" hidden>
-            <p class="codigo-archivo">partes-correo/partes_correo.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="convertir-markdown-html" data-nombre="convertir_markdown_html.py" data-busqueda="markdown a html programa que convierte un archivo markdown a un archivo html. utiliza la libreria markdown para realizar la conversión convertir-markdown-html convertir-markdown-html/convertir_markdown_html.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">17</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Markdown a HTML</h4>
-              <p class="ejercicio-desc">Programa que convierte un archivo markdown a un archivo html. Utiliza la libreria markdown para realizar la conversión</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-convertir-markdown-html">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-convertir-markdown-html" hidden>
-            <p class="codigo-archivo">convertir-markdown-html/convertir_markdown_html.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-      </section>
-      <section class="categoria" aria-labelledby="cat-archivos-y-pdf">
-        <h3 class="categoria-nombre" id="cat-archivos-y-pdf">
-          Archivos y PDF
-          <span class="categoria-conteo">6</span>
-        </h3>
-        <article class="ejercicio" data-slug="combinar-pdfs" data-nombre="combinar_pdfs.py" data-busqueda="combinar pdfs programa que une pdfs usando la libreria pypdf2. toma los pdfs de un directorio y los une en un solo pdf. combinar-pdfs combinar-pdfs/combinar_pdfs.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">18</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Combinar PDFs</h4>
-              <p class="ejercicio-desc">Programa que une pdfs usando la libreria PyPDF2. Toma los pdfs de un directorio y los une en un solo pdf.</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-combinar-pdfs">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-combinar-pdfs" hidden>
-            <p class="codigo-archivo">combinar-pdfs/combinar_pdfs.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="marca-agua" data-nombre="marca_agua.py" data-busqueda="marca de agua programa que inserta marca de agua en imagenes marca-agua marca-agua/marca_agua.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">19</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Marca de agua</h4>
-              <p class="ejercicio-desc">Programa que inserta marca de agua en imagenes</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-marca-agua">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-marca-agua" hidden>
-            <p class="codigo-archivo">marca-agua/marca_agua.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="extraer-texto-pdf-ocr" data-nombre="extraer_texto_pdf_ocr.py" data-busqueda="ocr sobre pdf programa que escanea documentos pdf usando ocr (optical character recognition o reconocimiento óptico de caracteres) que es un tecnica que se utiliza para leer texto desde imágenes o documentos y convertirlos a texto editable extraer-texto-pdf-ocr extraer-texto-pdf-ocr/extraer_texto_pdf_ocr.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">20</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">OCR sobre PDF</h4>
-              <p class="ejercicio-desc">Programa que escanea documentos pdf usando OCR (Optical Character Recognition o Reconocimiento Óptico de Caracteres) que es un tecnica que se utiliza para leer texto desde imágenes o documentos y convertirlos a texto editable</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-extraer-texto-pdf-ocr">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-extraer-texto-pdf-ocr" hidden>
-            <p class="codigo-archivo">extraer-texto-pdf-ocr/extraer_texto_pdf_ocr.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="herramienta-renombra-archivo" data-nombre="herramienta_renombra_archivo.py" data-busqueda="renombrador de archivos programa que renombra archivo. pide al usuario la ruta del archivo y el nuevo nombre, verifica si el archivo existe y lo renombra, de lo contrario muestra un mensaje de error herramienta-renombra-archivo herramienta-renombra-archivo/herramienta_renombra_archivo.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">21</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Renombrador de archivos</h4>
-              <p class="ejercicio-desc">Programa que renombra archivo. Pide al usuario la ruta del archivo y el nuevo nombre, verifica si el archivo existe y lo renombra, de lo contrario muestra un mensaje de error</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-herramienta-renombra-archivo">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-herramienta-renombra-archivo" hidden>
-            <p class="codigo-archivo">herramienta-renombra-archivo/herramienta_renombra_archivo.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="organizador-archivos" data-nombre="organizador_archivos.py" data-busqueda="organizador de archivos programa que organiza archivos en carpetas segun su extension. en una carpeta pueden ir archivos de mas de una extensión organizador-archivos organizador-archivos/organizador_archivos.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">22</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Organizador de archivos</h4>
-              <p class="ejercicio-desc">Programa que organiza archivos en carpetas segun su extension. En una carpeta pueden ir archivos de mas de una extensión</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-organizador-archivos">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-organizador-archivos" hidden>
-            <p class="codigo-archivo">organizador-archivos/organizador_archivos.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="convertir-videos" data-nombre="convertir_videos.py" data-busqueda="convertidor de vídeos programa que convierte un video de un formato a otro, permtiendo opcionalmente ajustar la resolución y la calidad del video convertir-videos convertir-videos/convertir_videos.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">23</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Convertidor de vídeos</h4>
-              <p class="ejercicio-desc">Programa que convierte un video de un formato a otro, permtiendo opcionalmente ajustar la resolución y la calidad del video</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-convertir-videos">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-convertir-videos" hidden>
-            <p class="codigo-archivo">convertir-videos/convertir_videos.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-      </section>
-      <section class="categoria" aria-labelledby="cat-tiempo-y-hábitos">
-        <h3 class="categoria-nombre" id="cat-tiempo-y-hábitos">
-          Tiempo y hábitos
-          <span class="categoria-conteo">6</span>
-        </h3>
-        <article class="ejercicio" data-slug="cuenta-tiempo-atras" data-nombre="cuenta_tiempo_atras.py" data-busqueda="cuenta atrás programa que pide al usuario un numero de tiempo inicial para iniciar un despegue, haciendo una cuentra regresiva del tiempo inicial hasta 1 y posteriormente hacer el despegue cuenta-tiempo-atras cuenta-tiempo-atras/cuenta_tiempo_atras.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">24</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Cuenta atrás</h4>
-              <p class="ejercicio-desc">Programa que pide al usuario un numero de tiempo inicial para iniciar un despegue, haciendo una cuentra regresiva del tiempo inicial hasta 1 y posteriormente hacer el despegue</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-cuenta-tiempo-atras">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-cuenta-tiempo-atras" hidden>
-            <p class="codigo-archivo">cuenta-tiempo-atras/cuenta_tiempo_atras.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="pomodoro" data-nombre="pomodoro.py" data-busqueda="pomodoro programa que simula un pomodoro método de gestión del tiempo desarrollado por francesco cirillo. el programa pide al usuario una lista de tareas separadas por espacios y inicia un temporizador de 25 minutos por cada tarea y un descanso de 5 minutos a cada tarea y en cada 4 tareas el tiempo de descanso aumenta a 15 minutos pomodoro pomodoro/pomodoro.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">25</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Pomodoro</h4>
-              <p class="ejercicio-desc">Programa que simula un pomodoro método de gestión del tiempo desarrollado por Francesco cirillo. El programa pide al usuario una lista de tareas separadas por espacios y inicia un temporizador de 25 minutos por cada tarea y un descanso de 5 minutos a cada tarea y en cada 4 tareas el tiempo de descanso aumenta a 15 minutos</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-pomodoro">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-pomodoro" hidden>
-            <p class="codigo-archivo">pomodoro/pomodoro.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="reloj-alarma" data-nombre="reloj_alarma.py" data-busqueda="reloj alarma programa que simula una reloj alarma. pide al usuario configurar su alarma en un formato especifico, marca la alarma configurada y muestra el tiempo restante (horas y minutos) que faltan para sonar la alarma reloj-alarma reloj-alarma/reloj_alarma.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">26</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Reloj alarma</h4>
-              <p class="ejercicio-desc">Programa que simula una reloj alarma. Pide al usuario configurar su alarma en un formato especifico, marca la alarma configurada y muestra el tiempo restante (horas y minutos) que faltan para sonar la alarma</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-reloj-alarma">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-reloj-alarma" hidden>
-            <p class="codigo-archivo">reloj-alarma/reloj_alarma.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="reloj-digital" data-nombre="reloj_digital.py" data-busqueda="reloj digital programa que simula un reloj digital, mostrando la hora actual cada segundo. reloj-digital reloj-digital/reloj_digital.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">27</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Reloj digital</h4>
-              <p class="ejercicio-desc">Programa que simula un reloj digital, mostrando la hora actual cada segundo.</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-reloj-digital">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-reloj-digital" hidden>
-            <p class="codigo-archivo">reloj-digital/reloj_digital.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="rastreador-habitos-diarios" data-nombre="rastreador_habitos_diarios.py" data-busqueda="rastreador de hábitos programa que permite al usuario agregar, registrar, marcar y mostrar hábitos diarios. además, permite ver el progreso de cada hábito registrado. rastreador-habitos-diarios rastreador-habitos-diarios/rastreador_habitos_diarios.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">28</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Rastreador de hábitos</h4>
-              <p class="ejercicio-desc">Programa que permite al usuario agregar, registrar, marcar y mostrar hábitos diarios. Además, permite ver el progreso de cada hábito registrado.</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-rastreador-habitos-diarios">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-rastreador-habitos-diarios" hidden>
-            <p class="codigo-archivo">rastreador-habitos-diarios/rastreador_habitos_diarios.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="lista-to-do" data-nombre="lista_to_do.py" data-busqueda="lista de tareas programa que permite agregar, marcar, eliminar y ver tareas, para añadir tarea se pide al usuario el nombre y se guarda con un id que incrementa automaticamente al estilo de una base de datos y además, se marca como incompleta, para permitir al usuario la opción de marcarla completada posteriormente, finalmente la eliminación de las tareas se hacen mediante eliminar el id. lista-to-do lista-to-do/lista_to_do.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">29</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Lista de tareas</h4>
-              <p class="ejercicio-desc">Programa que permite agregar, marcar, eliminar y ver tareas, para añadir tarea se pide al usuario el nombre y se guarda con un id que incrementa automaticamente al estilo de una base de datos y además, se marca como incompleta, para permitir al usuario la opción de marcarla completada posteriormente, finalmente la eliminación de las tareas se hacen mediante eliminar el ID.</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-lista-to-do">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-lista-to-do" hidden>
-            <p class="codigo-archivo">lista-to-do/lista_to_do.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-      </section>
-      <section class="categoria" aria-labelledby="cat-visión-por-computador">
-        <h3 class="categoria-nombre" id="cat-visión-por-computador">
-          Visión por computador
-          <span class="categoria-conteo">2</span>
-        </h3>
-        <article class="ejercicio" data-slug="detector-cara-opencv" data-nombre="detector_cara_opencv.py" data-busqueda="detector de caras programa que detecta rostros que se posicionen frente a la cámara. utiliza la libreria opencv para abrir la camara y detectar los rostros. detector-cara-opencv detector-cara-opencv/detector_cara_opencv.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">30</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Detector de caras</h4>
-              <p class="ejercicio-desc">Programa que detecta rostros que se posicionen frente a la cámara. Utiliza la libreria opencv para abrir la camara y detectar los rostros.</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-detector-cara-opencv">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-detector-cara-opencv" hidden>
-            <p class="codigo-archivo">detector-cara-opencv/detector_cara_opencv.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-        <article class="ejercicio" data-slug="sistema-reconocimiento-facial" data-nombre="sistema_reconocimiento_facial.py" data-busqueda="reconocimiento facial programa de reconocimiento facial usando las librerias opencv y face_recognition, compara el rostro de una imagen con el rostro que se posicione frente a la camara y verifica si coincide o no, mostrando el resultado de la comparación en el recuadro del detector de rostros y tambien muestra un aproximado de la distancia entre la coincidencia. sistema-reconocimiento-facial sistema-reconocimiento-facial/sistema_reconocimiento_facial.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">31</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Reconocimiento facial</h4>
-              <p class="ejercicio-desc">Programa de reconocimiento facial usando las librerias opencv y face_recognition, compara el rostro de una imagen con el rostro que se posicione frente a la camara y verifica si coincide o no, mostrando el resultado de la comparación en el recuadro del detector de rostros y tambien muestra un aproximado de la distancia entre la coincidencia.</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-sistema-reconocimiento-facial">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-sistema-reconocimiento-facial" hidden>
-            <p class="codigo-archivo">sistema-reconocimiento-facial/sistema_reconocimiento_facial.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-      </section>
-      <section class="categoria" aria-labelledby="cat-correo">
-        <h3 class="categoria-nombre" id="cat-correo">
-          Correo
-          <span class="categoria-conteo">1</span>
-        </h3>
-        <article class="ejercicio" data-slug="enviar-correo-csv" data-nombre="enviar_correo_csv.py" data-busqueda="envío de correos desde csv programa que lee un archivo csv y envia un correo electronico a los correos que encuentre enviar-correo-csv enviar-correo-csv/enviar_correo_csv.py">
-          <div class="ejercicio-fila">
-            <span class="ejercicio-num" aria-hidden="true">32</span>
-            <div class="ejercicio-info">
-              <h4 class="ejercicio-titulo">Envío de correos desde CSV</h4>
-              <p class="ejercicio-desc">Programa que lee un archivo csv y envia un correo electronico a los correos que encuentre</p>
-              <div class="ejercicio-acciones">
-                <button class="btn" type="button" data-accion="ver" aria-expanded="false" aria-controls="codigo-enviar-correo-csv">Ver código</button>
-                <button class="btn" type="button" data-accion="copiar">Copiar</button>
-                <button class="btn" type="button" data-accion="descargar">Descargar</button>
-              </div>
-            </div>
-          </div>
-          <div class="ejercicio-codigo" id="codigo-enviar-correo-csv" hidden>
-            <p class="codigo-archivo">enviar-correo-csv/enviar_correo_csv.py</p>
-            <pre><code></code></pre>
-          </div>
-        </article>
-      </section>
+    <section class="categoria" aria-labelledby="cat-patrones">
+      <h2 class="categoria-nombre" id="cat-patrones">Patrones</h2>
+      <article class="ejercicio" data-busqueda="patrón triángulo programa que dibuja un triangulo de astericos patron-triangulo patron-triangulo/patron_triangulo.py">
+        <span class="ejercicio-num" aria-hidden="true">05</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/patron-triangulo.html">Patrón triángulo</a></h3>
+          <p class="ejercicio-desc">Programa que dibuja un triangulo de astericos</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="patrón triángulo invertido programa que dibuja un triangulo invertido de astericos patron-triangulo-invertido patron-triangulo-invertido/patron_triangulo_invertido.py">
+        <span class="ejercicio-num" aria-hidden="true">06</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/patron-triangulo-invertido.html">Patrón triángulo invertido</a></h3>
+          <p class="ejercicio-desc">Programa que dibuja un triangulo invertido de astericos</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="patrón rombo programa que dibuja un rombo de astericos patron-rombo patron-rombo/patron_rombo.py">
+        <span class="ejercicio-num" aria-hidden="true">07</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/patron-rombo.html">Patrón rombo</a></h3>
+          <p class="ejercicio-desc">Programa que dibuja un rombo de astericos</p>
+        </div>
+      </article>
+    </section>
+    <section class="categoria" aria-labelledby="cat-calculadoras">
+      <h2 class="categoria-nombre" id="cat-calculadoras">Calculadoras</h2>
+      <article class="ejercicio" data-busqueda="calculadora programa que hace la funciones basica de una calculadora, pidiendole al usuario dos operando y un operador, finalmente muestra el resultado de la operación. calculadora calculadora/calculadora.py">
+        <span class="ejercicio-num" aria-hidden="true">08</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/calculadora.html">Calculadora</a></h3>
+          <p class="ejercicio-desc">Programa que hace la funciones basica de una calculadora, pidiendole al usuario dos operando y un operador, finalmente muestra el resultado de la operación.</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="calculadora de imc programa que pide al usuario su peso y altura, calcula su indice de masa corporal y muestra el resultado calculadora-indice-masa-corporal calculadora-indice-masa-corporal/calculadora_indice_masa_corporal.py">
+        <span class="ejercicio-num" aria-hidden="true">09</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/calculadora-indice-masa-corporal.html">Calculadora de IMC</a></h3>
+          <p class="ejercicio-desc">Programa que pide al usuario su peso y altura, calcula su indice de masa corporal y muestra el resultado</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="calculadora de propina programa que calcula la propina y el monto total de una cuenta. pide al usuario el monto de la cuenta y el porcentaje de la propina y muestra el monto total de la cuenta y la propina a pagar calculadora-propina calculadora-propina/calculadora_propina.py">
+        <span class="ejercicio-num" aria-hidden="true">10</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/calculadora-propina.html">Calculadora de propina</a></h3>
+          <p class="ejercicio-desc">Programa que calcula la propina y el monto total de una cuenta. Pide al usuario el monto de la cuenta y el porcentaje de la propina y muestra el monto total de la cuenta y la propina a pagar</p>
+        </div>
+      </article>
+    </section>
+    <section class="categoria" aria-labelledby="cat-web-y-api">
+      <h2 class="categoria-nombre" id="cat-web-y-api">Web y API</h2>
+      <article class="ejercicio" data-busqueda="convertidor de moneda programa que pide una cantidad, una moneda de origen, una moneda destino al usuario, y utiliza la api de frankfurter para obtener los datos de la conversion, finalmente muestra el resultado convertidor-moneda convertidor-moneda/convertidor_moneda.py">
+        <span class="ejercicio-num" aria-hidden="true">11</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/convertidor-moneda.html">Convertidor de moneda</a></h3>
+          <p class="ejercicio-desc">Programa que pide una cantidad, una moneda de origen, una moneda destino al usuario, y utiliza la API de frankfurter para obtener los datos de la conversion, finalmente muestra el resultado</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="acortador de urls programa que acorta una url larga. pide al usuario la url larga y retorna la url corta corta-url corta-url/corta_url.py">
+        <span class="ejercicio-num" aria-hidden="true">12</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/corta-url.html">Acortador de URLs</a></h3>
+          <p class="ejercicio-desc">Programa que acorta una url larga. Pide al usuario la url larga y retorna la url corta</p>
+        </div>
+      </article>
+    </section>
+    <section class="categoria" aria-labelledby="cat-texto-y-cadenas">
+      <h2 class="categoria-nombre" id="cat-texto-y-cadenas">Texto y cadenas</h2>
+      <article class="ejercicio" data-busqueda="generador de contraseñas programa que pide una longitud al usuario y genera una contraseña con esa longitud generador-contraseñas generador-contraseñas/generador_contrasenas.py">
+        <span class="ejercicio-num" aria-hidden="true">13</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/generador-contraseñas.html">Generador de contraseñas</a></h3>
+          <p class="ejercicio-desc">Programa que pide una longitud al usuario y genera una contraseña con esa longitud</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="generador de chistes programa que genera un chiste por petición, muestra un menu de dos opciones al usuario, permitiendo generar un chiste y salir del generador. generador-chiste-random generador-chiste-random/generador_chiste_random.py">
+        <span class="ejercicio-num" aria-hidden="true">14</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/generador-chiste-random.html">Generador de chistes</a></h3>
+          <p class="ejercicio-desc">Programa que genera un chiste por petición, muestra un menu de dos opciones al usuario, permitiendo generar un chiste y salir del generador.</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="historias divertidas programa que pide palabras al usuario y genera una historia divertida con esa palabras y se la muestra al usuario historias-divertidas historias-divertidas/historias_divertidas.py">
+        <span class="ejercicio-num" aria-hidden="true">15</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/historias-divertidas.html">Historias divertidas</a></h3>
+          <p class="ejercicio-desc">Programa que pide palabras al usuario y genera una historia divertida con esa palabras y se la muestra al usuario</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="partes de un correo programa que lee cualquier archivo que sea de texto y busca los correos electronicos y muestras sus partes (nombre y dominio) partes-correo partes-correo/partes_correo.py">
+        <span class="ejercicio-num" aria-hidden="true">16</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/partes-correo.html">Partes de un correo</a></h3>
+          <p class="ejercicio-desc">Programa que lee cualquier archivo que sea de texto y busca los correos electronicos y muestras sus partes (nombre y dominio)</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="markdown a html programa que convierte un archivo markdown a un archivo html. utiliza la libreria markdown para realizar la conversión convertir-markdown-html convertir-markdown-html/convertir_markdown_html.py">
+        <span class="ejercicio-num" aria-hidden="true">17</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/convertir-markdown-html.html">Markdown a HTML</a></h3>
+          <p class="ejercicio-desc">Programa que convierte un archivo markdown a un archivo html. Utiliza la libreria markdown para realizar la conversión</p>
+        </div>
+      </article>
+    </section>
+    <section class="categoria" aria-labelledby="cat-archivos-y-pdf">
+      <h2 class="categoria-nombre" id="cat-archivos-y-pdf">Archivos y PDF</h2>
+      <article class="ejercicio" data-busqueda="combinar pdfs programa que une pdfs usando la libreria pypdf2. toma los pdfs de un directorio y los une en un solo pdf. combinar-pdfs combinar-pdfs/combinar_pdfs.py">
+        <span class="ejercicio-num" aria-hidden="true">18</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/combinar-pdfs.html">Combinar PDFs</a></h3>
+          <p class="ejercicio-desc">Programa que une pdfs usando la libreria PyPDF2. Toma los pdfs de un directorio y los une en un solo pdf.</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="marca de agua programa que inserta marca de agua en imagenes marca-agua marca-agua/marca_agua.py">
+        <span class="ejercicio-num" aria-hidden="true">19</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/marca-agua.html">Marca de agua</a></h3>
+          <p class="ejercicio-desc">Programa que inserta marca de agua en imagenes</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="ocr sobre pdf programa que escanea documentos pdf usando ocr (optical character recognition o reconocimiento óptico de caracteres) que es un tecnica que se utiliza para leer texto desde imágenes o documentos y convertirlos a texto editable extraer-texto-pdf-ocr extraer-texto-pdf-ocr/extraer_texto_pdf_ocr.py">
+        <span class="ejercicio-num" aria-hidden="true">20</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/extraer-texto-pdf-ocr.html">OCR sobre PDF</a></h3>
+          <p class="ejercicio-desc">Programa que escanea documentos pdf usando OCR (Optical Character Recognition o Reconocimiento Óptico de Caracteres) que es un tecnica que se utiliza para leer texto desde imágenes o documentos y convertirlos a texto editable</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="renombrador de archivos programa que renombra archivo. pide al usuario la ruta del archivo y el nuevo nombre, verifica si el archivo existe y lo renombra, de lo contrario muestra un mensaje de error herramienta-renombra-archivo herramienta-renombra-archivo/herramienta_renombra_archivo.py">
+        <span class="ejercicio-num" aria-hidden="true">21</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/herramienta-renombra-archivo.html">Renombrador de archivos</a></h3>
+          <p class="ejercicio-desc">Programa que renombra archivo. Pide al usuario la ruta del archivo y el nuevo nombre, verifica si el archivo existe y lo renombra, de lo contrario muestra un mensaje de error</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="organizador de archivos programa que organiza archivos en carpetas segun su extension. en una carpeta pueden ir archivos de mas de una extensión organizador-archivos organizador-archivos/organizador_archivos.py">
+        <span class="ejercicio-num" aria-hidden="true">22</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/organizador-archivos.html">Organizador de archivos</a></h3>
+          <p class="ejercicio-desc">Programa que organiza archivos en carpetas segun su extension. En una carpeta pueden ir archivos de mas de una extensión</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="convertidor de vídeos programa que convierte un video de un formato a otro, permtiendo opcionalmente ajustar la resolución y la calidad del video convertir-videos convertir-videos/convertir_videos.py">
+        <span class="ejercicio-num" aria-hidden="true">23</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/convertir-videos.html">Convertidor de vídeos</a></h3>
+          <p class="ejercicio-desc">Programa que convierte un video de un formato a otro, permtiendo opcionalmente ajustar la resolución y la calidad del video</p>
+        </div>
+      </article>
+    </section>
+    <section class="categoria" aria-labelledby="cat-tiempo-y-hábitos">
+      <h2 class="categoria-nombre" id="cat-tiempo-y-hábitos">Tiempo y hábitos</h2>
+      <article class="ejercicio" data-busqueda="cuenta atrás programa que pide al usuario un numero de tiempo inicial para iniciar un despegue, haciendo una cuentra regresiva del tiempo inicial hasta 1 y posteriormente hacer el despegue cuenta-tiempo-atras cuenta-tiempo-atras/cuenta_tiempo_atras.py">
+        <span class="ejercicio-num" aria-hidden="true">24</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/cuenta-tiempo-atras.html">Cuenta atrás</a></h3>
+          <p class="ejercicio-desc">Programa que pide al usuario un numero de tiempo inicial para iniciar un despegue, haciendo una cuentra regresiva del tiempo inicial hasta 1 y posteriormente hacer el despegue</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="pomodoro programa que simula un pomodoro método de gestión del tiempo desarrollado por francesco cirillo. el programa pide al usuario una lista de tareas separadas por espacios y inicia un temporizador de 25 minutos por cada tarea y un descanso de 5 minutos a cada tarea y en cada 4 tareas el tiempo de descanso aumenta a 15 minutos pomodoro pomodoro/pomodoro.py">
+        <span class="ejercicio-num" aria-hidden="true">25</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/pomodoro.html">Pomodoro</a></h3>
+          <p class="ejercicio-desc">Programa que simula un pomodoro método de gestión del tiempo desarrollado por Francesco cirillo. El programa pide al usuario una lista de tareas separadas por espacios y inicia un temporizador de 25 minutos por cada tarea y un descanso de 5 minutos a cada tarea y en cada 4 tareas el tiempo de descanso aumenta a 15 minutos</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="reloj alarma programa que simula una reloj alarma. pide al usuario configurar su alarma en un formato especifico, marca la alarma configurada y muestra el tiempo restante (horas y minutos) que faltan para sonar la alarma reloj-alarma reloj-alarma/reloj_alarma.py">
+        <span class="ejercicio-num" aria-hidden="true">26</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/reloj-alarma.html">Reloj alarma</a></h3>
+          <p class="ejercicio-desc">Programa que simula una reloj alarma. Pide al usuario configurar su alarma en un formato especifico, marca la alarma configurada y muestra el tiempo restante (horas y minutos) que faltan para sonar la alarma</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="reloj digital programa que simula un reloj digital, mostrando la hora actual cada segundo. reloj-digital reloj-digital/reloj_digital.py">
+        <span class="ejercicio-num" aria-hidden="true">27</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/reloj-digital.html">Reloj digital</a></h3>
+          <p class="ejercicio-desc">Programa que simula un reloj digital, mostrando la hora actual cada segundo.</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="rastreador de hábitos programa que permite al usuario agregar, registrar, marcar y mostrar hábitos diarios. además, permite ver el progreso de cada hábito registrado. rastreador-habitos-diarios rastreador-habitos-diarios/rastreador_habitos_diarios.py">
+        <span class="ejercicio-num" aria-hidden="true">28</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/rastreador-habitos-diarios.html">Rastreador de hábitos</a></h3>
+          <p class="ejercicio-desc">Programa que permite al usuario agregar, registrar, marcar y mostrar hábitos diarios. Además, permite ver el progreso de cada hábito registrado.</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="lista de tareas programa que permite agregar, marcar, eliminar y ver tareas, para añadir tarea se pide al usuario el nombre y se guarda con un id que incrementa automaticamente al estilo de una base de datos y además, se marca como incompleta, para permitir al usuario la opción de marcarla completada posteriormente, finalmente la eliminación de las tareas se hacen mediante eliminar el id. lista-to-do lista-to-do/lista_to_do.py">
+        <span class="ejercicio-num" aria-hidden="true">29</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/lista-to-do.html">Lista de tareas</a></h3>
+          <p class="ejercicio-desc">Programa que permite agregar, marcar, eliminar y ver tareas, para añadir tarea se pide al usuario el nombre y se guarda con un id que incrementa automaticamente al estilo de una base de datos y además, se marca como incompleta, para permitir al usuario la opción de marcarla completada posteriormente, finalmente la eliminación de las tareas se hacen mediante eliminar el ID.</p>
+        </div>
+      </article>
+    </section>
+    <section class="categoria" aria-labelledby="cat-visión-por-computador">
+      <h2 class="categoria-nombre" id="cat-visión-por-computador">Visión por computador</h2>
+      <article class="ejercicio" data-busqueda="detector de caras programa que detecta rostros que se posicionen frente a la cámara. utiliza la libreria opencv para abrir la camara y detectar los rostros. detector-cara-opencv detector-cara-opencv/detector_cara_opencv.py">
+        <span class="ejercicio-num" aria-hidden="true">30</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/detector-cara-opencv.html">Detector de caras</a></h3>
+          <p class="ejercicio-desc">Programa que detecta rostros que se posicionen frente a la cámara. Utiliza la libreria opencv para abrir la camara y detectar los rostros.</p>
+        </div>
+      </article>
+      <article class="ejercicio" data-busqueda="reconocimiento facial programa de reconocimiento facial usando las librerias opencv y face_recognition, compara el rostro de una imagen con el rostro que se posicione frente a la camara y verifica si coincide o no, mostrando el resultado de la comparación en el recuadro del detector de rostros y tambien muestra un aproximado de la distancia entre la coincidencia. sistema-reconocimiento-facial sistema-reconocimiento-facial/sistema_reconocimiento_facial.py">
+        <span class="ejercicio-num" aria-hidden="true">31</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/sistema-reconocimiento-facial.html">Reconocimiento facial</a></h3>
+          <p class="ejercicio-desc">Programa de reconocimiento facial usando las librerias opencv y face_recognition, compara el rostro de una imagen con el rostro que se posicione frente a la camara y verifica si coincide o no, mostrando el resultado de la comparación en el recuadro del detector de rostros y tambien muestra un aproximado de la distancia entre la coincidencia.</p>
+        </div>
+      </article>
+    </section>
+    <section class="categoria" aria-labelledby="cat-correo">
+      <h2 class="categoria-nombre" id="cat-correo">Correo</h2>
+      <article class="ejercicio" data-busqueda="envío de correos desde csv programa que lee un archivo csv y envia un correo electronico a los correos que encuentre enviar-correo-csv enviar-correo-csv/enviar_correo_csv.py">
+        <span class="ejercicio-num" aria-hidden="true">32</span>
+        <div class="ejercicio-info">
+          <h3 class="ejercicio-titulo"><a href="ejercicios/enviar-correo-csv.html">Envío de correos desde CSV</a></h3>
+          <p class="ejercicio-desc">Programa que lee un archivo csv y envia un correo electronico a los correos que encuentre</p>
+        </div>
+      </article>
+    </section>
       <p class="sin-resultados" id="sin-resultados" hidden>Ningún ejercicio coincide con la búsqueda.</p>
     </section>
 
@@ -693,1685 +295,8 @@
       <p>El repositorio está publicado bajo la licencia MIT. Los ejercicios pueden usarse, copiarse y modificarse libremente.</p>
     </section>
   </main>
-
-  <footer class="foot-dense">
-    <p>web-pythoncises · 32 ejercicios de Python · licencia MIT · construido sin frameworks.</p>
+  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
   </footer>
-
-<script type="text/plain" id="src-adivina-numero">
-"""
-    Programa genera un numero aleatorio del 1 al 100, le permite 10 intentos al usuario para adivinarlo 
-"""
-import random
-
-def genera_numero_secreto():
-    return random.randint(1, 100)
-
-numero_secreto = genera_numero_secreto()
-contador_intentos = 0
-gana = False
-
-while True:
-    numero_usuario = input("Adivina el numero secreto (enter para salir): ")
-
-    # Validación de salida
-    if not numero_usuario:
-        print("Adios")
-        break
-    
-    # Convertir el número a un entero
-    numero_usuario = int(numero_usuario)
-
-    # Verificación de número y aumento intentos si falla
-    if numero_usuario < numero_secreto:
-        contador_intentos += 1
-        print("El número secreto es mayor\n")
-    elif numero_usuario > numero_secreto:
-        contador_intentos += 1
-        print("El número secreto es menor\n")
-    else:
-        gana = True # marcar que gana
-        print("Has adivinado!!!")
-        break
-    
-    # Verificacion de intentos sin ganar
-    if contador_intentos == 10 and not gana:
-        print("Se te han acabado los intentos y no has adivinado")
-        break
-
-</script>
-<script type="text/plain" id="src-ahorcado">
-"""
-    Programa que simula el juego del ahorcado.
-    Toma una palabra aleatoria de una lista,
-    muestra el estado inicial del juego,
-    pide y valida una letra al usuario,
-    muestra el estado en cada intento indicando cuando haya ganado.
-"""
-import random
-
-# Representación del estado del ahorcado en cada intento
-PARTES_AHORCADO = [
-    """
-    +---+
-    |   |
-        |
-        |
-        |
-        |
-    =========
-    """,
-    """
-    +---+
-    |   |
-    O   |
-        |
-        |
-        |
-    =========
-    """,
-    """
-    +---+
-    |   |
-    O   |
-    |   |
-        |
-        |
-    =========
-    """,
-    """
-     +---+
-     |   |
-     O   |
-    /|   |
-         |
-         |
-    =========
-    """,
-    """
-     +---+
-     |   |
-     O   |
-    /|\\  |
-         |
-         |
-    =========
-    """,
-    """
-     +---+
-     |   |
-     O   |
-    /|\\  |
-    /    |
-         |
-    =========
-    """,
-    """
-     +---+
-     |   |
-     O   |
-    /|\\  |
-    / \\  |
-         |
-    =========
-    """
-]
-
-# Lista de palabras de longitud igual a 7
-PALABRAS = [
-    "amapola","bandera","botella","caballo","caminar","cuchara","familia","gallina","glaciar",
-    "hormiga","lagarto","lavanda","limones","manzana","medalla","mensual","militar","mirador","montana",
-    "narices","nublado","palmera","patinar","peluche","perfume","pintura","piragua","plumero","portada",
-    "pradera","ratones","recoger","regalos","rejilla","remover","resumen","rosales","sabores","sandias",
-    "sardina","semilla","soldado","sombrio","teatral","temblor","tiburon","tortuga","trabajo","trenzas",
-    "triunfo","trompas","valores","ventana","viajero","volador","zapatos","acechar","acordar","actuaba",
-    "ajedrez","anzuelo","apretar","arenoso","armario","arrojar","atender","aventar","azucena","balanza",
-    "barrera","bateria","bordado","brillar","buscaba","cabello","camello","cansado","caretas","carpeta",
-    "cartera","celular","cenizas","cerdito","cerezas","charcos","corazon","cristal","cuadros","culebra",
-    "delgado","dientes","dibujos","esferas","fragata","frontal","gigante","granero","habitos","heraldo",
-    "joyeria"
-]
-
-# Pedir y validar letra al usuario
-def pedir_letra(letras_adivinadas):
-    while True:
-        letra_usuario = input("Introduce una letra: ").strip().lower()
-
-        if len(letra_usuario) != 1 or not letra_usuario.isalpha:
-            print("Introduce una sola letra (a-z)")
-            continue
-
-        if letra_usuario in letras_adivinadas:
-            print("La letra ya ha sido adivinada")
-            continue
-        return letra_usuario
-
-# Muestra el estado de la palabra en cada intento
-def mostrar_intento(palabra, letras_adivinadas):
-    intento = [letra.upper() if letra in letras_adivinadas else "_" for letra in palabra]
-    print(' '.join(intento))
-
-# Logica principal del juego
-def jugar(palabras):
-    print("============================")
-    print("     JUEGO DEL AHORCADO     ")
-    print("============================")
-
-    palabra = random.choice(palabras)
-    letras_adivinadas = set()
-    intentos = len(palabra)-1
-
-    while intentos > 0:
-        print(PARTES_AHORCADO[len(PARTES_AHORCADO) - 1 - intentos])
-        mostrar_intento(palabra, letras_adivinadas)
-        
-        if all(letra in letras_adivinadas for letra in palabra):
-            print("Has ganado!")
-
-        letra_usuario = pedir_letra(letras_adivinadas)
-        letras_adivinadas.add(letra_usuario)
-
-        if letra_usuario not in palabra:
-            intentos -= 1
-            print(f"La letra no esta en la palabra. Te quedan {intentos} intentos")
-
-    print(PARTES_AHORCADO[-1])
-    print(f"Has perdido. La palabra era: {palabra}")
-
-# Iniciar el juego
-jugar(PALABRAS)
-</script>
-<script type="text/plain" id="src-piedra-papel-tijera">
-"""
-    Programa que simula el juego de piedra papel o tijera,
-    el usuario elige una de las opciones y la maquina tambien, 
-    finalmente muestra el ganador o empate.
-"""
-import random
-
-def verifica_ganador(opcion_usuario, opcion_maquina):
-    if opcion_usuario == "tijera" and opcion_maquina == "papel":
-        return "Has ganado!"
-    elif opcion_usuario == "papel" and opcion_maquina == "piedra":
-        return "Has ganado!"
-    elif opcion_usuario == "piedra" and opcion_maquina == "tijera":
-        return "Has ganado!"
-    elif opcion_usuario == opcion_maquina:
-        return "Empate!"
-    else:
-        return "Maquina gana!"
-
-opciones = ['piedra', 'papel', 'tijera']
-
-while True:
-    opcion_maquina = random.choice(opciones) # opción aleatoria entre las tres disponibles
-    opcion_usuario = input("Piedra, Papel o Tijera (enter para salir): ").lower()
-
-    # Verificar salida
-    if not opcion_usuario:
-        print("Adios")
-        break
-
-    print(f"La maquina elige: {opcion_maquina}")
-    print(verifica_ganador(opcion_usuario, opcion_maquina))
-</script>
-<script type="text/plain" id="src-dados-aleatorios">
-"""
-    Programa que simula un lanzador de dados,
-    pide al usuario un número de lanzamientos,
-    lanza el número de dados indicados y muestra
-    el valor de cada dado, la suma y el producto de todos
-"""
-
-import random
-
-# Lanzar los dados indicados
-def lanza_dados(numero):
-    valores_dados = []
-    contador = 0
-
-    while contador < numero:
-        dado = random.randint(1, 6)
-        valores_dados.append(dado)
-        contador += 1
-    
-    return valores_dados
-
-while True:
-    print("Opciones:")
-    print("1. Lanzar dados")
-    print("2. Salir")
-
-    opcion = input("Opcion: ")
-    if opcion == "1":
-        numero_dados = input("Introduce el numero de dados: ")
-        valores_dados = lanza_dados(int(numero_dados))
-        producto = valores_dados[0]
-
-        for i, valor in enumerate(valores_dados):
-            print(f"Dado {i+1}: {valor}")
-            
-            if i < len(valores_dados) - 1:
-                producto *= valores_dados[i+1]
-
-        print(f"\nSuma: {sum(valores_dados)}")
-        print(f"Producto: {producto}\n")
-    elif opcion == "2":
-        print("Adios")
-        break
-    else:
-        print("Opción no valida")
-</script>
-<script type="text/plain" id="src-patron-triangulo">
-"""
-    Programa que dibuja un triangulo de astericos
-"""
-
-filas = 5
-
-for i in range(1, filas + 1):
-    print(" " * (filas - i) + '*' * (2 * i -1))
-</script>
-<script type="text/plain" id="src-patron-triangulo-invertido">
-"""
-    Programa que dibuja un triangulo invertido de astericos
-"""
-
-filas = 5
-
-for i in range(filas, 0, -1):
-    print(" " * (filas - i) + '*' * (2 * i -1))
-</script>
-<script type="text/plain" id="src-patron-rombo">
-"""
-    Programa que dibuja un rombo de astericos
-"""
-
-filas = 5
-
-# Triangulo
-for i in range(1, filas + 1):
-    print(" " * (filas - i) + '*' * (2 * i -1))
-
-# Triangulo invertido
-for i in range(filas - 1, 0, -1):
-    print(" " * (filas - i) + '*' * (2 * i -1))
-</script>
-<script type="text/plain" id="src-calculadora">
-"""
-    Programa que hace la funciones basica de una calculadora, 
-    pidiendole al usuario dos operando y un operador,
-    finalmente muestra el resultado de la operación.
-"""
-
-def calculo(primer_operando, operador, segundo_operando):
-    if operador == "+":
-        return  primer_operando + segundo_operando
-    elif operador == "-":
-        return primer_operando - segundo_operando
-    elif operador == "*":
-        return primer_operando * segundo_operando
-    elif operador == "/":
-        if segundo_operando != 0:
-            return primer_operando / segundo_operando
-        return ZeroDivisionError # Devolver excepción cuando intenta dividir por cero
-    return None # Devolver None cuando el operador no es valido
-
-primer_operando = input("Introduce el primer operando: ")
-operador = input("Introduce el operador (+, -, *, /): ")
-segundo_operando = input("Introduce el segundo operando: ")
-
-# Diccionario de operador como clave y su respectiva operación como valor
-operador_operacion = {
-    "+": "suma",
-    "-": "resta",
-    "*": "multiplicación",
-    "/": "división"
-}
-
-resultado = calculo(int(primer_operando), operador, int(segundo_operando))
-
-# Verificar resultado y mostra mensaje de error o resultado de operacion
-if resultado is ZeroDivisionError:
-    print("No se puede dividir por cero")
-elif resultado is None:
-    print("El operador no es valido")
-else:
-    print(f"Resultado de la {operador_operacion.get(operador)} es: {resultado}")
-</script>
-<script type="text/plain" id="src-calculadora-indice-masa-corporal">
-"""
-    Programa que pide al usuario su peso y altura,
-    calcula su indice de masa corporal y muestra el resultado
-"""
-
-peso = input("Introduce tu peso en kg: ")
-altura = input("Introduce tu altura en m: ")
-
-imc = float(peso) / (float(altura)**2)
-
-print(f"Tu indice de masa corporal es: {imc:.2f}")
-</script>
-<script type="text/plain" id="src-calculadora-propina">
-"""
-    Programa que calcula la propina y el monto total de una cuenta.
-    Pide al usuario el monto de la cuenta y el porcentaje de la propina 
-    y muestra el monto total de la cuenta y la propina a pagar
-"""
-monto_cuenta = input("Introduce el monto de la cuenta: ")
-porcentaje_propina = input("Introduce el porcentaje de la propina: ")
-
-monto_cuenta_entero = float(monto_cuenta)
-porcentaje_propina_entero = float(porcentaje_propina)
-
-propina = (porcentaje_propina_entero / 100) * monto_cuenta_entero # Calculo de la propina
-
-monto_total_cuenta = monto_cuenta_entero + propina
-
-print(f"Monto total: {monto_total_cuenta}")
-print(f"Propina: {propina}")
-</script>
-<script type="text/plain" id="src-convertidor-moneda">
-"""
-    Programa que pide una cantidad, una moneda de origen, una moneda destino al usuario,
-    y utiliza la API de frankfurter para obtener los datos de la conversion,
-    finalmente muestra el resultado
-"""
-import requests
-
-def convertir_moneda(cantidad, origen, destino):
-    url = f"https://api.frankfurter.app/latest?amount={cantidad}&from={origen}&to={destino}"
-
-    respuesta = requests.get(url) # Petición get a la API
-    datos = respuesta.json() # Convertir la respuesta a JSON
-    return datos
-
-cantidad = input("Introduce la cantidad: ")
-moneda_origen = input("Introduce la moneda origen: ").upper()
-moneda_destino = input("Introduce la moneda destino: ").upper()
-
-conversion = convertir_moneda(cantidad, moneda_origen, moneda_destino)
-
-if 'not found' in conversion.values():
-    print("Lo sentimos. No hay datos para esta conversión")
-else:
-    resultado = conversion['rates'][moneda_destino]
-    print(f"{cantidad} {moneda_origen} = {resultado:.2f} {moneda_destino}")
-</script>
-<script type="text/plain" id="src-corta-url">
-"""
-    Programa que acorta una url larga.
-    Pide al usuario la url larga y retorna la url corta
-"""
-import random
-
-""" 
-    Deberia sustituir esta diccionario por un archivo JSON o una base de datos, 
-    ya que los datos solo son persistentes en un archivo o una base de datos. 
-    Recomendable y seguro en una base de datos
-""" 
-urls = {}
-
-# Debe ser tu servidor real
-MI_SERVIDOR = "https://miservidor.com/" 
-
-def generar_codigo_corto():
-    caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-
-    codigo = [random.choice(caracteres) for _ in range(8)]
-    return ''.join(codigo)
-
-def validar_codigo(codigo):
-    while codigo in urls.keys():
-        codigo = generar_codigo_corto()
-    return codigo
-
-def acorta_url(codigo, url_larga):
-    urls[codigo] = url_larga
-    return MI_SERVIDOR + codigo
-
-def redirigir(codigo_corto):
-    if codigo_corto in urls.keys():
-        ulr_larga = urls.get(codigo_corto)
-        return ulr_larga
-    else:
-        print("URL no encontrada")
-
-url = input("Introduce la URL a acortar: ")
-
-codigo = generar_codigo_corto()
-codigo_valido = validar_codigo(codigo)
-
-url_corta = acorta_url(codigo, url)
-url_redirigida = redirigir(codigo_valido)
-
-print(f"URL corta: {url_corta}")
-print(f"URL larga: {url_redirigida}")
-</script>
-<script type="text/plain" id="src-generador-contraseñas">
-"""
-    Programa que pide una longitud al usuario y
-    genera una contraseña con esa longitud
-"""
-import random
-
-# Todos los caracteres posibles de una contraseña
-caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
-
-longitud = input("Introduce la longitud de la contraseña: ")
-
-contrasena = "".join(random.choice(caracteres) for _ in range(int(longitud)))
-
-print(f"La contraseña generada es: {contrasena}")
-</script>
-<script type="text/plain" id="src-generador-chiste-random">
-"""
-    Programa que genera un chiste por petición, muestra un menu de dos opciones al usuario, permitiendo generar un chiste y salir del generador.
-"""
-import random
-import os
-import time
-
-def limpiar_pantalla():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-def obtener_chiste(lista):
-    return random.choice(lista)
-
-lista_chistes = [
-    "¿Por qué el libro de matemáticas estaba triste? Porque tenía demasiados problemas.",
-    "¿Cómo se despiden los químicos? Ácido un placer.",
-    "¿Qué hace una abeja en el gimnasio? ¡Zum-ba!",
-    "¿Por qué los pájaros no usan Facebook? Porque ya tienen Twitter.",
-    "¿Qué le dice un jardinero a otro? ¡Disfruta tu día, hoja!",
-    "¿Qué hace una vaca cuando sale el sol? Sombra.",
-    "¿Por qué los esqueletos no pelean entre ellos? Porque no tienen agallas.",
-    "¿Cómo se llama un boomerang que no vuelve? Palo.",
-    "¿Cuál es el café más peligroso del mundo? El ex-preso.",
-    "¿Por qué los peces no usan computadoras? Porque les da miedo el net.",
-    "¿Qué hace un programador cuando tiene frío? Se pone un 'loop'.",
-    "¿Por qué los programadores confunden Halloween con Navidad? Porque OCT 31 = DEC 25.",
-    "¿Cuántos programadores hacen falta para cambiar una bombilla? Ninguno, eso es un problema de hardware.",
-    "¿Por qué Python es tan tranquilo? Porque no tiene punteros.",
-    "¿Qué le dice un bit a otro bit? Nos vemos en el bus.",
-    "¿Cómo llamas a un gato que sabe programar? Un purr-ogramador.",
-    "¿Qué hace un HTML en una fiesta? Se divierte en línea.",
-    "¿Por qué Java es tan optimista? Porque siempre encuentra una excepción.",
-    "¿Cómo se llama un programador sin novia? Soltero (null pointer).",
-    "¿Qué le dice un array vacío a otro array vacío? '¿Nos encontramos en la memoria?'",
-    "¿Por qué los pájaros no usan el ordenador? Porque les da miedo el ratón.",
-    "¿Cómo se despiden los programadores? ¡Hasta el próximo ciclo!",
-    "¿Qué hace un electricista en la computadora? Toma un byte.",
-    "¿Por qué los esqueletos no pelean en línea? Porque se les cae el backbone.",
-    "¿Qué le dice un bug a otro bug? ¡Corre que nos van a depurar!",
-    "¿Cuál es el colmo de un jardinero? Que siempre lo planten.",
-    "¿Qué hace una computadora en la playa? Surf en la web.",
-    "¿Por qué los programadores aman el café? Porque les da Java.",
-    "¿Qué hace un bit triste? Se convierte en un 0 solitario.",
-    "¿Cuál es el colmo de un carpintero? Que siempre lo claven.",
-    "¿Por qué los fantasmas aman el ascensor? Porque les sube el espíritu.",
-    "¿Qué le dice un diodo a otro? 'No me pases corriente.'",
-    "¿Cuál es el animal más antiguo? La cebra, porque está en blanco y negro.",
-    "¿Cómo se despiden los químicos? Ácido un gusto.",
-    "¿Qué hace una abeja en el gimnasio? ¡Zum-ba!",
-    "¿Por qué los peces no usan internet? Porque les da miedo la red.",
-    "¿Cuál es el colmo de un electricista? Que no tenga corriente.",
-    "¿Qué hace un programador en el desierto? Busca la función oasis().",
-    "¿Por qué los programadores aman el teclado? Porque les da espacio.",
-    "¿Qué le dice un bug a un programador? 'Nos vemos en producción.'",
-    "¿Cuál es el colmo de un astronauta? Que siempre esté en las nubes.",
-    "¿Qué hace un matemático en la playa? Suma arena.",
-    "¿Por qué los programadores odian la playa? Porque tiene demasiadas arenas de bits.",
-    "¿Cómo llamas a un programador dormido? Un thread inactivo.",
-    "¿Qué hace un router en la fiesta? Dirige el tráfico.",
-    "¿Por qué el ordenador fue al doctor? Porque tenía un virus.",
-    "¿Cuál es el colmo de un panadero? Que siempre lo amasen.",
-    "¿Qué hace un array en el gimnasio? Se estira.",
-    "¿Por qué los programadores aman los videojuegos? Porque siempre tienen loops infinitos.",
-    "¿Qué hace un bit en la fiesta? Se mezcla con otros bits.",
-    "¿Cómo se llama un gato que sabe usar Git? Un commit felino.",
-    "¿Qué hace un ordenador en la cocina? Procesa datos.",
-    "¿Por qué los programadores usan lentes? Para ver el código claro.",
-    "¿Cuál es el colmo de un fotógrafo? Que siempre lo enfoquen.",
-    "¿Qué hace un HTML triste? Se queda sin estilo.",
-    "¿Por qué los programadores aman Python? Porque no tiene problemas de sintaxis.",
-    "¿Qué hace un electricista en la fiesta? Se conecta.",
-    "¿Cómo se despiden los químicos? Hasta la reacción.",
-    "¿Qué hace un matemático en el parque? Integra.",
-    "¿Por qué los fantasmas no mienten? Porque se les ve a través.",
-    "¿Qué hace un programador en la cocina? Depura la receta.",
-    "¿Cuál es el colmo de un panadero? Que siempre lo amasen.",
-    "¿Qué hace un array feliz? Se llena de valores.",
-    "¿Por qué los programadores aman los loops? Porque nunca terminan.",
-    "¿Qué hace un bug en vacaciones? Se esconde.",
-    "¿Cómo se llama un dinosaurio programador? Dino-code.",
-    "¿Qué hace un router triste? Se desconecta.",
-    "¿Por qué los programadores aman el chocolate? Porque es sweet y tiene bytes.",
-    "¿Qué le dice un cero a un ocho? ¡Bonito cinturón!",
-    "¿Cuál es el colmo de un carnicero? Que siempre lo corten.",
-    "¿Qué hace un bug en el ordenador? Se multiplica.",
-    "¿Por qué los programadores odian los ascensores? Porque prefieren los bucles.",
-    "¿Cómo se llama un ordenador lento? Tortu-PC.",
-    "¿Qué hace un matemático en la fiesta? Suma amigos.",
-    "¿Por qué los fantasmas aman los puzzles? Porque encajan perfectamente.",
-    "¿Qué hace un bit rebelde? Cambia su valor.",
-    "¿Cómo se despiden los hackers? Ctrl+Alt+Adiós.",
-    "¿Qué hace un array vacío? Nada.",
-    "¿Por qué JavaScript es travieso? Porque siempre cambia de tipo.",
-    "¿Qué hace un bug en la red? Intercepta paquetes.",
-    "¿Cuál es el colmo de un cartero? Que nunca le lleguen cartas.",
-    "¿Qué hace un programador en la playa? Debuggea la arena.",
-    "¿Por qué los ordenadores nunca tienen hambre? Porque siempre tienen bytes.",
-    "¿Qué hace un bit en la playa? Nada, es un 0.",
-    "¿Cómo se llama un programador valiente? Code-hero.",
-    "¿Qué hace un router feliz? Distribuye alegría.",
-    "¿Por qué los programadores aman Linux? Porque es libre.",
-    "¿Qué hace un bug en un programa? Rompe la diversión.",
-    "¿Cuál es el colmo de un músico? Que siempre lo desafinen.",
-    "¿Qué hace un array enojado? Se sale de rango.",
-    "¿Por qué los fantasmas aman el código? Porque es transparente.",
-    "¿Qué hace un programador romántico? Le declara amor al código.",
-    "¿Cómo se despiden los programadores? ¡Nos vemos en el próximo commit!",
-    "¿Qué hace un bug en el servidor? Espera para atacar.",
-    "¿Por qué Python es feliz? Porque todo es un objeto.",
-    "¿Qué hace un electricista en la playa? Se conecta al sol.",
-    "¿Cuál es el colmo de un pintor? Que siempre lo borren.",
-    "¿Qué hace un array divertido? Se llena de risas.",
-    "¿Por qué los programadores aman los loops infinitos? Porque nunca quieren salir del código.",
-    "¿Qué hace un bug juguetón? Se esconde entre líneas.",
-    "¿Cómo se llama un programador que canta? Code-ardo.",
-    "¿Qué hace un router aburrido? Se desconecta.",
-    "¿Por qué los ordenadores aman el chocolate? Porque tienen bytes dulces.",
-    "¿Qué hace un bug en vacaciones? Se esconde y descansa.",
-    "¿Cuál es el colmo de un jardinero? Que lo planten todos los días."
-]
-
-while True:
-    print("Bienvenido al generador de chistes")
-    print("1. Generar chiste")
-    print("2. Salir")
-
-    opcion = input("Elige una opcion: ")
-
-    if opcion == "1":
-        chiste = obtener_chiste(lista_chistes)
-        print(f"Chiste: {chiste}")
-        time.sleep(10) # Espera de 10 segundos
-        limpiar_pantalla()
-    elif opcion == "2":
-        print("Adios")
-        break
-</script>
-<script type="text/plain" id="src-historias-divertidas">
-"""
-    Programa que pide palabras al usuario y genera una historia divertida con esa palabras y se la muestra al usuario
-"""
-import random
-
-templates = [
-    "Hoy fui al {lugar} para {verbo1}. Allí vi un {animal} muy {adjetivo}. Me sentí tan {emocion} que decidí {verbo2} con él.",
-    "Nunca pensé que ir al {lugar} para {verbo1} sería tan divertido. Un {animal} {adjetivo} apareció y me hizo sentir {emocion}. Al final, tuve que {verbo2}.",
-    "En {lugar}, mientras intentaba {verbo1}, un {animal} {adjetivo} cruzó mi camino. Esto me hizo sentir {emocion} y terminé {verbo2}.",
-    "Mi día en {lugar} empezó intentando {verbo1}, pero todo cambió cuando un {animal} {adjetivo} apareció. Me puse {emocion} y decidí {verbo2}.",
-    "Fui al {lugar} con la intención de {verbo1}. Entonces vi un {animal} {adjetivo} que me hizo sentir {emocion}. Sin pensarlo, empecé a {verbo2}.",
-    "Mientras estaba en {lugar}, intentando {verbo1}, un {animal} {adjetivo} apareció de la nada. Me sentí {emocion} y tuve que {verbo2}.",
-    "El {animal} {adjetivo} en {lugar} me sorprendió mientras quería {verbo1}. Esto me hizo sentir {emocion} y no pude evitar {verbo2}.",
-    "Fui a {lugar} para {verbo1} y encontré un {animal} {adjetivo}. Me llenó de {emocion} y terminé {verbo2}.",
-    "Qué día en {lugar}: estaba {verbo1} cuando un {animal} {adjetivo} apareció. Me sentí {emocion} y decidí {verbo2}.",
-    "Mientras {verbo1} en {lugar}, un {animal} {adjetivo} me hizo sentir {emocion}. Así que tuve que {verbo2} inmediatamente.",
-    "Nunca olvidaré cuando fui a {lugar} a {verbo1}. Un {animal} {adjetivo} me vio y de repente me sentí {emocion}. Terminé {verbo2} sin pensar.",
-    "Hoy en {lugar} decidí {verbo1}. De repente apareció un {animal} {adjetivo}, y me sentí tan {emocion} que tuve que {verbo2}.",
-    "Estaba {verbo1} en {lugar} cuando un {animal} {adjetivo} se cruzó en mi camino. Sentí {emocion} y terminé {verbo2}.",
-    "Fui a {lugar} solo para {verbo1}, pero un {animal} {adjetivo} apareció. Me puse {emocion} y tuve que {verbo2}.",
-    "En {lugar}, mientras intentaba {verbo1}, un {animal} {adjetivo} hizo que me sintiera {emocion}. Sin pensarlo, empecé a {verbo2}.",
-    "Hoy, al llegar a {lugar} para {verbo1}, un {animal} {adjetivo} me sorprendió. Me sentí {emocion} y decidí {verbo2}.",
-    "Nunca imaginé que {verbo1} en {lugar} terminaría con un {animal} {adjetivo} y tanta {emocion}. Finalmente, tuve que {verbo2}.",
-    "Mientras {verbo1} en {lugar}, apareció un {animal} {adjetivo}. Me llenó de {emocion} y no pude evitar {verbo2}.",
-    "El día comenzó normal en {lugar}, intentaba {verbo1} hasta que apareció un {animal} {adjetivo}. Me sentí {emocion} y terminé {verbo2}.",
-    "Fui a {lugar} para {verbo1}, pero un {animal} {adjetivo} hizo que todo cambiara. Me puse {emocion} y terminé {verbo2}."
-]
-
-# Pedir palabras al usuario
-lugar = input("Ingresa un lugar: ")
-verbo1 = input("Ingresa un verbo: ")
-animal = input("Ingresa un animal: ")
-adjetivo = input("Ingresa un adjetivo: ")
-emocion = input("Ingresa una emoción: ")
-verbo2 = input("Ingresa otro verbo: ")
-
-# Obtener un template random de la lista
-template = random.choice(templates)
-
-# formatear el template con las palabras del usuario
-historia = template.format(
-    lugar=lugar,
-    verbo1=verbo1,
-    animal=animal,
-    adjetivo=adjetivo,
-    emocion=emocion,
-    verbo2=verbo2
-)
-
-# Mostrar la historia
-print("Historia generada:\n")
-print(historia)
-</script>
-<script type="text/plain" id="src-partes-correo">
-"""
-    Programa que lee cualquier archivo que sea de texto
-    y busca los correos electronicos y muestras sus partes 
-    (nombre y dominio)
-"""
-import os
-
-nombre_archivo = input("Introduce el nombre del archivo: ")
-
-# Verificar que el archivo existe antes de leer
-if os.path.exists(nombre_archivo):
-    with open(nombre_archivo, "r") as archivo:
-        for linea in archivo:
-            linea = linea.strip()
-
-            if "@" in linea:
-                partes = linea.split("@")
-
-                nombre_usuario = partes[0]
-                dominio = partes[1]
-
-                print(f"Nombre usuario: {nombre_usuario}")
-                print(f"Dominio: {dominio}")
-else:
-    print(f"El archivo {nombre_archivo} no existe")
-</script>
-<script type="text/plain" id="src-convertir-markdown-html">
-"""
-    Programa que convierte un archivo markdown a un archivo html.
-    Utiliza la libreria markdown para realizar la conversión
-"""
-import os
-import markdown
-
-def leer_markdown(ruta_archivo):
-    with open(ruta_archivo, "r") as md:
-        contenido = md.read()
-    return contenido
-
-def convertir_markdown_html(texto_md):
-    html = markdown.markdown(texto_md)
-    return html
-    
-def guardar_html(ruta_destino, contenido_html):
-    with open(ruta_destino, "w") as html:
-        html.write(contenido_html)
-
-ruta_archivo_md = input("Introduce la ruta absoluta del archivo markdown: ")
-
-if not os.path.exists(ruta_archivo_md):
-    print("El archivo no existe")
-else:
-    texto_md = leer_markdown(ruta_archivo_md)
-    html = convertir_markdown_html(texto_md)
-
-    ruta_destino_html = "index.html"
-    html_guardado = guardar_html(ruta_destino_html, html)
-</script>
-<script type="text/plain" id="src-combinar-pdfs">
-"""
-    Programa que une pdfs usando la libreria PyPDF2.
-    Toma los pdfs de un directorio y los une en un solo
-    pdf.
-"""
-import os
-from PyPDF2 import PdfMerger
-
-merger = PdfMerger()
-
-directorio = "pdfs"
-pdfs = os.listdir(directorio)
-ruta_destino = "combinacion.pdf"
-
-for pdf in pdfs:
-    ruta_pdf = os.path.join(directorio, pdf)
-    merger.append(ruta_pdf)
-
-merger.write(ruta_destino)
-merger.close()
-
-print(f"PDF combinacion en {ruta_destino}")
-</script>
-<script type="text/plain" id="src-marca-agua">
-"""
-    Programa que inserta marca de agua en imagenes
-"""
-from PIL import Image, ImageDraw, ImageFont
-
-"""
-    La imagen se convierte a un modo de color con canal alfa.
-
-    El canal alfa controla la opacidad.
-
-    Para marcas de agua con trasparencias se necesita que la imagen soporte el canal alfa, porque si la imagen solo soporta RGB no se puede insertar la capa de texto semitransparente correctamente.
-"""
-# Abrir la imagen convertida a RGBA
-imagen = Image.open("imagen.jpg").convert("RGBA")
-
-# Caracteristicas de la marca de agua
-marca_agua = "JeironPro"
-tamano_texto = 150
-margen_derecho = 75
-margen_inferior = 75
-
-"""
-    El método ImageFont.truetype carga las fuentes TrueType(TTF) para poder usarla al dibujar la marca de agua en la imagen.
-
-    Recibe la ruta de la fuente y el tamaño como un entero que representa pixeles.
-
-    Devuelve un objeto ImageFont.FreeTypeFont que podemos usar con ImageDraw.text() para dibujar texto con la fuente que se ha indicado y el tamaño.
-"""
-# Usar un fuente del sistema para pasarla al texto de la marca de agua
-fuente = ImageFont.truetype("/usr/share/fonts/open-sans/OpenSans-Bold.ttf", tamano_texto)
-
-# Crear una nueva capa transparente para insertarla en la imagen
-capa = Image.new("RGBA", imagen.size, (255, 255, 255, 0))
-
-"""
-    El método ImageDraw.Draw(capa) crea un objeto (lienzo) para dibujar sobre la imagen.
-
-    Permite dibujar texto, líneas, formas, rectángulos, círculos, etc. sobre la imagen. En este caso la imagen es una capa trasparente.
-"""
-dibujo = ImageDraw.Draw(capa)
-
-"""
-    El método dibujo.textbbox(posociones, texto, fuente) se usa para medir el tamaño exacto del texto antes de dibujarlo.
-
-    Devuelve una caja delimitadora (bounding box) del texto que deseamos dibujar. Con exactitud te dice cuánto espacio ocupará el texto en pixeles, teniendo en cuenta la fuente y el tamaño.
-"""
-tamano_exacto_texto = dibujo.textbbox((0, 0), marca_agua, font=fuente)
-"""
-    Toma las posiciones x1, x0 para calcula cuanto mide horizontalmente, restando los valores a la inversa
-"""
-ancho_texto = tamano_exacto_texto[2] - tamano_exacto_texto[0] 
-"""
-    Toma las posiciones y1, y0 para calcula cuanto mide verticalmente, restando los valores a la inversa
-"""
-alto_texto = tamano_exacto_texto[3] - tamano_exacto_texto[1]
-
-"""
-    Posiciones del plano cartesiano a la se va a dibujar el texto en la capa (imagen).
-    
-    La posición x (horizontal) se obtiene restando el ancho de la imagen con el ancho del texto y el margen horizontal.
-
-    La posición y (vertical) se obtiene restando el alto de la imagen con el alto del texto y el margen vertical.
-"""
-posicion_x = imagen.width - ancho_texto - margen_derecho
-posicion_y = imagen.height - alto_texto - margen_inferior
-
-# Dibujar texto en la capa
-dibujo.text((posicion_x, posicion_y), marca_agua, font=fuente, fill=(255, 255, 255, 180))  # fill es el color del texto
-
-"""
-    El método Image.alpha_composite(imagen, capa) sirve para combinar dos imágenes que tienen canal alfa (transparencia), superponiendo la segunda sobre la primera.
-"""
-imagen_final = Image.alpha_composite(imagen, capa)
-
-"""
-    Para obtener la imagen con la marca de agua, se convierta a imagen sin transparencia RGB o mejor dicho sin canal alfa y se guarda en una nueva ruta o nombre de imagen con su formato original
-"""
-imagen_final.convert("RGB").save("imagen_marca_agua.jpg")
-print("Marca de agua agregada correctamente")
-</script>
-<script type="text/plain" id="src-extraer-texto-pdf-ocr">
-"""
-    Programa que escanea documentos pdf usando OCR (Optical Character Recognition o Reconocimiento Óptico de Caracteres) que es un tecnica que se utiliza para leer texto desde imágenes o documentos y convertirlos a texto editable
-"""
-import fitz
-import pytesseract
-from pdf2image import convert_from_path
-
-ruta_archivo = "comandos_esenciales_docker_engine.pdf"
-
-texto_total = ""
-
-# Abrir el documento
-documento_pdf = fitz.open(ruta_archivo)
-
-# Iterar cada página del documento
-for numero, pagina in enumerate(documento_pdf, start=1):
-    texto = pagina.get_text().strip() # Obtener el texto
-
-    # Si el documento no tiene texto, tratar imagenes
-    if not texto:
-        print(f"Página {numero}: sin texto, aplicando OCR...")
-        # Tratar el documento como imagen
-        imagen = convert_from_path(ruta_archivo, first_page=numero, last_page=numero)[0]
-        # Usar ocr para convertir la imagen en texto
-        texto = pytesseract.image_to_string(imagen)
-    else:
-        print(f"Página {numero}: texto digital detectado")
-    
-    # Guardar el texto de cada pagina 
-    texto_total += f"\n--- Página {numero} ---\n{texto}\n"
-
-# Mostrar el texto obtenido
-print(texto_total)
-</script>
-<script type="text/plain" id="src-herramienta-renombra-archivo">
-"""
-    Programa que renombra archivo.
-    Pide al usuario la ruta del archivo y el nuevo nombre,
-    verifica si el archivo existe y lo renombra,
-    de lo contrario muestra un mensaje de error
-"""
-import os
-
-ruta_archivo = input("Introduce la ruta del archivo: ")
-nuevo_nombre = input("Introduce el nuevo nombre: ")
-# Obtener el directorio de la ruta ruta del archivo
-directorio_archivo = os.path.dirname(ruta_archivo)
-
-# Verificar si el archivo existe
-if os.path.exists(ruta_archivo):
-    # Ruta completa del nuevo nombre
-    directorio_nuevo_nombre = os.path.join(directorio_archivo, nuevo_nombre)
-
-    # Renombrar el archivo
-    os.rename(ruta_archivo, directorio_nuevo_nombre)
-    print(f"Archivo {ruta_archivo} renombrado a {directorio_nuevo_nombre}")
-else:
-    print("El archivo no existe")
-</script>
-<script type="text/plain" id="src-organizador-archivos">
-"""
-    Programa que organiza archivos en carpetas segun
-    su extension. En una carpeta pueden ir archivos
-    de mas de una extensión
-"""
-import os
-import shutil
-
-carpeta_archivos = {
-    "documentos": ['pdf', 'txt', 'json', 'docx'],
-    "hoja_de_calculo": ['xlsx', 'csv'],
-    "imagenes": ['jpg', 'gif', 'png', 'jpeg'],
-    "audios": ['mp3'],
-    "videos": ['mp4', 'mkv', 'mov'],
-    "codigo": ['py', 'js', 'java', 'c', 'html']
-}
-
-directorio = "archivos"
-
-archivos = os.listdir(directorio)
-
-for archivo in archivos:
-    partes = archivo.split(".")
-
-    # Verificar si el archivo es valido
-    if len(partes) < 2: 
-        continue
-
-    # Tomar la extensión del archivo
-    extension = partes[-1].lower()
-
-    for carpeta, extensiones in carpeta_archivos.items():
-        if extension in extensiones:
-            ruta_carpeta = os.path.join(directorio, carpeta)
-            ruta_origen = os.path.join(directorio, archivo)
-            ruta_destino = os.path.join(ruta_carpeta, archivo)
-
-            # Verificar y crear la carpeta de cada grupo de archivos
-            if not os.path.exists(ruta_carpeta):
-                os.makedirs(ruta_carpeta, exist_ok=True)
-                print(f"Carpeta: {carpeta} creada correctamente")
-
-            # Mover el archivo a su respectiva carpeta
-            shutil.move(ruta_origen, ruta_destino)
-            print(f"Archivo: {archivo} organizado en {ruta_destino}")
-            break
-</script>
-<script type="text/plain" id="src-convertir-videos">
-"""
-    Programa que convierte un video de un formato a otro,
-    permtiendo opcionalmente ajustar la resolución y la calidad del video
-"""
-import os
-from moviepy import VideoFileClip
-
-ruta_video = input("Ingrese la ruta del video: ")
-
-# Verificar si el video existe
-if not os.path.exists(ruta_video):
-    print("El video no existe")
-    exit()
-
-# Cargar el video
-video = VideoFileClip(ruta_video)
-
-formato_destino = input("Ingrese el formato de salida deseado (ej: mp4, avi, mov): ")
-
-cambio_resolucion = input("Desea cambiar la resolución del video? (si/no): ")
-
-# Resolución original del video
-ancho_resolucion = video.size[0]
-alto_resolucion = video.size[1]
-
-if cambio_resolucion == "si":
-    resolucion = input("Ingresa la nueva resolución (ej: 1920x1080): ")
-
-    partes_resolucion = resolucion.split("x")
-
-    if len(partes_resolucion) == 2:
-        ancho_resolucion = int(partes_resolucion[0])
-        alto_resolucion = int(partes_resolucion[1])
-    else:
-        print("Formato de resolución no válido")
-        exit()
-
-cambio_calidad = input("Desea cambiar la calidad o bitrate del video? (si/no): ")
-calidad = None
-
-if cambio_calidad == "si":
-    calidad = input("Ingrese el bitrate deseado en kbps (ej: 2000): ")
-
-# Verificar y ajustar valores de resolución
-if ancho_resolucion and alto_resolucion:
-    video = video.resized((ancho_resolucion, alto_resolucion))
-
-calidad_valida = None
-# Verificar y validad calidad
-if calidad:
-    calidad_valida = f"{calidad}k"
-
-video.write_videofile(
-    f"video_convertido.{formato_destino}",
-    codec="libx264",
-    bitrate=calidad_valida
-)   
-</script>
-<script type="text/plain" id="src-cuenta-tiempo-atras">
-"""
-    Programa que pide al usuario un numero de tiempo inicial
-    para iniciar un despegue, haciendo una cuentra regresiva
-    del tiempo inicial hasta 1 y posteriormente hacer el despegue 
-"""
-import time
-
-tiempo_inicial = input("Introduce el tiempo inicial: ")
-contador = int(tiempo_inicial)
-
-print("Iniciando cuenta regresiva...")
-
-while contador > 0:
-    print(contador)
-    contador -= 1
-    time.sleep(0.5) # espera de 5 milisegundos
-
-print("Despegue!!!")
-</script>
-<script type="text/plain" id="src-pomodoro">
-"""
-    Programa que simula un pomodoro método de gestión del tiempo desarrollado por Francesco cirillo. El programa pide al usuario una lista de tareas separadas por espacios y inicia un temporizador de 25 minutos por cada tarea y un descanso de 5 minutos a cada tarea y en cada 4 tareas el tiempo de descanso aumenta a 15 minutos
-"""
-import os
-import time
-
-def limpiar_pantalla():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-def temporizador(minutos, mensaje):
-    print("¡Inicia el tiempo regresivo!")
-    for minuto in range(minutos, 0, -1):
-        for segundo in range(59, -1, -1):
-            print(f"{mensaje} - {minuto-1:02d}:{segundo:02d}", end="\r")
-            time.sleep(1)
-    print()
-
-def pomodoro(tareas):
-    contador = 0
-
-    for tarea in tareas:
-        contador+= 1
-        limpiar_pantalla()
-        print(f"Pomodoro {contador} - Tarea: {tarea}")
-        temporizador(25, "Trabajando")
-        print("¡Pomodoro terminado!")
-
-        if contador % 4 != 0:
-            temporizador(5, "Descansando")
-        else:
-            temporizador(15, "Descansando")
-
-tareas_usuario = input("Introduce una lista de taras separadas por espacios: ")
-lista_tareas = tareas_usuario.split()
-
-pomodoro(lista_tareas)
-print("¡Todos los Pomodoros completados!")
-</script>
-<script type="text/plain" id="src-reloj-alarma">
-"""
-    Programa que simula una reloj alarma. 
-    Pide al usuario configurar su alarma en un formato especifico,
-    marca la alarma configurada y muestra el tiempo restante (horas y minutos) 
-    que faltan para sonar la alarma
-"""
-import time
-
-alarma = input("Configura la hora de la alarma en formato 24H (ej: 7:45): ")
-
-# Validar formato
-if ":" not in alarma or len(alarma.split(":")) != 2:
-    print("Formato no valido")
-else:
-    partes = alarma.split(":")
-    hora_objetivo = int(partes[0])
-    minutos_objetivo = int(partes[1])
-
-    print(f"Alarma configurada a las {alarma}")
-
-    while True:
-        ahora = time.localtime()
-        hora_actual = ahora.tm_hour
-        minutos_actuales = ahora.tm_min
-        segundos_actuales = ahora.tm_sec
-
-        # Verificar si la hora es la alarma configurada
-        if hora_actual == hora_objetivo and minutos_actuales == minutos_objetivo:
-            print("ALARMA ACTIVADA")
-            break
-        else:
-            horas_faltantes = hora_objetivo - hora_actual
-            minutos_faltantes = minutos_objetivo - minutos_actuales
-
-            # Verificar minutos faltantes
-            if minutos_faltantes < 0:
-                minutos_faltantes += 60
-                horas_faltantes -= 1
-            
-            # Verificar horas faltantes
-            if horas_faltantes < 0:
-                horas_faltantes += 24
-
-            print(f"Faltan {horas_faltantes} horas y {minutos_faltantes} {"minutos" if minutos_faltantes > 1 else "minuto"}")
-            time.sleep(60 - segundos_actuales) # Espera del siguiente minuto
-</script>
-<script type="text/plain" id="src-reloj-digital">
-"""
-    Programa que simula un reloj digital, mostrando la hora
-    actual cada segundo.
-"""
-import time
-import os
-
-tiempo = time.localtime()
-
-horaActual = tiempo.tm_hour
-minutosActuales = tiempo.tm_min
-segundosActuales = tiempo.tm_sec
-
-while True:
-    # Limpiar pantalla
-    os.system('clear')
-
-    print(f"{horaActual}:{minutosActuales}:{segundosActuales}")
-
-    time.sleep(1) # Espera de un segundo
-
-    # Actualizar los segundos
-    segundosActuales = segundosActuales + 1
-
-    # Verificar limite de segundos y actualizar minutos
-    if segundosActuales == 60:
-        segundosActuales = 0
-        minutosActuales = minutosActuales + 1
-
-    # Verificar limite de minutos y actualizar hora
-    if minutosActuales == 60:
-        minutosActuales = 0
-        horaActual = horaActual + 1
-
-    # Verificar y actualizar limite hora
-    if horaActual == 24:
-        horaActual = 0
-</script>
-<script type="text/plain" id="src-rastreador-habitos-diarios">
-"""
-    Programa que permite al usuario agregar, registrar, marcar y mostrar hábitos diarios. Además, permite ver el progreso de cada hábito registrado.
-"""
-"""
-Estos datos no son persistentes, se debería usar un JSON o una base de datos para que los datos permanezcan guardados
-"""
-habitos = {}
-
-def agregar_habito(nombre):
-    if nombre not in habitos:
-        habitos[nombre] = []
-        print("Hábito agregado correctamente")
-    else:
-        print("Este hábito ya existe")
-
-def registrar_habito(nombre, fecha):
-    fechas = habitos[nombre]
-    fechas.append(fecha)
-    print(f"Hábito registrado para {fecha}")
-
-def mostrar_progreso(nombre):
-    if nombre in habitos:
-        fechas = habitos[nombre]
-        total_dias = len(fechas)
-        print(f"Has cumplido este hábito {total_dias} {"vez" if total_dias == 1 else "veces"}")
-        print(f"Fechas: {', '.join(fechas)}")
-    else:
-        print("Este hábito no existe")
-
-def listar_habitos():
-    if habitos:
-        print("Tus hábitos son:")
-
-        for habito in habitos.keys():
-            print(f"- {habito}")
-    else:
-        print("Aún no tienes hábitos registrados")
-
-# Función principal
-def menu():
-    while True:
-        print("Rastreador de hábitos")
-        print("1. Agregar hábito")
-        print("2. Registrar hábito cumplido")
-        print("3. Mostrar progreso")
-        print("4. Listar hábitos")
-        print("5. Salir")
-
-        opcion = input("Elige una opción: ")
-
-        if opcion == "1":
-            nombre_habito = input("Ingresa el nombre del habito: ")
-            agregar_habito(nombre_habito)
-        elif opcion == "2":
-            nombre_habito = input("Ingresa el nombre del habito: ")
-
-            if nombre_habito in habitos:
-                fecha = input("Fecha (YYYY-MM-DD): ")
-                registrar_habito(nombre_habito, fecha)
-            else:
-                print("Este hábito no existe")
-        elif opcion == "3":
-            nombre_habito = input("Ingresa el nombre del habito: ")
-            mostrar_progreso(nombre_habito)
-        elif opcion == "4":
-            listar_habitos()
-        elif opcion == "5":
-            print("Adios")
-            break
-        else:
-            print("Opción inválida")
-
-menu() # Iniciar el programa
-</script>
-<script type="text/plain" id="src-lista-to-do">
-"""
-    Programa que permite agregar, marcar, eliminar y ver tareas, para añadir tarea se pide al usuario el nombre y se guarda con un id que incrementa automaticamente al estilo de una base de datos y además, se marca como incompleta, para permitir al usuario la opción de marcarla completada posteriormente, finalmente la eliminación de las tareas se hacen mediante eliminar el ID. 
-"""
-import json
-import os
-
-ruta_archivo = "tareas.json"
-
-# Verificar si el archivo no existe y crearlo
-if not os.path.exists(ruta_archivo):
-    with open(ruta_archivo, "w") as tareas:
-        json.dump([], tareas)
-    print(f"Creando el archivo {ruta_archivo}")
-
-def cargar_tareas():
-    with open(ruta_archivo, "r") as tareas:
-        contenido = json.load(tareas)
-
-    if contenido:
-        return contenido
-    else:
-        return []
-
-def guardar_tareas(lista):
-    with open(ruta_archivo, "w") as tareas:
-        tareas.write(json.dumps(lista, indent=4))
-
-def mostrar_tareas(lista):
-    if not lista:
-        print("No hay tareas")
-    else:
-        print("\n--- TAREAS ---")
-        for tarea in lista:
-            estado = "✔" if tarea["completada"] else "✖"
-            print(f"{tarea['id']}: {tarea['nombre']} ({estado})")
-        print("----------------\n")
-
-def agregar_tarea(lista):
-    ultimo_id = max((tarea["id"] for tarea in lista), default=0)
-
-    nombre = input("Ingrese el nombre de la tarea: ")
-
-    nueva_tarea = {
-        "id": ultimo_id + 1,
-        "nombre": nombre,
-        "completada": False
-    }
-
-    lista.append(nueva_tarea)
-    guardar_tareas(lista)
-    print("Tarea agregada correctamente")
-
-def marcar_completada(lista):
-    mostrar_tareas(lista)
-
-    tarea_id = int(input("Ingrese el ID de la tarea: "))
-
-    for tarea in lista:
-        if tarea["id"] == tarea_id:
-            tarea["completada"] = True
-            guardar_tareas(lista)
-            print("Tarea marcada como completada")
-        else:
-            print("El ID es inválido")
-
-def eliminar_tarea(lista):
-    mostrar_tareas(lista)
-
-    tarea_id = int(input("Ingrese el ID de la tarea: "))
-
-    for tarea in lista:
-        if tarea["id"] == tarea_id:
-            lista.remove(tarea)
-            guardar_tareas(lista)
-            print("Tarea eliminada correctamente")
-        else:
-            print("El ID es inválido")
-
-def mostrar_menu():
-    print("--- LISTA TO-DO ---")
-    print("1. Ver tareas")
-    print("2. Agregar tarea")
-    print("3. Marcar tarea como completada")
-    print("4. Eliminar tarea")
-    print("5. Salir")    
-
-LISTA_TAREAS = cargar_tareas()
-
-while True:
-    mostrar_menu()
-
-    opcion = input("Elige una opcion: ")
-
-    if opcion == "1":
-        mostrar_tareas(LISTA_TAREAS)
-    elif opcion == "2":
-        agregar_tarea(LISTA_TAREAS)
-    elif opcion == "3":
-        marcar_completada(LISTA_TAREAS)
-    elif opcion == "4":
-        eliminar_tarea(LISTA_TAREAS)
-    elif opcion == "5":
-        print("Adios")
-        break
-    else:
-        print("Opción no válida")
-</script>
-<script type="text/plain" id="src-detector-cara-opencv">
-"""
-    Programa que detecta rostros que se posicionen frente a la cámara.
-    Utiliza la libreria opencv para abrir la camara y detectar los rostros.
-"""
-import cv2
-"""
-    Función	                  Descripción
-    cv2.imread()	          Cargar imagen
-    cv2.imwrite()	          Guardar imagen
-    cv2.VideoCapture()	      Leer cámara o video
-    cv2.cvtColor()	          Cambiar espacio de color
-    cv2.GaussianBlur()	      Aplicar desenfoque
-    cv2.Canny()	              Detectar bordes
-    cv2.resize()	          Redimensionar imagen
-    cv2.threshold()	          Umbralización (blanco/negro)
-    cv2.findContours()	      Detección de contornos
-    cv2.CascadeClassifier()	  Detección facial
-"""
-
-# Clasificador de rostros preentranado de OpenCV
-clasificador_rostros = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-
-# Cargar la cámara
-camara = cv2.VideoCapture(0)
-
-# Verificar si la camara no se abre
-if not camara.isOpened():
-    print("No se pudo acceder a la cámara")
-    exit()
-
-while True:
-    """
-        El método .read() lee una imagen (frame) desde el objeto VideoCapture, puede ser tanto una cámara como un archivo de video.
-    """
-    lectura_exitosa, imagen = camara.read()
-
-    # Verificar si la lectura de la imagen se realizo correctamente
-    if not lectura_exitosa:
-        print("No se leer la imagen")
-        break
-
-    """
-        El método cv2.cvtColor(imagen, cv2.COLOR_BGR2GRAY) convierte una imagen (frame) de color (BGR) a escala de grises (GRAY). La imagen pasa de 3 canales de color (azul, verde, rojo) a una imagen de un solo canal (intensidad de luz). 
-    """
-    conversion_imagen_gray = cv2.cvtColor(imagen, cv2.COLOR_BGR2GRAY)
-
-    """
-        El método .detectMultiScale(imagen_en_escala_de_grises, reductor_de_escala, detenciones_vecinas, tamaño_del_rostro) busca un rostro dentro de la imagen.
-
-        Devuelve una lista de coordenadas con todos los rostros detectados.
-    """
-    rostros = clasificador_rostros.detectMultiScale(
-        conversion_imagen_gray, 
-        scaleFactor=1.1, 
-        minNeighbors=5, 
-        minSize=(50, 50)
-    )
-
-    # Iterar la tupla de coordenadas de cada rostro detectado 
-    """
-        x = posición X del rostro (esquina superior izquierda)
-        y = posición Y del rostro
-        w = ancho del rostro detectado
-        h = alto del rostro detectado
-    """
-    for (x, y, w, h) in rostros:
-        """
-            El método .rectangle(imagen, coordenadas_de_la_esquina_superior_izquierda, coordenadas_de_la_esquina_inferior_derecha_sumando_ancho_y_alto, color_del_rectangulo_en_formato_BGR_(azul_verde_rojo), grosor_de_la_linea) dibuja un rectángulo sobre la imagen en la posición donde se detectó el rostro.
-        """
-        cv2.rectangle(imagen, (x, y), (x + w, y + h), (0, 255, 0), 2)
-
-    # Muestra el video en una ventana con el titulo "Camara"
-    cv2.imshow("Camara", imagen)
-
-    """
-        El método .waitKey(tiempo) espera una tecla del teclado durante un número determinado de milisegundos. Ademas, permite actualizar la ventana de la cámara evitando que se congele.
-
-        & 0xFF: se asegura que el valor leido de la tecla presionada sea compatible entre sistemas operativos, tomando 8 bits bajos del código ASCII.
-
-        ord('q'): convierte el caracter q en su valor numérico ASCII.
-    """
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-# Liberación de la cámara para que no se quede bloqueada o encendida después de cerrar el programa
-camara.release()
-# Cierre de todo lo que abrio cv2.imshow()
-cv2.destroyAllWindows()
-</script>
-<script type="text/plain" id="src-sistema-reconocimiento-facial">
-"""
-    Programa de reconocimiento facial usando las librerias opencv y face_recognition, compara el rostro de una imagen con el rostro que se posicione frente a la camara y verifica si coincide o no, mostrando el resultado de la comparación en el recuadro del detector de rostros y tambien muestra un aproximado de la distancia entre la coincidencia. 
-"""
-import cv2
-import face_recognition
-import os
-
-# Ruta de la imagen de la comparación
-ruta_imagen = "rostro.jpg"
-
-# Verificar si la imagen existe
-if not os.path.exists(ruta_imagen):
-    print("La imagen no existe")
-    exit()
-
-# Cargar la imagen a comparar
-cargar_imagen = face_recognition.load_image_file(ruta_imagen)
-
-"""
-    El método face_encodings(imagen_cargada) busca todos los rostros en la imagen y genera un vector numérico de 128 dimensiones que representa las características faciales únicas de cada rostro. El vector se llama "encoding" o codificación facial.
-"""
-# Tomar la primera codificación de la lista
-codificacion_imagen = face_recognition.face_encodings(cargar_imagen)[0]
-
-# Cargar la cámara
-camara = cv2.VideoCapture(0)
-
-while True:
-    """
-        El método .read() lee una imagen (frame) desde el objeto VideoCapture, puede ser tanto una cámara como un archivo de video.
-    """
-    lectura_existosa, imagen_camara = camara.read()
-
-    # Verificar si la lectura de la imagen se realizo correctamente
-    if not lectura_existosa:
-        print("No se leer la imagen")
-        break
-    
-    """
-        El método cv2.cvtColor(imagen, cv2.COLOR_BGR2RGB) convierte una imagen (frame) de color (BGR) a RGB. La imagen pasa de 3 canales de color (azul, verde, rojo) a una imagen de 3 canales (rojo, verde, azul). 
-    """
-    conversion_imagen_rgb = cv2.cvtColor(imagen_camara, cv2.COLOR_BGR2RGB)
-
-    """
-        El método face_recognition.face_locations(imagen_rgb) toma una imagen en RGB y analiza dónde se encuentran los rostros y devuelve una lista de coordenadas, una por cada rostro detectado.
-
-        Formato de las coordenadas devueltas: tupla de 4 valores (top, right, bottom, left).
-
-        top: fila superior del rostro
-
-        right: columna derecha del rostro
-
-        bottom: fila inferior del rostro
-
-        left: columna izquierda del rostro
-    """
-    localizaciones_caras = face_recognition.face_locations(conversion_imagen_rgb)
-    
-    """
-        El método face_recognition.face_encodings(imagen_rgb, localizaciones_caras) toma la imagen en rgb y una lista de coordenadas de rostros para cada rostro de la lista calcula un vector de 128 dimensiones llamado encoding o codificación facial. El vector captura las características únicas del rostro, como la distancia entre ojos, forma de la nariz, contorno del rostro, y más. Devolviendo una lista de vectores uno por cada rostro detectado, cada vector tiene 128 números flotantes que representa el rosotro de manera matemática.
-    """
-    codificaciones_caras = face_recognition.face_encodings(conversion_imagen_rgb, localizaciones_caras)
-
-    """
-        Desempaqueta cada tupla de coordenadas de la cara. Estas coordenadas se usan para dibujar rectángulos o mostrar texto alrededor del rostro
-
-        zip(localizaciones_caras, codificaciones_caras) une las dos listas y devuelve pares (coordenadas, codificacion) que corresponden al mismo rostro.
-    """
-    for (arriba, derecha, abajo, izquierda), codificacion_cara in zip(localizaciones_caras, codificaciones_caras):
-        """
-            El método face_recognition.compare_faces(lista_codificacion_imagen, codificacion_a_comparar) compara las codificiones obtenidas de la imagen y la codificaciones del rostro en la cámara y devuelve una lista de valores boolenos (True o False), uno por cada codificación de referencia.
-        """
-        coincide = face_recognition.compare_faces([codificacion_imagen], codificacion_cara)
-
-        """
-            El método face_recognition.face_distance(lista_codificacion_imagen, codificacion_a_comparar) calcula la distancia euclidiana entre los vectores de codificación (los 128 números) de cada rostro de referencia y el rostro a comparar y devuelve una lista de distancias donde cada distancia es un número flotante. Los valores más bajos indican que los rostros son más parecidos y los valores más altos indican que los rostros son diferentes.
-        """
-        distancia = face_recognition.face_distance([codificacion_imagen], codificacion_cara)[0]
-
-        # Guardar color verde si los rostros coinciden y rojo de lo contrario
-        color = (0, 255, 0) if coincide[0] else (0, 0, 255)
-        
-        """
-            El método cv2.rectangle(imagen_camara, (coordenadas_de_las_esquina_superior_izquierda), (coordenadas_de_las_esquina_inferior_derecha), color, grosor_linea) dibuja un rectángulo alrededor del rostro detectado en la imagen.
-        """
-        cv2.rectangle(imagen_camara, (izquierda, arriba), (derecha, abajo), color, 2)
-
-        # Guardar "Coincide" si hay coincidencias en los rostros, de lo contrario guardar "No coincide"
-        texto = "Coincide" if coincide[0] else "No coincide"
-        
-        """
-            El método cv2.putText(imagen_camara, texto, posicion_del_texto, tipo_de_fuente, tamaño_del_texto, color, grosor_del_texto) sirve para escribir el texto sobre la imagen encima del rectángulo que rodea el rostro.
-        """
-        cv2.putText(imagen_camara, f"{texto} ({distancia:.2f})", (izquierda, arriba-10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
-
-    # Muestra el video en una ventana con el titulo "Reconocimiento Facial"
-    cv2.imshow("Reconocimiento Facial", imagen_camara)
-
-    """
-        El método .waitKey(tiempo) espera una tecla del teclado durante un número determinado de milisegundos. Ademas, permite actualizar la ventana de la cámara evitando que se congele.
-
-        & 0xFF: se asegura que el valor leido de la tecla presionada sea compatible entre sistemas operativos, tomando 8 bits bajos del código ASCII.
-
-        ord('q'): convierte el caracter q en su valor numérico ASCII.
-    """
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-# Liberación de la cámara para que no se quede bloqueada o encendida después de cerrar el programa
-camara.release()
-# Cierre de todo lo que abrio cv2.imshow()
-cv2.destroyAllWindows()
-</script>
-<script type="text/plain" id="src-enviar-correo-csv">
-"""
-    Programa que lee un archivo csv y 
-    envia un correo electronico a los correos que encuentre
-"""
-
-import csv
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.base import MIMEBase
-from email.mime.text import MIMEText
-from email import encoders
-
-remitente = "jeironprogrammer@gmail.com"
-"""
-    Es necesario crear un contraseña de aplicación en gmail para que se puedan enviar los correos. 
-    
-    Se crea aqui: https://myaccount.google.com/apppasswords
-"""
-contrasena = ""
-asunto = "Correos desde csv"
-cuerpo = """<html>
-    <body>
-        <h1>Hola desde python!</h1>
-        <p>Este es un correo enviado desde python con una plantilla <b>HTML</b>.</p>
-    <body>
-</html>
-"""
-
-with open('usuarios.csv', newline='') as archivo:
-    lectura = csv.DictReader(archivo)
-    correos = [columna['correo'] for columna in lectura]
-
-for correo in correos:
-    mensaje = MIMEMultipart()
-    mensaje['From'] = remitente
-    mensaje['To'] = correo
-    mensaje['Subject'] = asunto
-    mensaje.attach(MIMEText(cuerpo, 'html'))
-
-    with smtplib.SMTP('smtp.gmail.com', 587) as servidor:
-        servidor.starttls()
-        servidor.login(remitente, contrasena)
-        servidor.send_message(mensaje)
-
-    print("Correo enviado!")
-</script>
-  <script>
-    (function () {
-      "use strict";
-
-      var filas = Array.prototype.slice.call(document.querySelectorAll(".ejercicio"));
-      var categorias = Array.prototype.slice.call(document.querySelectorAll(".categoria"));
-      var input = document.getElementById("buscar");
-      var conteo = document.getElementById("buscar-conteo");
-      var sinResultados = document.getElementById("sin-resultados");
-
-      function normaliza(texto) {
-        return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-      }
-
-      function codigoDe(boton) {
-        var ficha = boton.closest(".ejercicio");
-        var fuente = document.getElementById("src-" + ficha.dataset.slug);
-        return fuente.textContent.replace(/^\n/, "").replace(/\s+$/, "");
-      }
-
-      function filtrar() {
-        var termino = normaliza(input.value.trim());
-        var visibles = 0;
-        filas.forEach(function (fila) {
-          var coincide = !termino || normaliza(fila.dataset.busqueda).indexOf(termino) !== -1;
-          fila.hidden = !coincide;
-          if (coincide) visibles++;
-        });
-        categorias.forEach(function (cat) {
-          cat.hidden = cat.querySelectorAll(".ejercicio:not([hidden])").length === 0;
-        });
-        conteo.textContent = visibles + " de " + filas.length + (visibles === 1 ? " ejercicio" : " ejercicios");
-        sinResultados.hidden = visibles !== 0;
-      }
-
-      input.addEventListener("input", filtrar);
-
-      document.addEventListener("click", function (evento) {
-        var boton = evento.target.closest("button[data-accion]");
-        if (!boton) return;
-
-        var ficha = boton.closest(".ejercicio");
-        var panel = ficha.querySelector(".ejercicio-codigo");
-        var codigo = codigoDe(boton);
-        var accion = boton.dataset.accion;
-
-        if (accion === "ver") {
-          var abierto = !panel.hidden;
-          if (abierto) {
-            panel.hidden = true;
-            boton.setAttribute("aria-expanded", "false");
-            boton.textContent = "Ver código";
-          } else {
-            panel.querySelector("code").textContent = codigo;
-            panel.hidden = false;
-            boton.setAttribute("aria-expanded", "true");
-            boton.textContent = "Ocultar código";
-          }
-        } else if (accion === "copiar") {
-          copiar(boton, codigo);
-        } else if (accion === "descargar") {
-          descargar(ficha.dataset.nombre, codigo);
-        }
-      });
-
-      function copiar(boton, texto) {
-        var hecho = function () {
-          var original = boton.textContent;
-          boton.textContent = "Copiado ✓";
-          boton.dataset.copiado = "true";
-          setTimeout(function () {
-            boton.textContent = original;
-            delete boton.dataset.copiado;
-          }, 2500);
-        };
-        if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard.writeText(texto).then(hecho, function () { copiarPorSeleccion(texto, hecho); });
-        } else {
-          copiarPorSeleccion(texto, hecho);
-        }
-      }
-
-      function copiarPorSeleccion(texto, hecho) {
-        var area = document.createElement("textarea");
-        area.value = texto;
-        area.setAttribute("readonly", "");
-        area.style.position = "fixed";
-        area.style.opacity = "0";
-        document.body.appendChild(area);
-        area.select();
-        try { document.execCommand("copy"); hecho(); } catch (error) { /* sin acción */ }
-        document.body.removeChild(area);
-      }
-
-      function descargar(nombre, texto) {
-        var blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
-        var url = URL.createObjectURL(blob);
-        var enlace = document.createElement("a");
-        enlace.href = url;
-        enlace.download = nombre;
-        document.body.appendChild(enlace);
-        enlace.click();
-        document.body.removeChild(enlace);
-        URL.revokeObjectURL(url);
-      }
-    })();
-  </script>
 </body>
 </html>

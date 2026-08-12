@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Programa genera un numero aleatorio del 1 al 100, le permite 10 intentos al usuario para adivinarlo">
+  <title>Pythoncises · Adivina el número</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-word" href="../index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="../index.html#indice">Índice</a></li>
+        <li><a href="../index.html#licencia">Licencia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="detalle">
+    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <p class="detalle-meta">Juegos · 01 · adivina_numero.py</p>
+    <h1 class="detalle-titulo">Adivina el número</h1>
+    <p class="detalle-desc">Programa genera un numero aleatorio del 1 al 100, le permite 10 intentos al usuario para adivinarlo</p>
+    <div class="detalle-acciones">
+      <button class="btn" type="button" data-accion="copiar">Copiar</button>
+      <button class="btn" type="button" data-accion="descargar" data-nombre="adivina_numero.py">Descargar</button>
+    </div>
+    <p class="codigo-archivo">adivina-numero/adivina_numero.py</p>
+    <pre><code>&quot;&quot;&quot;
+    Programa genera un numero aleatorio del 1 al 100, le permite 10 intentos al usuario para adivinarlo 
+&quot;&quot;&quot;
+import random
+
+def genera_numero_secreto():
+    return random.randint(1, 100)
+
+numero_secreto = genera_numero_secreto()
+contador_intentos = 0
+gana = False
+
+while True:
+    numero_usuario = input(&quot;Adivina el numero secreto (enter para salir): &quot;)
+
+    # Validación de salida
+    if not numero_usuario:
+        print(&quot;Adios&quot;)
+        break
+    
+    # Convertir el número a un entero
+    numero_usuario = int(numero_usuario)
+
+    # Verificación de número y aumento intentos si falla
+    if numero_usuario &lt; numero_secreto:
+        contador_intentos += 1
+        print(&quot;El número secreto es mayor\n&quot;)
+    elif numero_usuario &gt; numero_secreto:
+        contador_intentos += 1
+        print(&quot;El número secreto es menor\n&quot;)
+    else:
+        gana = True # marcar que gana
+        print(&quot;Has adivinado!!!&quot;)
+        break
+    
+    # Verificacion de intentos sin ganar
+    if contador_intentos == 10 and not gana:
+        print(&quot;Se te han acabado los intentos y no has adivinado&quot;)
+        break
+</code></pre>
+    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+      
+      <a class="siguiente" href="ahorcado.html">El ahorcado →</a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
+  </footer>
+</body>
+</html>

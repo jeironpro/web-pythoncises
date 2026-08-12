@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Programa que calcula la propina y el monto total de una cuenta. Pide al usuario el monto de la cuenta y el porcentaje de la propina y muestra el monto total de la cuenta y la propina a pagar">
+  <title>Pythoncises · Calculadora de propina</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-word" href="../index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="../index.html#indice">Índice</a></li>
+        <li><a href="../index.html#licencia">Licencia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="detalle">
+    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <p class="detalle-meta">Calculadoras · 10 · calculadora_propina.py</p>
+    <h1 class="detalle-titulo">Calculadora de propina</h1>
+    <p class="detalle-desc">Programa que calcula la propina y el monto total de una cuenta. Pide al usuario el monto de la cuenta y el porcentaje de la propina y muestra el monto total de la cuenta y la propina a pagar</p>
+    <div class="detalle-acciones">
+      <button class="btn" type="button" data-accion="copiar">Copiar</button>
+      <button class="btn" type="button" data-accion="descargar" data-nombre="calculadora_propina.py">Descargar</button>
+    </div>
+    <p class="codigo-archivo">calculadora-propina/calculadora_propina.py</p>
+    <pre><code>&quot;&quot;&quot;
+    Programa que calcula la propina y el monto total de una cuenta.
+    Pide al usuario el monto de la cuenta y el porcentaje de la propina 
+    y muestra el monto total de la cuenta y la propina a pagar
+&quot;&quot;&quot;
+monto_cuenta = input(&quot;Introduce el monto de la cuenta: &quot;)
+porcentaje_propina = input(&quot;Introduce el porcentaje de la propina: &quot;)
+
+monto_cuenta_entero = float(monto_cuenta)
+porcentaje_propina_entero = float(porcentaje_propina)
+
+propina = (porcentaje_propina_entero / 100) * monto_cuenta_entero # Calculo de la propina
+
+monto_total_cuenta = monto_cuenta_entero + propina
+
+print(f&quot;Monto total: {monto_total_cuenta}&quot;)
+print(f&quot;Propina: {propina}&quot;)</code></pre>
+    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+      <a class="anterior" href="calculadora-indice-masa-corporal.html">← Calculadora de IMC</a>
+      <a class="siguiente" href="convertidor-moneda.html">Convertidor de moneda →</a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
+  </footer>
+</body>
+</html>

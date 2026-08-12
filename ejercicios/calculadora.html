@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Programa que hace la funciones basica de una calculadora, pidiendole al usuario dos operando y un operador, finalmente muestra el resultado de la operación.">
+  <title>Pythoncises · Calculadora</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-word" href="../index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="../index.html#indice">Índice</a></li>
+        <li><a href="../index.html#licencia">Licencia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="detalle">
+    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <p class="detalle-meta">Calculadoras · 08 · calculadora.py</p>
+    <h1 class="detalle-titulo">Calculadora</h1>
+    <p class="detalle-desc">Programa que hace la funciones basica de una calculadora, pidiendole al usuario dos operando y un operador, finalmente muestra el resultado de la operación.</p>
+    <div class="detalle-acciones">
+      <button class="btn" type="button" data-accion="copiar">Copiar</button>
+      <button class="btn" type="button" data-accion="descargar" data-nombre="calculadora.py">Descargar</button>
+    </div>
+    <p class="codigo-archivo">calculadora/calculadora.py</p>
+    <pre><code>&quot;&quot;&quot;
+    Programa que hace la funciones basica de una calculadora, 
+    pidiendole al usuario dos operando y un operador,
+    finalmente muestra el resultado de la operación.
+&quot;&quot;&quot;
+
+def calculo(primer_operando, operador, segundo_operando):
+    if operador == &quot;+&quot;:
+        return  primer_operando + segundo_operando
+    elif operador == &quot;-&quot;:
+        return primer_operando - segundo_operando
+    elif operador == &quot;*&quot;:
+        return primer_operando * segundo_operando
+    elif operador == &quot;/&quot;:
+        if segundo_operando != 0:
+            return primer_operando / segundo_operando
+        return ZeroDivisionError # Devolver excepción cuando intenta dividir por cero
+    return None # Devolver None cuando el operador no es valido
+
+primer_operando = input(&quot;Introduce el primer operando: &quot;)
+operador = input(&quot;Introduce el operador (+, -, *, /): &quot;)
+segundo_operando = input(&quot;Introduce el segundo operando: &quot;)
+
+# Diccionario de operador como clave y su respectiva operación como valor
+operador_operacion = {
+    &quot;+&quot;: &quot;suma&quot;,
+    &quot;-&quot;: &quot;resta&quot;,
+    &quot;*&quot;: &quot;multiplicación&quot;,
+    &quot;/&quot;: &quot;división&quot;
+}
+
+resultado = calculo(int(primer_operando), operador, int(segundo_operando))
+
+# Verificar resultado y mostra mensaje de error o resultado de operacion
+if resultado is ZeroDivisionError:
+    print(&quot;No se puede dividir por cero&quot;)
+elif resultado is None:
+    print(&quot;El operador no es valido&quot;)
+else:
+    print(f&quot;Resultado de la {operador_operacion.get(operador)} es: {resultado}&quot;)</code></pre>
+    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+      <a class="anterior" href="patron-rombo.html">← Patrón rombo</a>
+      <a class="siguiente" href="calculadora-indice-masa-corporal.html">Calculadora de IMC →</a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
+  </footer>
+</body>
+</html>

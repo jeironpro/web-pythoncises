@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Programa que acorta una url larga. Pide al usuario la url larga y retorna la url corta">
+  <title>Pythoncises · Acortador de URLs</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-word" href="../index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="../index.html#indice">Índice</a></li>
+        <li><a href="../index.html#licencia">Licencia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="detalle">
+    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <p class="detalle-meta">Web y API · 12 · corta_url.py</p>
+    <h1 class="detalle-titulo">Acortador de URLs</h1>
+    <p class="detalle-desc">Programa que acorta una url larga. Pide al usuario la url larga y retorna la url corta</p>
+    <div class="detalle-acciones">
+      <button class="btn" type="button" data-accion="copiar">Copiar</button>
+      <button class="btn" type="button" data-accion="descargar" data-nombre="corta_url.py">Descargar</button>
+    </div>
+    <p class="codigo-archivo">corta-url/corta_url.py</p>
+    <pre><code>&quot;&quot;&quot;
+    Programa que acorta una url larga.
+    Pide al usuario la url larga y retorna la url corta
+&quot;&quot;&quot;
+import random
+
+&quot;&quot;&quot; 
+    Deberia sustituir esta diccionario por un archivo JSON o una base de datos, 
+    ya que los datos solo son persistentes en un archivo o una base de datos. 
+    Recomendable y seguro en una base de datos
+&quot;&quot;&quot; 
+urls = {}
+
+# Debe ser tu servidor real
+MI_SERVIDOR = &quot;https://miservidor.com/&quot; 
+
+def generar_codigo_corto():
+    caracteres = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;
+
+    codigo = [random.choice(caracteres) for _ in range(8)]
+    return ''.join(codigo)
+
+def validar_codigo(codigo):
+    while codigo in urls.keys():
+        codigo = generar_codigo_corto()
+    return codigo
+
+def acorta_url(codigo, url_larga):
+    urls[codigo] = url_larga
+    return MI_SERVIDOR + codigo
+
+def redirigir(codigo_corto):
+    if codigo_corto in urls.keys():
+        ulr_larga = urls.get(codigo_corto)
+        return ulr_larga
+    else:
+        print(&quot;URL no encontrada&quot;)
+
+url = input(&quot;Introduce la URL a acortar: &quot;)
+
+codigo = generar_codigo_corto()
+codigo_valido = validar_codigo(codigo)
+
+url_corta = acorta_url(codigo, url)
+url_redirigida = redirigir(codigo_valido)
+
+print(f&quot;URL corta: {url_corta}&quot;)
+print(f&quot;URL larga: {url_redirigida}&quot;)</code></pre>
+    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+      <a class="anterior" href="convertidor-moneda.html">← Convertidor de moneda</a>
+      <a class="siguiente" href="generador-contraseñas.html">Generador de contraseñas →</a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
+  </footer>
+</body>
+</html>

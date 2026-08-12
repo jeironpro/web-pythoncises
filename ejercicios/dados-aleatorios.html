@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Programa que simula un lanzador de dados, pide al usuario un número de lanzamientos, lanza el número de dados indicados y muestra el valor de cada dado, la suma y el producto de todos">
+  <title>Pythoncises · Dados aleatorios</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-word" href="../index.html">Pythoncises</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="../index.html#indice">Índice</a></li>
+        <li><a href="../index.html#licencia">Licencia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="detalle">
+    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <p class="detalle-meta">Juegos · 04 · dados_aleatorios.py</p>
+    <h1 class="detalle-titulo">Dados aleatorios</h1>
+    <p class="detalle-desc">Programa que simula un lanzador de dados, pide al usuario un número de lanzamientos, lanza el número de dados indicados y muestra el valor de cada dado, la suma y el producto de todos</p>
+    <div class="detalle-acciones">
+      <button class="btn" type="button" data-accion="copiar">Copiar</button>
+      <button class="btn" type="button" data-accion="descargar" data-nombre="dados_aleatorios.py">Descargar</button>
+    </div>
+    <p class="codigo-archivo">dados-aleatorios/dados_aleatorios.py</p>
+    <pre><code>&quot;&quot;&quot;
+    Programa que simula un lanzador de dados,
+    pide al usuario un número de lanzamientos,
+    lanza el número de dados indicados y muestra
+    el valor de cada dado, la suma y el producto de todos
+&quot;&quot;&quot;
+
+import random
+
+# Lanzar los dados indicados
+def lanza_dados(numero):
+    valores_dados = []
+    contador = 0
+
+    while contador &lt; numero:
+        dado = random.randint(1, 6)
+        valores_dados.append(dado)
+        contador += 1
+    
+    return valores_dados
+
+while True:
+    print(&quot;Opciones:&quot;)
+    print(&quot;1. Lanzar dados&quot;)
+    print(&quot;2. Salir&quot;)
+
+    opcion = input(&quot;Opcion: &quot;)
+    if opcion == &quot;1&quot;:
+        numero_dados = input(&quot;Introduce el numero de dados: &quot;)
+        valores_dados = lanza_dados(int(numero_dados))
+        producto = valores_dados[0]
+
+        for i, valor in enumerate(valores_dados):
+            print(f&quot;Dado {i+1}: {valor}&quot;)
+            
+            if i &lt; len(valores_dados) - 1:
+                producto *= valores_dados[i+1]
+
+        print(f&quot;\nSuma: {sum(valores_dados)}&quot;)
+        print(f&quot;Producto: {producto}\n&quot;)
+    elif opcion == &quot;2&quot;:
+        print(&quot;Adios&quot;)
+        break
+    else:
+        print(&quot;Opción no valida&quot;)</code></pre>
+    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+      <a class="anterior" href="piedra-papel-tijera.html">← Piedra, papel o tijera</a>
+      <a class="siguiente" href="patron-triangulo.html">Patrón triángulo →</a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <p>&copy; Pythoncises - 2026</p>
+  </footer>
+</body>
+</html>
