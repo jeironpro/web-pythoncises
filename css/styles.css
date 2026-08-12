@@ -191,6 +191,7 @@ html.js .stage__line { transform: scaleY(0); }
 
 .stage__panel { min-width: 0; background: var(--color-paper); border: 1.5px solid var(--color-rule); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: clamp(1.4rem, 3vw, 2.25rem); margin-bottom: clamp(2rem, 5vh, 3.75rem); display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: center; transition: opacity 620ms var(--ease-out), transform 620ms var(--ease-out); }
 html.js .stage__panel { opacity: 0; transform: translateX(28px); }
+@media (max-width: 639px) { html.js .stage__panel { transform: none; } }
 .stage__copy { min-width: 0; }
 @media (min-width: 720px) { .stage__panel { grid-template-columns: 1fr clamp(120px, 22vw, 168px); } }
 .stage.is-in .stage__node { transform: none; opacity: 1; }

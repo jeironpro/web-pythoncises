@@ -49,7 +49,7 @@ Las salidas de ejemplo viven en `data/salidas.json` (un mapa de slug a transcrip
 | 10 | Calculadora de propina | `exercises/calculadora-propina/` |
 | 11 | Convertidor de moneda | `exercises/convertidor-moneda/` |
 | 12 | Acortador de URLs | `exercises/corta-url/` |
-| 13 | Generador de contrasenas | `exercises/generador-contrasenas/` |
+| 13 | Generador de contrasenas | `exercises/generador-contraseñas/` |
 | 14 | Generador de chistes | `exercises/generador-chiste-random/` |
 | 15 | Historias divertidas | `exercises/historias-divertidas/` |
 | 16 | Partes de un correo | `exercises/partes-correo/` |
