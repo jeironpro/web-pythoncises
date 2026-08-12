@@ -7,3 +7,5 @@ organizador-archivos/archivos/
 # Python
 __pycache__/
 *.pyc
+
+.freebuff
