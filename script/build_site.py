@@ -533,7 +533,7 @@ def pagina_ejercicio(ejercicio, anterior, siguiente):
     return f"""{cabecera("../", f"Pythoncises · {ejercicio['titulo']}", ejercicio['descripcion'])}
 {nav("../")}
   <main class="detalle" data-accent="{accent}">
-    <a class="detalle-volver" href="../index.html#indice">← Índice</a>
+    <a class="btn btn--outline btn--pear btn--sm detalle-volver" href="../index.html#indice">← Índice</a>
     <p class="detalle-meta">
       <span class="eyebrow__dot eyebrow__dot--{accent}" style="display:inline-block;margin-right:0.45em;vertical-align:middle"></span>
       {escapa_html(meta)}
