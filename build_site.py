@@ -17,6 +17,69 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent
 SALIDA = RAIZ / "ejercicios"
 
+# Resaltado de sintaxis (tokenizador propio, sin librerías)
+
+PALABRAS_CLAVE = {
+    "False", "None", "True", "and", "as", "assert", "async", "await", "break",
+    "class", "continue", "def", "del", "elif", "else", "except", "finally",
+    "for", "from", "global", "if", "import", "in", "is", "lambda", "nonlocal",
+    "not", "or", "pass", "raise", "return", "try", "while", "with", "yield",
+}
+
+BUILTINS = {
+    "abs", "all", "any", "bool", "bytes", "bytearray", "callable", "chr", "classmethod",
+    "compile", "complex", "delattr", "dict", "dir", "divmod", "enumerate", "eval",
+    "exec", "filter", "float", "format", "frozenset", "getattr", "globals", "hasattr",
+    "hash", "hex", "id", "input", "int", "isinstance", "issubclass", "iter", "len",
+    "list", "locals", "map", "max", "memoryview", "min", "next", "object", "oct",
+    "open", "ord", "pow", "print", "property", "range", "repr", "reversed", "round",
+    "set", "setattr", "slice", "sorted", "staticmethod", "str", "sum", "super",
+    "tuple", "type", "vars", "zip",
+}
+
+TOKEN = re.compile(
+    r"(?P<comentario>\#[^\n]*)"
+    r"|(?P<cadena>[rRbBuUfF]{0,2}(?:\x22\x22\x22[\s\S]*?\x22\x22\x22|\x27\x27\x27[\s\S]*?\x27\x27\x27|\x22(?:\\.|[^\x22\\\n])*\x22|\x27(?:\\.|[^\x27\\\n])*\x27))"
+    r"|(?P<numero>\b(?:0[xX][0-9a-fA-F_]+|0[oO][0-7_]+|0[bB][01_]+|(?:\d[\d_]*\.?[\d_]*)(?:[eE][+-]?\d+)?[jJ]?|\.\d[\d_]*(?:[eE][+-]?\d+)?[jJ]?)\b)"
+    r"|(?P<decorador>@[\w.]+)"
+    r"|(?P<identificador>[A-Za-z_]\w*)",
+)
+
+
+def resalta_python(codigo):
+    """Devuelve el código con <span class="tok-*"> para colorear la sintaxis."""
+    salida = []
+    pos = 0
+    previo = None
+    for coincidencia in TOKEN.finditer(codigo):
+        salida.append(escapa_html(codigo[pos:coincidencia.start()]))
+        clase = None
+        if coincidencia.group("comentario"):
+            clase = "tok-comentario"
+        elif coincidencia.group("cadena"):
+            clase = "tok-cadena"
+        elif coincidencia.group("numero"):
+            clase = "tok-numero"
+        elif coincidencia.group("decorador"):
+            clase = "tok-decorador"
+        elif coincidencia.group("identificador"):
+            nombre = coincidencia.group(0)
+            if nombre in PALABRAS_CLAVE:
+                clase = "tok-palabra"
+            elif previo == "def":
+                clase = "tok-funcion"
+            elif previo == "class":
+                clase = "tok-clase"
+            elif nombre in BUILTINS:
+                clase = "tok-builtin"
+        token = escapa_html(coincidencia.group(0))
+        salida.append(f'<span class="{clase}">{token}</span>' if clase else token)
+        if coincidencia.group("identificador") or coincidencia.group("decorador"):
+            previo = coincidencia.group(0)
+        pos = coincidencia.end()
+    salida.append(escapa_html(codigo[pos:]))
+    return "".join(salida)
+
 CATEGORIAS = [
     ("Juegos", [
         "adivina-numero",
@@ -187,12 +250,6 @@ def cabecera(rel, titulo, descripcion):
 def nav(rel):
     return f"""  <header class="nav">
     <a class="nav-word" href="{rel}index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="{rel}index.html#indice">Índice</a></li>
-        <li><a href="{rel}index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>"""
 
 
@@ -247,11 +304,6 @@ def genera_indice(categorias, total):
 {chr(10).join(secciones)}
       <p class="sin-resultados" id="sin-resultados" hidden>Ningún ejercicio coincide con la búsqueda.</p>
     </section>
-
-    <section class="licencia" id="licencia" aria-labelledby="licencia-titulo">
-      <h2 class="licencia-titulo" id="licencia-titulo">Licencia</h2>
-      <p>El repositorio está publicado bajo la licencia MIT. Los ejercicios pueden usarse, copiarse y modificarse libremente.</p>
-    </section>
   </main>
 {pie()}"""
 
@@ -276,7 +328,7 @@ def pagina_ejercicio(ejercicio, anterior, siguiente):
       <button class="btn" type="button" data-accion="descargar" data-nombre="{escapa_html(ejercicio['nombre'])}">Descargar</button>
     </div>
     <p class="codigo-archivo">{escapa_html(ejercicio['archivo'])}</p>
-    <pre><code>{escapa_html(ejercicio['codigo'])}</code></pre>
+    <pre><code>{resalta_python(ejercicio['codigo'])}</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       {nav_previo}
       {nav_siguiente}

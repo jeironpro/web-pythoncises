@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,112 +28,112 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="lista_to_do.py">Descargar</button>
     </div>
     <p class="codigo-archivo">lista-to-do/lista_to_do.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que permite agregar, marcar, eliminar y ver tareas, para añadir tarea se pide al usuario el nombre y se guarda con un id que incrementa automaticamente al estilo de una base de datos y además, se marca como incompleta, para permitir al usuario la opción de marcarla completada posteriormente, finalmente la eliminación de las tareas se hacen mediante eliminar el ID. 
-&quot;&quot;&quot;
-import json
-import os
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> json
+<span class="tok-palabra">import</span> os
 
-ruta_archivo = &quot;tareas.json&quot;
+ruta_archivo = <span class="tok-cadena">&quot;tareas.json&quot;</span>
 
-# Verificar si el archivo no existe y crearlo
-if not os.path.exists(ruta_archivo):
-    with open(ruta_archivo, &quot;w&quot;) as tareas:
+<span class="tok-comentario"># Verificar si el archivo no existe y crearlo</span>
+<span class="tok-palabra">if</span> <span class="tok-palabra">not</span> os.path.exists(ruta_archivo):
+    <span class="tok-palabra">with</span> <span class="tok-builtin">open</span>(ruta_archivo, <span class="tok-cadena">&quot;w&quot;</span>) <span class="tok-palabra">as</span> tareas:
         json.dump([], tareas)
-    print(f&quot;Creando el archivo {ruta_archivo}&quot;)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Creando el archivo {ruta_archivo}&quot;</span>)
 
-def cargar_tareas():
-    with open(ruta_archivo, &quot;r&quot;) as tareas:
+<span class="tok-palabra">def</span> <span class="tok-funcion">cargar_tareas</span>():
+    <span class="tok-palabra">with</span> <span class="tok-builtin">open</span>(ruta_archivo, <span class="tok-cadena">&quot;r&quot;</span>) <span class="tok-palabra">as</span> tareas:
         contenido = json.load(tareas)
 
-    if contenido:
-        return contenido
-    else:
-        return []
+    <span class="tok-palabra">if</span> contenido:
+        <span class="tok-palabra">return</span> contenido
+    <span class="tok-palabra">else</span>:
+        <span class="tok-palabra">return</span> []
 
-def guardar_tareas(lista):
-    with open(ruta_archivo, &quot;w&quot;) as tareas:
-        tareas.write(json.dumps(lista, indent=4))
+<span class="tok-palabra">def</span> <span class="tok-funcion">guardar_tareas</span>(lista):
+    <span class="tok-palabra">with</span> <span class="tok-builtin">open</span>(ruta_archivo, <span class="tok-cadena">&quot;w&quot;</span>) <span class="tok-palabra">as</span> tareas:
+        tareas.write(json.dumps(lista, indent=<span class="tok-numero">4</span>))
 
-def mostrar_tareas(lista):
-    if not lista:
-        print(&quot;No hay tareas&quot;)
-    else:
-        print(&quot;\n--- TAREAS ---&quot;)
-        for tarea in lista:
-            estado = &quot;✔&quot; if tarea[&quot;completada&quot;] else &quot;✖&quot;
-            print(f&quot;{tarea['id']}: {tarea['nombre']} ({estado})&quot;)
-        print(&quot;----------------\n&quot;)
+<span class="tok-palabra">def</span> <span class="tok-funcion">mostrar_tareas</span>(lista):
+    <span class="tok-palabra">if</span> <span class="tok-palabra">not</span> lista:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;No hay tareas&quot;</span>)
+    <span class="tok-palabra">else</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;\n--- TAREAS ---&quot;</span>)
+        <span class="tok-palabra">for</span> tarea <span class="tok-palabra">in</span> lista:
+            estado = <span class="tok-cadena">&quot;✔&quot;</span> <span class="tok-palabra">if</span> tarea[<span class="tok-cadena">&quot;completada&quot;</span>] <span class="tok-palabra">else</span> <span class="tok-cadena">&quot;✖&quot;</span>
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;{tarea['id']}: {tarea['nombre']} ({estado})&quot;</span>)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;----------------\n&quot;</span>)
 
-def agregar_tarea(lista):
-    ultimo_id = max((tarea[&quot;id&quot;] for tarea in lista), default=0)
+<span class="tok-palabra">def</span> <span class="tok-funcion">agregar_tarea</span>(lista):
+    ultimo_id = <span class="tok-builtin">max</span>((tarea[<span class="tok-cadena">&quot;id&quot;</span>] <span class="tok-palabra">for</span> tarea <span class="tok-palabra">in</span> lista), default=<span class="tok-numero">0</span>)
 
-    nombre = input(&quot;Ingrese el nombre de la tarea: &quot;)
+    nombre = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Ingrese el nombre de la tarea: &quot;</span>)
 
     nueva_tarea = {
-        &quot;id&quot;: ultimo_id + 1,
-        &quot;nombre&quot;: nombre,
-        &quot;completada&quot;: False
+        <span class="tok-cadena">&quot;id&quot;</span>: ultimo_id + <span class="tok-numero">1</span>,
+        <span class="tok-cadena">&quot;nombre&quot;</span>: nombre,
+        <span class="tok-cadena">&quot;completada&quot;</span>: <span class="tok-palabra">False</span>
     }
 
     lista.append(nueva_tarea)
     guardar_tareas(lista)
-    print(&quot;Tarea agregada correctamente&quot;)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Tarea agregada correctamente&quot;</span>)
 
-def marcar_completada(lista):
+<span class="tok-palabra">def</span> <span class="tok-funcion">marcar_completada</span>(lista):
     mostrar_tareas(lista)
 
-    tarea_id = int(input(&quot;Ingrese el ID de la tarea: &quot;))
+    tarea_id = <span class="tok-builtin">int</span>(<span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Ingrese el ID de la tarea: &quot;</span>))
 
-    for tarea in lista:
-        if tarea[&quot;id&quot;] == tarea_id:
-            tarea[&quot;completada&quot;] = True
+    <span class="tok-palabra">for</span> tarea <span class="tok-palabra">in</span> lista:
+        <span class="tok-palabra">if</span> tarea[<span class="tok-cadena">&quot;id&quot;</span>] == tarea_id:
+            tarea[<span class="tok-cadena">&quot;completada&quot;</span>] = <span class="tok-palabra">True</span>
             guardar_tareas(lista)
-            print(&quot;Tarea marcada como completada&quot;)
-        else:
-            print(&quot;El ID es inválido&quot;)
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Tarea marcada como completada&quot;</span>)
+        <span class="tok-palabra">else</span>:
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;El ID es inválido&quot;</span>)
 
-def eliminar_tarea(lista):
+<span class="tok-palabra">def</span> <span class="tok-funcion">eliminar_tarea</span>(lista):
     mostrar_tareas(lista)
 
-    tarea_id = int(input(&quot;Ingrese el ID de la tarea: &quot;))
+    tarea_id = <span class="tok-builtin">int</span>(<span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Ingrese el ID de la tarea: &quot;</span>))
 
-    for tarea in lista:
-        if tarea[&quot;id&quot;] == tarea_id:
+    <span class="tok-palabra">for</span> tarea <span class="tok-palabra">in</span> lista:
+        <span class="tok-palabra">if</span> tarea[<span class="tok-cadena">&quot;id&quot;</span>] == tarea_id:
             lista.remove(tarea)
             guardar_tareas(lista)
-            print(&quot;Tarea eliminada correctamente&quot;)
-        else:
-            print(&quot;El ID es inválido&quot;)
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Tarea eliminada correctamente&quot;</span>)
+        <span class="tok-palabra">else</span>:
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;El ID es inválido&quot;</span>)
 
-def mostrar_menu():
-    print(&quot;--- LISTA TO-DO ---&quot;)
-    print(&quot;1. Ver tareas&quot;)
-    print(&quot;2. Agregar tarea&quot;)
-    print(&quot;3. Marcar tarea como completada&quot;)
-    print(&quot;4. Eliminar tarea&quot;)
-    print(&quot;5. Salir&quot;)    
+<span class="tok-palabra">def</span> <span class="tok-funcion">mostrar_menu</span>():
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;--- LISTA TO-DO ---&quot;</span>)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;1. Ver tareas&quot;</span>)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;2. Agregar tarea&quot;</span>)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;3. Marcar tarea como completada&quot;</span>)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;4. Eliminar tarea&quot;</span>)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;5. Salir&quot;</span>)    
 
 LISTA_TAREAS = cargar_tareas()
 
-while True:
+<span class="tok-palabra">while</span> <span class="tok-palabra">True</span>:
     mostrar_menu()
 
-    opcion = input(&quot;Elige una opcion: &quot;)
+    opcion = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Elige una opcion: &quot;</span>)
 
-    if opcion == &quot;1&quot;:
+    <span class="tok-palabra">if</span> opcion == <span class="tok-cadena">&quot;1&quot;</span>:
         mostrar_tareas(LISTA_TAREAS)
-    elif opcion == &quot;2&quot;:
+    <span class="tok-palabra">elif</span> opcion == <span class="tok-cadena">&quot;2&quot;</span>:
         agregar_tarea(LISTA_TAREAS)
-    elif opcion == &quot;3&quot;:
+    <span class="tok-palabra">elif</span> opcion == <span class="tok-cadena">&quot;3&quot;</span>:
         marcar_completada(LISTA_TAREAS)
-    elif opcion == &quot;4&quot;:
+    <span class="tok-palabra">elif</span> opcion == <span class="tok-cadena">&quot;4&quot;</span>:
         eliminar_tarea(LISTA_TAREAS)
-    elif opcion == &quot;5&quot;:
-        print(&quot;Adios&quot;)
-        break
-    else:
-        print(&quot;Opción no válida&quot;)</code></pre>
+    <span class="tok-palabra">elif</span> opcion == <span class="tok-cadena">&quot;5&quot;</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Adios&quot;</span>)
+        <span class="tok-palabra">break</span>
+    <span class="tok-palabra">else</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Opción no válida&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="rastreador-habitos-diarios.html">← Rastreador de hábitos</a>
       <a class="siguiente" href="detector-cara-opencv.html">Detector de caras →</a>

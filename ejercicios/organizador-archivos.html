@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,52 +28,52 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="organizador_archivos.py">Descargar</button>
     </div>
     <p class="codigo-archivo">organizador-archivos/organizador_archivos.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que organiza archivos en carpetas segun
     su extension. En una carpeta pueden ir archivos
     de mas de una extensión
-&quot;&quot;&quot;
-import os
-import shutil
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> os
+<span class="tok-palabra">import</span> shutil
 
 carpeta_archivos = {
-    &quot;documentos&quot;: ['pdf', 'txt', 'json', 'docx'],
-    &quot;hoja_de_calculo&quot;: ['xlsx', 'csv'],
-    &quot;imagenes&quot;: ['jpg', 'gif', 'png', 'jpeg'],
-    &quot;audios&quot;: ['mp3'],
-    &quot;videos&quot;: ['mp4', 'mkv', 'mov'],
-    &quot;codigo&quot;: ['py', 'js', 'java', 'c', 'html']
+    <span class="tok-cadena">&quot;documentos&quot;</span>: [<span class="tok-cadena">'pdf'</span>, <span class="tok-cadena">'txt'</span>, <span class="tok-cadena">'json'</span>, <span class="tok-cadena">'docx'</span>],
+    <span class="tok-cadena">&quot;hoja_de_calculo&quot;</span>: [<span class="tok-cadena">'xlsx'</span>, <span class="tok-cadena">'csv'</span>],
+    <span class="tok-cadena">&quot;imagenes&quot;</span>: [<span class="tok-cadena">'jpg'</span>, <span class="tok-cadena">'gif'</span>, <span class="tok-cadena">'png'</span>, <span class="tok-cadena">'jpeg'</span>],
+    <span class="tok-cadena">&quot;audios&quot;</span>: [<span class="tok-cadena">'mp3'</span>],
+    <span class="tok-cadena">&quot;videos&quot;</span>: [<span class="tok-cadena">'mp4'</span>, <span class="tok-cadena">'mkv'</span>, <span class="tok-cadena">'mov'</span>],
+    <span class="tok-cadena">&quot;codigo&quot;</span>: [<span class="tok-cadena">'py'</span>, <span class="tok-cadena">'js'</span>, <span class="tok-cadena">'java'</span>, <span class="tok-cadena">'c'</span>, <span class="tok-cadena">'html'</span>]
 }
 
-directorio = &quot;archivos&quot;
+directorio = <span class="tok-cadena">&quot;archivos&quot;</span>
 
 archivos = os.listdir(directorio)
 
-for archivo in archivos:
-    partes = archivo.split(&quot;.&quot;)
+<span class="tok-palabra">for</span> archivo <span class="tok-palabra">in</span> archivos:
+    partes = archivo.split(<span class="tok-cadena">&quot;.&quot;</span>)
 
-    # Verificar si el archivo es valido
-    if len(partes) &lt; 2: 
-        continue
+    <span class="tok-comentario"># Verificar si el archivo es valido</span>
+    <span class="tok-palabra">if</span> <span class="tok-builtin">len</span>(partes) &lt; <span class="tok-numero">2</span>: 
+        <span class="tok-palabra">continue</span>
 
-    # Tomar la extensión del archivo
-    extension = partes[-1].lower()
+    <span class="tok-comentario"># Tomar la extensión del archivo</span>
+    extension = partes[-<span class="tok-numero">1</span>].lower()
 
-    for carpeta, extensiones in carpeta_archivos.items():
-        if extension in extensiones:
+    <span class="tok-palabra">for</span> carpeta, extensiones <span class="tok-palabra">in</span> carpeta_archivos.items():
+        <span class="tok-palabra">if</span> extension <span class="tok-palabra">in</span> extensiones:
             ruta_carpeta = os.path.join(directorio, carpeta)
             ruta_origen = os.path.join(directorio, archivo)
             ruta_destino = os.path.join(ruta_carpeta, archivo)
 
-            # Verificar y crear la carpeta de cada grupo de archivos
-            if not os.path.exists(ruta_carpeta):
-                os.makedirs(ruta_carpeta, exist_ok=True)
-                print(f&quot;Carpeta: {carpeta} creada correctamente&quot;)
+            <span class="tok-comentario"># Verificar y crear la carpeta de cada grupo de archivos</span>
+            <span class="tok-palabra">if</span> <span class="tok-palabra">not</span> os.path.exists(ruta_carpeta):
+                os.makedirs(ruta_carpeta, exist_ok=<span class="tok-palabra">True</span>)
+                <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Carpeta: {carpeta} creada correctamente&quot;</span>)
 
-            # Mover el archivo a su respectiva carpeta
+            <span class="tok-comentario"># Mover el archivo a su respectiva carpeta</span>
             shutil.move(ruta_origen, ruta_destino)
-            print(f&quot;Archivo: {archivo} organizado en {ruta_destino}&quot;)
-            break</code></pre>
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Archivo: {archivo} organizado en {ruta_destino}&quot;</span>)
+            <span class="tok-palabra">break</span></code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="herramienta-renombra-archivo.html">← Renombrador de archivos</a>
       <a class="siguiente" href="convertir-videos.html">Convertidor de vídeos →</a>

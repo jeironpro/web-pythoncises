@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,38 +28,38 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="piedra_papel_tijera.py">Descargar</button>
     </div>
     <p class="codigo-archivo">piedra-papel-tijera/piedra_papel_tijera.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que simula el juego de piedra papel o tijera,
     el usuario elige una de las opciones y la maquina tambien, 
     finalmente muestra el ganador o empate.
-&quot;&quot;&quot;
-import random
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> random
 
-def verifica_ganador(opcion_usuario, opcion_maquina):
-    if opcion_usuario == &quot;tijera&quot; and opcion_maquina == &quot;papel&quot;:
-        return &quot;Has ganado!&quot;
-    elif opcion_usuario == &quot;papel&quot; and opcion_maquina == &quot;piedra&quot;:
-        return &quot;Has ganado!&quot;
-    elif opcion_usuario == &quot;piedra&quot; and opcion_maquina == &quot;tijera&quot;:
-        return &quot;Has ganado!&quot;
-    elif opcion_usuario == opcion_maquina:
-        return &quot;Empate!&quot;
-    else:
-        return &quot;Maquina gana!&quot;
+<span class="tok-palabra">def</span> <span class="tok-funcion">verifica_ganador</span>(opcion_usuario, opcion_maquina):
+    <span class="tok-palabra">if</span> opcion_usuario == <span class="tok-cadena">&quot;tijera&quot;</span> <span class="tok-palabra">and</span> opcion_maquina == <span class="tok-cadena">&quot;papel&quot;</span>:
+        <span class="tok-palabra">return</span> <span class="tok-cadena">&quot;Has ganado!&quot;</span>
+    <span class="tok-palabra">elif</span> opcion_usuario == <span class="tok-cadena">&quot;papel&quot;</span> <span class="tok-palabra">and</span> opcion_maquina == <span class="tok-cadena">&quot;piedra&quot;</span>:
+        <span class="tok-palabra">return</span> <span class="tok-cadena">&quot;Has ganado!&quot;</span>
+    <span class="tok-palabra">elif</span> opcion_usuario == <span class="tok-cadena">&quot;piedra&quot;</span> <span class="tok-palabra">and</span> opcion_maquina == <span class="tok-cadena">&quot;tijera&quot;</span>:
+        <span class="tok-palabra">return</span> <span class="tok-cadena">&quot;Has ganado!&quot;</span>
+    <span class="tok-palabra">elif</span> opcion_usuario == opcion_maquina:
+        <span class="tok-palabra">return</span> <span class="tok-cadena">&quot;Empate!&quot;</span>
+    <span class="tok-palabra">else</span>:
+        <span class="tok-palabra">return</span> <span class="tok-cadena">&quot;Maquina gana!&quot;</span>
 
-opciones = ['piedra', 'papel', 'tijera']
+opciones = [<span class="tok-cadena">'piedra'</span>, <span class="tok-cadena">'papel'</span>, <span class="tok-cadena">'tijera'</span>]
 
-while True:
-    opcion_maquina = random.choice(opciones) # opción aleatoria entre las tres disponibles
-    opcion_usuario = input(&quot;Piedra, Papel o Tijera (enter para salir): &quot;).lower()
+<span class="tok-palabra">while</span> <span class="tok-palabra">True</span>:
+    opcion_maquina = random.choice(opciones) <span class="tok-comentario"># opción aleatoria entre las tres disponibles</span>
+    opcion_usuario = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Piedra, Papel o Tijera (enter para salir): &quot;</span>).lower()
 
-    # Verificar salida
-    if not opcion_usuario:
-        print(&quot;Adios&quot;)
-        break
+    <span class="tok-comentario"># Verificar salida</span>
+    <span class="tok-palabra">if</span> <span class="tok-palabra">not</span> opcion_usuario:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Adios&quot;</span>)
+        <span class="tok-palabra">break</span>
 
-    print(f&quot;La maquina elige: {opcion_maquina}&quot;)
-    print(verifica_ganador(opcion_usuario, opcion_maquina))</code></pre>
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;La maquina elige: {opcion_maquina}&quot;</span>)
+    <span class="tok-builtin">print</span>(verifica_ganador(opcion_usuario, opcion_maquina))</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="ahorcado.html">← El ahorcado</a>
       <a class="siguiente" href="dados-aleatorios.html">Dados aleatorios →</a>

@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,23 +28,23 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="calculadora_propina.py">Descargar</button>
     </div>
     <p class="codigo-archivo">calculadora-propina/calculadora_propina.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que calcula la propina y el monto total de una cuenta.
     Pide al usuario el monto de la cuenta y el porcentaje de la propina 
     y muestra el monto total de la cuenta y la propina a pagar
-&quot;&quot;&quot;
-monto_cuenta = input(&quot;Introduce el monto de la cuenta: &quot;)
-porcentaje_propina = input(&quot;Introduce el porcentaje de la propina: &quot;)
+&quot;&quot;&quot;</span>
+monto_cuenta = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce el monto de la cuenta: &quot;</span>)
+porcentaje_propina = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce el porcentaje de la propina: &quot;</span>)
 
-monto_cuenta_entero = float(monto_cuenta)
-porcentaje_propina_entero = float(porcentaje_propina)
+monto_cuenta_entero = <span class="tok-builtin">float</span>(monto_cuenta)
+porcentaje_propina_entero = <span class="tok-builtin">float</span>(porcentaje_propina)
 
-propina = (porcentaje_propina_entero / 100) * monto_cuenta_entero # Calculo de la propina
+propina = (porcentaje_propina_entero / <span class="tok-numero">100</span>) * monto_cuenta_entero <span class="tok-comentario"># Calculo de la propina</span>
 
 monto_total_cuenta = monto_cuenta_entero + propina
 
-print(f&quot;Monto total: {monto_total_cuenta}&quot;)
-print(f&quot;Propina: {propina}&quot;)</code></pre>
+<span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Monto total: {monto_total_cuenta}&quot;</span>)
+<span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Propina: {propina}&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="calculadora-indice-masa-corporal.html">← Calculadora de IMC</a>
       <a class="siguiente" href="convertidor-moneda.html">Convertidor de moneda →</a>

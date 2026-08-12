@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,51 +28,51 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="dados_aleatorios.py">Descargar</button>
     </div>
     <p class="codigo-archivo">dados-aleatorios/dados_aleatorios.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que simula un lanzador de dados,
     pide al usuario un número de lanzamientos,
     lanza el número de dados indicados y muestra
     el valor de cada dado, la suma y el producto de todos
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
 
-import random
+<span class="tok-palabra">import</span> random
 
-# Lanzar los dados indicados
-def lanza_dados(numero):
+<span class="tok-comentario"># Lanzar los dados indicados</span>
+<span class="tok-palabra">def</span> <span class="tok-funcion">lanza_dados</span>(numero):
     valores_dados = []
-    contador = 0
+    contador = <span class="tok-numero">0</span>
 
-    while contador &lt; numero:
-        dado = random.randint(1, 6)
+    <span class="tok-palabra">while</span> contador &lt; numero:
+        dado = random.randint(<span class="tok-numero">1</span>, <span class="tok-numero">6</span>)
         valores_dados.append(dado)
-        contador += 1
+        contador += <span class="tok-numero">1</span>
     
-    return valores_dados
+    <span class="tok-palabra">return</span> valores_dados
 
-while True:
-    print(&quot;Opciones:&quot;)
-    print(&quot;1. Lanzar dados&quot;)
-    print(&quot;2. Salir&quot;)
+<span class="tok-palabra">while</span> <span class="tok-palabra">True</span>:
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Opciones:&quot;</span>)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;1. Lanzar dados&quot;</span>)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;2. Salir&quot;</span>)
 
-    opcion = input(&quot;Opcion: &quot;)
-    if opcion == &quot;1&quot;:
-        numero_dados = input(&quot;Introduce el numero de dados: &quot;)
-        valores_dados = lanza_dados(int(numero_dados))
-        producto = valores_dados[0]
+    opcion = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Opcion: &quot;</span>)
+    <span class="tok-palabra">if</span> opcion == <span class="tok-cadena">&quot;1&quot;</span>:
+        numero_dados = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce el numero de dados: &quot;</span>)
+        valores_dados = lanza_dados(<span class="tok-builtin">int</span>(numero_dados))
+        producto = valores_dados[<span class="tok-numero">0</span>]
 
-        for i, valor in enumerate(valores_dados):
-            print(f&quot;Dado {i+1}: {valor}&quot;)
+        <span class="tok-palabra">for</span> i, valor <span class="tok-palabra">in</span> <span class="tok-builtin">enumerate</span>(valores_dados):
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Dado {i+1}: {valor}&quot;</span>)
             
-            if i &lt; len(valores_dados) - 1:
-                producto *= valores_dados[i+1]
+            <span class="tok-palabra">if</span> i &lt; <span class="tok-builtin">len</span>(valores_dados) - <span class="tok-numero">1</span>:
+                producto *= valores_dados[i+<span class="tok-numero">1</span>]
 
-        print(f&quot;\nSuma: {sum(valores_dados)}&quot;)
-        print(f&quot;Producto: {producto}\n&quot;)
-    elif opcion == &quot;2&quot;:
-        print(&quot;Adios&quot;)
-        break
-    else:
-        print(&quot;Opción no valida&quot;)</code></pre>
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;\nSuma: {sum(valores_dados)}&quot;</span>)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Producto: {producto}\n&quot;</span>)
+    <span class="tok-palabra">elif</span> opcion == <span class="tok-cadena">&quot;2&quot;</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Adios&quot;</span>)
+        <span class="tok-palabra">break</span>
+    <span class="tok-palabra">else</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Opción no valida&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="piedra-papel-tijera.html">← Piedra, papel o tijera</a>
       <a class="siguiente" href="patron-triangulo.html">Patrón triángulo →</a>

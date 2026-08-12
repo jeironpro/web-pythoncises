@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,79 +28,79 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="rastreador_habitos_diarios.py">Descargar</button>
     </div>
     <p class="codigo-archivo">rastreador-habitos-diarios/rastreador_habitos_diarios.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que permite al usuario agregar, registrar, marcar y mostrar hábitos diarios. Además, permite ver el progreso de cada hábito registrado.
-&quot;&quot;&quot;
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
+<span class="tok-cadena">&quot;&quot;&quot;
 Estos datos no son persistentes, se debería usar un JSON o una base de datos para que los datos permanezcan guardados
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
 habitos = {}
 
-def agregar_habito(nombre):
-    if nombre not in habitos:
+<span class="tok-palabra">def</span> <span class="tok-funcion">agregar_habito</span>(nombre):
+    <span class="tok-palabra">if</span> nombre <span class="tok-palabra">not</span> <span class="tok-palabra">in</span> habitos:
         habitos[nombre] = []
-        print(&quot;Hábito agregado correctamente&quot;)
-    else:
-        print(&quot;Este hábito ya existe&quot;)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Hábito agregado correctamente&quot;</span>)
+    <span class="tok-palabra">else</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Este hábito ya existe&quot;</span>)
 
-def registrar_habito(nombre, fecha):
+<span class="tok-palabra">def</span> <span class="tok-funcion">registrar_habito</span>(nombre, fecha):
     fechas = habitos[nombre]
     fechas.append(fecha)
-    print(f&quot;Hábito registrado para {fecha}&quot;)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Hábito registrado para {fecha}&quot;</span>)
 
-def mostrar_progreso(nombre):
-    if nombre in habitos:
+<span class="tok-palabra">def</span> <span class="tok-funcion">mostrar_progreso</span>(nombre):
+    <span class="tok-palabra">if</span> nombre <span class="tok-palabra">in</span> habitos:
         fechas = habitos[nombre]
-        total_dias = len(fechas)
-        print(f&quot;Has cumplido este hábito {total_dias} {&quot;vez&quot; if total_dias == 1 else &quot;veces&quot;}&quot;)
-        print(f&quot;Fechas: {', '.join(fechas)}&quot;)
-    else:
-        print(&quot;Este hábito no existe&quot;)
+        total_dias = <span class="tok-builtin">len</span>(fechas)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Has cumplido este hábito {total_dias} {&quot;</span>vez<span class="tok-cadena">&quot; if total_dias == 1 else &quot;</span>veces<span class="tok-cadena">&quot;}&quot;</span>)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Fechas: {', '.join(fechas)}&quot;</span>)
+    <span class="tok-palabra">else</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Este hábito no existe&quot;</span>)
 
-def listar_habitos():
-    if habitos:
-        print(&quot;Tus hábitos son:&quot;)
+<span class="tok-palabra">def</span> <span class="tok-funcion">listar_habitos</span>():
+    <span class="tok-palabra">if</span> habitos:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Tus hábitos son:&quot;</span>)
 
-        for habito in habitos.keys():
-            print(f&quot;- {habito}&quot;)
-    else:
-        print(&quot;Aún no tienes hábitos registrados&quot;)
+        <span class="tok-palabra">for</span> habito <span class="tok-palabra">in</span> habitos.keys():
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;- {habito}&quot;</span>)
+    <span class="tok-palabra">else</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Aún no tienes hábitos registrados&quot;</span>)
 
-# Función principal
-def menu():
-    while True:
-        print(&quot;Rastreador de hábitos&quot;)
-        print(&quot;1. Agregar hábito&quot;)
-        print(&quot;2. Registrar hábito cumplido&quot;)
-        print(&quot;3. Mostrar progreso&quot;)
-        print(&quot;4. Listar hábitos&quot;)
-        print(&quot;5. Salir&quot;)
+<span class="tok-comentario"># Función principal</span>
+<span class="tok-palabra">def</span> <span class="tok-funcion">menu</span>():
+    <span class="tok-palabra">while</span> <span class="tok-palabra">True</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Rastreador de hábitos&quot;</span>)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;1. Agregar hábito&quot;</span>)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;2. Registrar hábito cumplido&quot;</span>)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;3. Mostrar progreso&quot;</span>)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;4. Listar hábitos&quot;</span>)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;5. Salir&quot;</span>)
 
-        opcion = input(&quot;Elige una opción: &quot;)
+        opcion = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Elige una opción: &quot;</span>)
 
-        if opcion == &quot;1&quot;:
-            nombre_habito = input(&quot;Ingresa el nombre del habito: &quot;)
+        <span class="tok-palabra">if</span> opcion == <span class="tok-cadena">&quot;1&quot;</span>:
+            nombre_habito = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Ingresa el nombre del habito: &quot;</span>)
             agregar_habito(nombre_habito)
-        elif opcion == &quot;2&quot;:
-            nombre_habito = input(&quot;Ingresa el nombre del habito: &quot;)
+        <span class="tok-palabra">elif</span> opcion == <span class="tok-cadena">&quot;2&quot;</span>:
+            nombre_habito = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Ingresa el nombre del habito: &quot;</span>)
 
-            if nombre_habito in habitos:
-                fecha = input(&quot;Fecha (YYYY-MM-DD): &quot;)
+            <span class="tok-palabra">if</span> nombre_habito <span class="tok-palabra">in</span> habitos:
+                fecha = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Fecha (YYYY-MM-DD): &quot;</span>)
                 registrar_habito(nombre_habito, fecha)
-            else:
-                print(&quot;Este hábito no existe&quot;)
-        elif opcion == &quot;3&quot;:
-            nombre_habito = input(&quot;Ingresa el nombre del habito: &quot;)
+            <span class="tok-palabra">else</span>:
+                <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Este hábito no existe&quot;</span>)
+        <span class="tok-palabra">elif</span> opcion == <span class="tok-cadena">&quot;3&quot;</span>:
+            nombre_habito = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Ingresa el nombre del habito: &quot;</span>)
             mostrar_progreso(nombre_habito)
-        elif opcion == &quot;4&quot;:
+        <span class="tok-palabra">elif</span> opcion == <span class="tok-cadena">&quot;4&quot;</span>:
             listar_habitos()
-        elif opcion == &quot;5&quot;:
-            print(&quot;Adios&quot;)
-            break
-        else:
-            print(&quot;Opción inválida&quot;)
+        <span class="tok-palabra">elif</span> opcion == <span class="tok-cadena">&quot;5&quot;</span>:
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Adios&quot;</span>)
+            <span class="tok-palabra">break</span>
+        <span class="tok-palabra">else</span>:
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Opción inválida&quot;</span>)
 
-menu() # Iniciar el programa</code></pre>
+menu() <span class="tok-comentario"># Iniciar el programa</span></code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="reloj-digital.html">← Reloj digital</a>
       <a class="siguiente" href="lista-to-do.html">Lista de tareas →</a>

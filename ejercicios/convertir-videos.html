@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,61 +28,61 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="convertir_videos.py">Descargar</button>
     </div>
     <p class="codigo-archivo">convertir-videos/convertir_videos.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que convierte un video de un formato a otro,
     permtiendo opcionalmente ajustar la resolución y la calidad del video
-&quot;&quot;&quot;
-import os
-from moviepy import VideoFileClip
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> os
+<span class="tok-palabra">from</span> moviepy <span class="tok-palabra">import</span> VideoFileClip
 
-ruta_video = input(&quot;Ingrese la ruta del video: &quot;)
+ruta_video = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Ingrese la ruta del video: &quot;</span>)
 
-# Verificar si el video existe
-if not os.path.exists(ruta_video):
-    print(&quot;El video no existe&quot;)
+<span class="tok-comentario"># Verificar si el video existe</span>
+<span class="tok-palabra">if</span> <span class="tok-palabra">not</span> os.path.exists(ruta_video):
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;El video no existe&quot;</span>)
     exit()
 
-# Cargar el video
+<span class="tok-comentario"># Cargar el video</span>
 video = VideoFileClip(ruta_video)
 
-formato_destino = input(&quot;Ingrese el formato de salida deseado (ej: mp4, avi, mov): &quot;)
+formato_destino = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Ingrese el formato de salida deseado (ej: mp4, avi, mov): &quot;</span>)
 
-cambio_resolucion = input(&quot;Desea cambiar la resolución del video? (si/no): &quot;)
+cambio_resolucion = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Desea cambiar la resolución del video? (si/no): &quot;</span>)
 
-# Resolución original del video
-ancho_resolucion = video.size[0]
-alto_resolucion = video.size[1]
+<span class="tok-comentario"># Resolución original del video</span>
+ancho_resolucion = video.size[<span class="tok-numero">0</span>]
+alto_resolucion = video.size[<span class="tok-numero">1</span>]
 
-if cambio_resolucion == &quot;si&quot;:
-    resolucion = input(&quot;Ingresa la nueva resolución (ej: 1920x1080): &quot;)
+<span class="tok-palabra">if</span> cambio_resolucion == <span class="tok-cadena">&quot;si&quot;</span>:
+    resolucion = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Ingresa la nueva resolución (ej: 1920x1080): &quot;</span>)
 
-    partes_resolucion = resolucion.split(&quot;x&quot;)
+    partes_resolucion = resolucion.split(<span class="tok-cadena">&quot;x&quot;</span>)
 
-    if len(partes_resolucion) == 2:
-        ancho_resolucion = int(partes_resolucion[0])
-        alto_resolucion = int(partes_resolucion[1])
-    else:
-        print(&quot;Formato de resolución no válido&quot;)
+    <span class="tok-palabra">if</span> <span class="tok-builtin">len</span>(partes_resolucion) == <span class="tok-numero">2</span>:
+        ancho_resolucion = <span class="tok-builtin">int</span>(partes_resolucion[<span class="tok-numero">0</span>])
+        alto_resolucion = <span class="tok-builtin">int</span>(partes_resolucion[<span class="tok-numero">1</span>])
+    <span class="tok-palabra">else</span>:
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Formato de resolución no válido&quot;</span>)
         exit()
 
-cambio_calidad = input(&quot;Desea cambiar la calidad o bitrate del video? (si/no): &quot;)
-calidad = None
+cambio_calidad = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Desea cambiar la calidad o bitrate del video? (si/no): &quot;</span>)
+calidad = <span class="tok-palabra">None</span>
 
-if cambio_calidad == &quot;si&quot;:
-    calidad = input(&quot;Ingrese el bitrate deseado en kbps (ej: 2000): &quot;)
+<span class="tok-palabra">if</span> cambio_calidad == <span class="tok-cadena">&quot;si&quot;</span>:
+    calidad = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Ingrese el bitrate deseado en kbps (ej: 2000): &quot;</span>)
 
-# Verificar y ajustar valores de resolución
-if ancho_resolucion and alto_resolucion:
+<span class="tok-comentario"># Verificar y ajustar valores de resolución</span>
+<span class="tok-palabra">if</span> ancho_resolucion <span class="tok-palabra">and</span> alto_resolucion:
     video = video.resized((ancho_resolucion, alto_resolucion))
 
-calidad_valida = None
-# Verificar y validad calidad
-if calidad:
-    calidad_valida = f&quot;{calidad}k&quot;
+calidad_valida = <span class="tok-palabra">None</span>
+<span class="tok-comentario"># Verificar y validad calidad</span>
+<span class="tok-palabra">if</span> calidad:
+    calidad_valida = <span class="tok-cadena">f&quot;{calidad}k&quot;</span>
 
 video.write_videofile(
-    f&quot;video_convertido.{formato_destino}&quot;,
-    codec=&quot;libx264&quot;,
+    <span class="tok-cadena">f&quot;video_convertido.{formato_destino}&quot;</span>,
+    codec=<span class="tok-cadena">&quot;libx264&quot;</span>,
     bitrate=calidad_valida
 )   </code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">

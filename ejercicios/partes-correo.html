@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,31 +28,31 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="partes_correo.py">Descargar</button>
     </div>
     <p class="codigo-archivo">partes-correo/partes_correo.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que lee cualquier archivo que sea de texto
     y busca los correos electronicos y muestras sus partes 
     (nombre y dominio)
-&quot;&quot;&quot;
-import os
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> os
 
-nombre_archivo = input(&quot;Introduce el nombre del archivo: &quot;)
+nombre_archivo = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce el nombre del archivo: &quot;</span>)
 
-# Verificar que el archivo existe antes de leer
-if os.path.exists(nombre_archivo):
-    with open(nombre_archivo, &quot;r&quot;) as archivo:
-        for linea in archivo:
+<span class="tok-comentario"># Verificar que el archivo existe antes de leer</span>
+<span class="tok-palabra">if</span> os.path.exists(nombre_archivo):
+    <span class="tok-palabra">with</span> <span class="tok-builtin">open</span>(nombre_archivo, <span class="tok-cadena">&quot;r&quot;</span>) <span class="tok-palabra">as</span> archivo:
+        <span class="tok-palabra">for</span> linea <span class="tok-palabra">in</span> archivo:
             linea = linea.strip()
 
-            if &quot;@&quot; in linea:
-                partes = linea.split(&quot;@&quot;)
+            <span class="tok-palabra">if</span> <span class="tok-cadena">&quot;@&quot;</span> <span class="tok-palabra">in</span> linea:
+                partes = linea.split(<span class="tok-cadena">&quot;@&quot;</span>)
 
-                nombre_usuario = partes[0]
-                dominio = partes[1]
+                nombre_usuario = partes[<span class="tok-numero">0</span>]
+                dominio = partes[<span class="tok-numero">1</span>]
 
-                print(f&quot;Nombre usuario: {nombre_usuario}&quot;)
-                print(f&quot;Dominio: {dominio}&quot;)
-else:
-    print(f&quot;El archivo {nombre_archivo} no existe&quot;)</code></pre>
+                <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Nombre usuario: {nombre_usuario}&quot;</span>)
+                <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Dominio: {dominio}&quot;</span>)
+<span class="tok-palabra">else</span>:
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;El archivo {nombre_archivo} no existe&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="historias-divertidas.html">← Historias divertidas</a>
       <a class="siguiente" href="convertir-markdown-html.html">Markdown a HTML →</a>

@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,17 +28,17 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="calculadora_indice_masa_corporal.py">Descargar</button>
     </div>
     <p class="codigo-archivo">calculadora-indice-masa-corporal/calculadora_indice_masa_corporal.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que pide al usuario su peso y altura,
     calcula su indice de masa corporal y muestra el resultado
-&quot;&quot;&quot;
+&quot;&quot;&quot;</span>
 
-peso = input(&quot;Introduce tu peso en kg: &quot;)
-altura = input(&quot;Introduce tu altura en m: &quot;)
+peso = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce tu peso en kg: &quot;</span>)
+altura = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce tu altura en m: &quot;</span>)
 
-imc = float(peso) / (float(altura)**2)
+imc = <span class="tok-builtin">float</span>(peso) / (<span class="tok-builtin">float</span>(altura)**<span class="tok-numero">2</span>)
 
-print(f&quot;Tu indice de masa corporal es: {imc:.2f}&quot;)</code></pre>
+<span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Tu indice de masa corporal es: {imc:.2f}&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="calculadora.html">← Calculadora</a>
       <a class="siguiente" href="calculadora-propina.html">Calculadora de propina →</a>

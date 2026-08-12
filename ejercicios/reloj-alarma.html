@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,51 +28,51 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="reloj_alarma.py">Descargar</button>
     </div>
     <p class="codigo-archivo">reloj-alarma/reloj_alarma.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que simula una reloj alarma. 
     Pide al usuario configurar su alarma en un formato especifico,
     marca la alarma configurada y muestra el tiempo restante (horas y minutos) 
     que faltan para sonar la alarma
-&quot;&quot;&quot;
-import time
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> time
 
-alarma = input(&quot;Configura la hora de la alarma en formato 24H (ej: 7:45): &quot;)
+alarma = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Configura la hora de la alarma en formato 24H (ej: 7:45): &quot;</span>)
 
-# Validar formato
-if &quot;:&quot; not in alarma or len(alarma.split(&quot;:&quot;)) != 2:
-    print(&quot;Formato no valido&quot;)
-else:
-    partes = alarma.split(&quot;:&quot;)
-    hora_objetivo = int(partes[0])
-    minutos_objetivo = int(partes[1])
+<span class="tok-comentario"># Validar formato</span>
+<span class="tok-palabra">if</span> <span class="tok-cadena">&quot;:&quot;</span> <span class="tok-palabra">not</span> <span class="tok-palabra">in</span> alarma <span class="tok-palabra">or</span> <span class="tok-builtin">len</span>(alarma.split(<span class="tok-cadena">&quot;:&quot;</span>)) != <span class="tok-numero">2</span>:
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Formato no valido&quot;</span>)
+<span class="tok-palabra">else</span>:
+    partes = alarma.split(<span class="tok-cadena">&quot;:&quot;</span>)
+    hora_objetivo = <span class="tok-builtin">int</span>(partes[<span class="tok-numero">0</span>])
+    minutos_objetivo = <span class="tok-builtin">int</span>(partes[<span class="tok-numero">1</span>])
 
-    print(f&quot;Alarma configurada a las {alarma}&quot;)
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Alarma configurada a las {alarma}&quot;</span>)
 
-    while True:
+    <span class="tok-palabra">while</span> <span class="tok-palabra">True</span>:
         ahora = time.localtime()
         hora_actual = ahora.tm_hour
         minutos_actuales = ahora.tm_min
         segundos_actuales = ahora.tm_sec
 
-        # Verificar si la hora es la alarma configurada
-        if hora_actual == hora_objetivo and minutos_actuales == minutos_objetivo:
-            print(&quot;ALARMA ACTIVADA&quot;)
-            break
-        else:
+        <span class="tok-comentario"># Verificar si la hora es la alarma configurada</span>
+        <span class="tok-palabra">if</span> hora_actual == hora_objetivo <span class="tok-palabra">and</span> minutos_actuales == minutos_objetivo:
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;ALARMA ACTIVADA&quot;</span>)
+            <span class="tok-palabra">break</span>
+        <span class="tok-palabra">else</span>:
             horas_faltantes = hora_objetivo - hora_actual
             minutos_faltantes = minutos_objetivo - minutos_actuales
 
-            # Verificar minutos faltantes
-            if minutos_faltantes &lt; 0:
-                minutos_faltantes += 60
-                horas_faltantes -= 1
+            <span class="tok-comentario"># Verificar minutos faltantes</span>
+            <span class="tok-palabra">if</span> minutos_faltantes &lt; <span class="tok-numero">0</span>:
+                minutos_faltantes += <span class="tok-numero">60</span>
+                horas_faltantes -= <span class="tok-numero">1</span>
             
-            # Verificar horas faltantes
-            if horas_faltantes &lt; 0:
-                horas_faltantes += 24
+            <span class="tok-comentario"># Verificar horas faltantes</span>
+            <span class="tok-palabra">if</span> horas_faltantes &lt; <span class="tok-numero">0</span>:
+                horas_faltantes += <span class="tok-numero">24</span>
 
-            print(f&quot;Faltan {horas_faltantes} horas y {minutos_faltantes} {&quot;minutos&quot; if minutos_faltantes &gt; 1 else &quot;minuto&quot;}&quot;)
-            time.sleep(60 - segundos_actuales) # Espera del siguiente minuto</code></pre>
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Faltan {horas_faltantes} horas y {minutos_faltantes} {&quot;</span>minutos<span class="tok-cadena">&quot; if minutos_faltantes &gt; 1 else &quot;</span>minuto<span class="tok-cadena">&quot;}&quot;</span>)
+            time.sleep(<span class="tok-numero">60</span> - segundos_actuales) <span class="tok-comentario"># Espera del siguiente minuto</span></code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="pomodoro.html">← Pomodoro</a>
       <a class="siguiente" href="reloj-digital.html">Reloj digital →</a>

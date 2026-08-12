@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,24 +28,24 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="cuenta_tiempo_atras.py">Descargar</button>
     </div>
     <p class="codigo-archivo">cuenta-tiempo-atras/cuenta_tiempo_atras.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que pide al usuario un numero de tiempo inicial
     para iniciar un despegue, haciendo una cuentra regresiva
     del tiempo inicial hasta 1 y posteriormente hacer el despegue 
-&quot;&quot;&quot;
-import time
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> time
 
-tiempo_inicial = input(&quot;Introduce el tiempo inicial: &quot;)
-contador = int(tiempo_inicial)
+tiempo_inicial = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce el tiempo inicial: &quot;</span>)
+contador = <span class="tok-builtin">int</span>(tiempo_inicial)
 
-print(&quot;Iniciando cuenta regresiva...&quot;)
+<span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Iniciando cuenta regresiva...&quot;</span>)
 
-while contador &gt; 0:
-    print(contador)
-    contador -= 1
-    time.sleep(0.5) # espera de 5 milisegundos
+<span class="tok-palabra">while</span> contador &gt; <span class="tok-numero">0</span>:
+    <span class="tok-builtin">print</span>(contador)
+    contador -= <span class="tok-numero">1</span>
+    time.sleep(<span class="tok-numero">0.5</span>) <span class="tok-comentario"># espera de 5 milisegundos</span>
 
-print(&quot;Despegue!!!&quot;)</code></pre>
+<span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;Despegue!!!&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="convertir-videos.html">← Convertidor de vídeos</a>
       <a class="siguiente" href="pomodoro.html">Pomodoro →</a>

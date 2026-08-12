@@ -17,12 +17,6 @@
 <body>
   <header class="nav">
     <a class="nav-word" href="../index.html">Pythoncises</a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="../index.html#indice">Índice</a></li>
-        <li><a href="../index.html#licencia">Licencia</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="detalle">
     <a class="detalle-volver" href="../index.html#indice">← Índice</a>
@@ -34,43 +28,43 @@
       <button class="btn" type="button" data-accion="descargar" data-nombre="pomodoro.py">Descargar</button>
     </div>
     <p class="codigo-archivo">pomodoro/pomodoro.py</p>
-    <pre><code>&quot;&quot;&quot;
+    <pre><code><span class="tok-cadena">&quot;&quot;&quot;
     Programa que simula un pomodoro método de gestión del tiempo desarrollado por Francesco cirillo. El programa pide al usuario una lista de tareas separadas por espacios y inicia un temporizador de 25 minutos por cada tarea y un descanso de 5 minutos a cada tarea y en cada 4 tareas el tiempo de descanso aumenta a 15 minutos
-&quot;&quot;&quot;
-import os
-import time
+&quot;&quot;&quot;</span>
+<span class="tok-palabra">import</span> os
+<span class="tok-palabra">import</span> time
 
-def limpiar_pantalla():
-    os.system('cls' if os.name == 'nt' else 'clear')
+<span class="tok-palabra">def</span> <span class="tok-funcion">limpiar_pantalla</span>():
+    os.system(<span class="tok-cadena">'cls'</span> <span class="tok-palabra">if</span> os.name == <span class="tok-cadena">'nt'</span> <span class="tok-palabra">else</span> <span class="tok-cadena">'clear'</span>)
 
-def temporizador(minutos, mensaje):
-    print(&quot;¡Inicia el tiempo regresivo!&quot;)
-    for minuto in range(minutos, 0, -1):
-        for segundo in range(59, -1, -1):
-            print(f&quot;{mensaje} - {minuto-1:02d}:{segundo:02d}&quot;, end=&quot;\r&quot;)
-            time.sleep(1)
-    print()
+<span class="tok-palabra">def</span> <span class="tok-funcion">temporizador</span>(minutos, mensaje):
+    <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;¡Inicia el tiempo regresivo!&quot;</span>)
+    <span class="tok-palabra">for</span> minuto <span class="tok-palabra">in</span> <span class="tok-builtin">range</span>(minutos, <span class="tok-numero">0</span>, -<span class="tok-numero">1</span>):
+        <span class="tok-palabra">for</span> segundo <span class="tok-palabra">in</span> <span class="tok-builtin">range</span>(<span class="tok-numero">59</span>, -<span class="tok-numero">1</span>, -<span class="tok-numero">1</span>):
+            <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;{mensaje} - {minuto-1:02d}:{segundo:02d}&quot;</span>, end=<span class="tok-cadena">&quot;\r&quot;</span>)
+            time.sleep(<span class="tok-numero">1</span>)
+    <span class="tok-builtin">print</span>()
 
-def pomodoro(tareas):
-    contador = 0
+<span class="tok-palabra">def</span> <span class="tok-funcion">pomodoro</span>(tareas):
+    contador = <span class="tok-numero">0</span>
 
-    for tarea in tareas:
-        contador+= 1
+    <span class="tok-palabra">for</span> tarea <span class="tok-palabra">in</span> tareas:
+        contador+= <span class="tok-numero">1</span>
         limpiar_pantalla()
-        print(f&quot;Pomodoro {contador} - Tarea: {tarea}&quot;)
-        temporizador(25, &quot;Trabajando&quot;)
-        print(&quot;¡Pomodoro terminado!&quot;)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">f&quot;Pomodoro {contador} - Tarea: {tarea}&quot;</span>)
+        temporizador(<span class="tok-numero">25</span>, <span class="tok-cadena">&quot;Trabajando&quot;</span>)
+        <span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;¡Pomodoro terminado!&quot;</span>)
 
-        if contador % 4 != 0:
-            temporizador(5, &quot;Descansando&quot;)
-        else:
-            temporizador(15, &quot;Descansando&quot;)
+        <span class="tok-palabra">if</span> contador % <span class="tok-numero">4</span> != <span class="tok-numero">0</span>:
+            temporizador(<span class="tok-numero">5</span>, <span class="tok-cadena">&quot;Descansando&quot;</span>)
+        <span class="tok-palabra">else</span>:
+            temporizador(<span class="tok-numero">15</span>, <span class="tok-cadena">&quot;Descansando&quot;</span>)
 
-tareas_usuario = input(&quot;Introduce una lista de taras separadas por espacios: &quot;)
+tareas_usuario = <span class="tok-builtin">input</span>(<span class="tok-cadena">&quot;Introduce una lista de taras separadas por espacios: &quot;</span>)
 lista_tareas = tareas_usuario.split()
 
 pomodoro(lista_tareas)
-print(&quot;¡Todos los Pomodoros completados!&quot;)</code></pre>
+<span class="tok-builtin">print</span>(<span class="tok-cadena">&quot;¡Todos los Pomodoros completados!&quot;</span>)</code></pre>
     <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       <a class="anterior" href="cuenta-tiempo-atras.html">← Cuenta atrás</a>
       <a class="siguiente" href="reloj-alarma.html">Reloj alarma →</a>
