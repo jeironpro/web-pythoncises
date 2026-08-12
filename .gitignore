@@ -1,0 +1,9 @@
+# Artefactos generados al ejecutar los ejercicios
+combinar-pdfs/combinacion.pdf
+marca-agua/imagen_marca_agua.jpg
+lista-to-do/tareas.json
+organizador-archivos/archivos/
+
+# Python
+__pycache__/
+*.pyc
