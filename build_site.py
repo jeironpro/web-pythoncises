@@ -8,14 +8,25 @@ Produce:
 - ejercicios/<slug>.html      una página por ejercicio (código, copiar, descargar)
 
 El código de cada ejercicio vive solo en su propia página; el índice no
-contiene código. El diseño se define en styles.css y tokens.css.
+contiene código. Si existe salidas.json (slug -> transcripción de la salida
+real del programa), cada página muestra además una sección 'Salida de
+ejemplo'. El diseño se define en styles.css y tokens.css.
 """
 
+import json
 import re
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent
 SALIDA = RAIZ / "ejercicios"
+
+# Salidas de ejemplo capturadas ejecutando cada programa (ver salidas.json).
+# Si el archivo no existe, el sitio se genera sin la sección de salida.
+try:
+    with open(RAIZ / "salidas.json", encoding="utf-8") as _f:
+        SALIDAS = json.load(_f)
+except (OSError, json.JSONDecodeError):
+    SALIDAS = {}
 
 # Resaltado de sintaxis (tokenizador propio, sin librerías)
 
@@ -220,6 +231,7 @@ def lee_ejercicios():
                 "nombre": archivo.name,
                 "descripcion": extrae_descripcion(codigo),
                 "codigo": codigo,
+                "salida": SALIDAS.get(slug),
             }
             items.append(ejercicio)
             plana.append(ejercicio)
@@ -316,6 +328,13 @@ def pagina_ejercicio(ejercicio, anterior, siguiente):
     ])
     nav_previo = f'<a class="anterior" href="{anterior["slug"]}.html">← {escapa_html(anterior["titulo"])}</a>' if anterior else ""
     nav_siguiente = f'<a class="siguiente" href="{siguiente["slug"]}.html">{escapa_html(siguiente["titulo"])} →</a>' if siguiente else ""
+    salida = ""
+    if ejercicio["salida"]:
+        salida = f"""    <section class="salida" aria-labelledby="salida-{escapa_html(ejercicio['slug'])}">
+      <h2 class="salida-titulo" id="salida-{escapa_html(ejercicio['slug'])}">Salida de ejemplo</h2>
+      <pre class="salida-cuerpo">{escapa_html(ejercicio['salida'])}</pre>
+    </section>
+"""
     return f"""{cabecera("../", f"Pythoncises · {ejercicio['titulo']}", ejercicio['descripcion'])}
 {nav("../")}
   <main class="detalle">
@@ -329,7 +348,7 @@ def pagina_ejercicio(ejercicio, anterior, siguiente):
     </div>
     <p class="codigo-archivo">{escapa_html(ejercicio['archivo'])}</p>
     <pre><code>{resalta_python(ejercicio['codigo'])}</code></pre>
-    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
+{salida}    <nav class="detalle-nav" aria-label="Navegación entre ejercicios">
       {nav_previo}
       {nav_siguiente}
     </nav>
