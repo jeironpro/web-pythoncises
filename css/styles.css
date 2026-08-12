@@ -322,8 +322,7 @@ html.js .stage__panel { opacity: 0; transform: translateX(28px); }
 
 /* ═══ DETALLE ═══ */
 .detalle { max-width: 64rem; margin: 0 auto; padding: clamp(2rem, 5vh, 4rem) var(--page-gutter) var(--space-3xl); }
-.detalle-volver { display: inline-flex; align-items: center; gap: 0.4em; font-family: var(--font-label); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in oklch, var(--color-accent-2-deep) 55%, var(--color-ink)); margin-bottom: 2rem; transition: color 160ms ease; }
-.detalle-volver:hover { color: var(--color-ink); }
+.detalle-volver { margin-bottom: 2rem; }
 .detalle-meta { font-family: var(--font-label); font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-muted); margin: 0 0 0.6rem; }
 .detalle-titulo { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); line-height: 1.05; letter-spacing: -0.03em; color: var(--color-ink); margin: 0 0 1.1rem; text-wrap: balance; }
 .detalle-desc { font-size: 1.125rem; line-height: 1.6; color: var(--color-ink-2); max-width: 52ch; margin: 0 0 2rem; }
